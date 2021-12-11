@@ -1,0 +1,1 @@
+web gunicorn MedsPanda.wsgi --log-file -

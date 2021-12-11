@@ -1,0 +1,151 @@
+::-webkit-scrollbar-thumb {
+    background: #b9b9b9;
+    height: 200px
+}
+
+::-webkit-scrollbar {
+    display: block !important
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+.exitpop-content img {
+    max-width: 100%
+}
+
+.line1 {
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 32px
+}
+
+.line2 {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 25px
+}
+
+.line3 {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 20px
+}
+
+.forPopUp {
+    color: #fff;
+    text-align: center
+}
+
+p.no-Thanks {
+    text-align: center
+}
+
+p.no-Thanks a {
+    text-decoration: none;
+    color: #fff;
+    text-align: center
+}
+
+.footerWrapper {
+    padding: 45px 0;
+    text-align: center
+}
+
+.footerWrapper ul {
+    margin-bottom: 15px
+}
+
+.footerWrapper ul li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    font-size: 14px;
+    color: #000
+}
+
+.footerWrapper ul li a {
+    color: #a8a8a8
+}
+
+.footerWrapper p {
+    color: #a8a8a8;
+    font-size: 12px;
+    margin-bottom: 15px
+}
+
+.footerWrapper p:last-child {
+    margin-bottom: 0
+}
+
+.footerWrapper {
+    padding: 25px 0
+}
+
+.footerWrapper .container {
+    padding: 0 50px
+}
+
+.attention {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    font-family: roboto, 'sans-serif';
+    font-weight: 300;
+    font-size: 14px;
+    color: #666;
+    background: #f8f8f8;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 3px;
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.attention span {
+    color: #db3d24;
+    font-weight: 700
+}
+
+.attention p {
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+.attention-inner {
+    max-width: 1450px;
+    display: flex;
+    justify-content: space-between
+}
+
+.icon-exclamation {
+    min-width: 34px;
+    height: 32px
+}
+
+.icon-close {
+    min-width: 20px;
+    height: 20px
+}
+
+.footerWrapper p.represent_txt {
+    font-size: 14px;
+    line-height: 24px;
+    color: #4b4b4b;
+    text-align: center;
+    margin: 20px auto;
+    width: 70%
+}
+
+.footerWrapper p.represent_txt a {
+    color: #4b4b4b
+}
+
+@media screen and (max-width:646px) {
+    .attention p {
+        font-size: 12px
+    }
+}

@@ -1,0 +1,477 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<div class="">
+    <div class="col-sm-12 attention" style="display: none;">
+        <div class='attention-inner'>
+            <div class="icon-exclamation"><i class="new_sprite new_sprite-exclamation"></i></div>
+            <p>Due to increased demand for our offers with free bottles we have a limited supply. As of
+                <span style="color: #DB3D24;">Thursday 9th December 2021</span> we currently have the product <span
+                    style="color: #DB3D24;">IN STOCK</span> and are ready to ship within 24 hours of purchase.
+            </p>
+            <div class="icon-close"><i class="new_sprite new_sprite-close"></i></div>
+        </div>
+    </div>
+</div>
+<div class="section-1" id="home">
+    <div class="container">
+        <div class="sc1-para-lft"> <i class="new_sprite new_sprite-doctr-img doctr-img"></i> <i
+                class="new_sprite new_sprite-s1-box-bottle top-bottle"></i> 
+                <!-- <i             class="new_sprite new_sprite-usa-seal usa-seal"></i> -->
+            <div class="sc1-para1"> <i class="new_sprite new_sprite-default_17 top-logo"
+                    style="margin-bottom: 5px; margin-left: 0; width: 160px; margin-left: 256px;"></i>
+                <p class="sc1-txt1">Maximum strength blend <span>includes all-natural ingredients </span></p>
+            </div>
+            <!-- <div class="sc1-para2" style="margin-top: -25px; text-align: center;">
+                <p class="sc1-txt2" style="margin-top: 30px;     margin-left: 0;">Rapid Absorption Technology </p>
+                <i class="new_sprite new_sprite-logo-1 top-logo"
+                    style="width: 304px; margin: 20px 0 10px; padding:0; float: none;"></i>
+            </div> -->
+            <p class="red-arrow">Now Available Without A Prescription </p>
+            <div class="sc1-para3">
+                <p class="sc1-txt4" style="margin-top: -23px;">Doctor Recommended </p>
+                <p class="sc1-txt5"><strong>ManDime</strong> nutritional matrix includes ingredients which have been
+                    proven to support sexual health and energy. </p>
+                <ul class="list-sec1">
+                    <li>
+                        <p style="background:none;">Enhances<span> Sex Drive & Libido </span></p>
+                    </li>
+                    <li>
+                        <p>Achieve <span>Bigger & Harder Erections </span></p>
+                    </li>
+                    <li>
+                        <p> Longer <span> Sexual Staying Power </span></p>
+                    </li>
+                    <li>
+                        <p> Increased <span>Penis Length & Girth</span></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="sc1-para4">
+                <div class="bnr-slider"></div>
+            </div>
+            <div class="clearall"></div>
+            <div class="gap"></div>
+            <div class="clearall"></div>
+            <p class="promo">†Promotional consideration provided. *Results are not guaranteed, individual results
+                may vary.</p>
+        </div>
+        <div class="sc1-para-rgt">
+            <p class="sc1-flag">Internet Exclusive Offer
+                <br>Available to US Residents Only
+            </p>
+            <div class="form-container">
+                <div class="ani-arrow1"> <i class="new_sprite new_sprite-animate-arw"></i> </div>
+                <div class="form-top" id="form-top">
+                    <i class="new_sprite new_sprite-frm-top"></i>
+
+                </div>
+                <form method="post"
+                    action="https://trymandimenow.com/special-offer/online/ajax.php?method=new_prospect"
+                    name="prospect_form1" accept-charset="utf-8"
+                    enctype="application/x-www-form-urlencoded;charset=utf-8">
+                    <input type="hidden" name="limelight_charset" id="limelight_charset" value="utf-8" />
+                    <div class="form-box">
+                        <div class="form-group">
+
+                            <input type="text" name="firstName" placeholder="First Name"
+                                class="required form-control" value=""
+                                data-error-message="Please enter your first name!" />
+                        </div>
+                        <div class="form-group">
+
+                            <input type="text" name="lastName" placeholder="Last Name" class="required form-control"
+                                value="" data-error-message="Please enter your last name!" />
+                        </div>
+                        <div class="form-group">
+
+                            <input type="text" name="shippingAddress1" placeholder="Your Address" class="required"
+                                value="" data-error-message="Please enter your address!" />
+                        </div>
+                        <div class="form-group">
+
+                            <input type="text" name="shippingCity" placeholder="Your City" class="required" value=""
+                                data-error-message="Please enter your city!" />
+                        </div>
+                        <div class="form-group">
+
+                            <select name="shippingCountry" class="required no-error" data-selected=""
+                                data-error-message="Please select your country!">
+                                <option value="US">United States</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+
+                            <input type="text" name="shippingState" placeholder="Your State" class="required"
+                                data-selected="" data-error-message="Please select your state!" readonly />
+                        </div>
+                        <div class="form-group">
+
+                            <input type="tel" name="shippingZip" placeholder="Zip Code" class="required" value=""
+                                maxlength="5" onkeyup="javascript: this.value = this.value.replace(/[^0-9]/g,'');"
+                                data-error-message="Please enter a valid zip code!" />
+                            <span id="zip-validate" style="display: none">
+                                <img
+                                    src="{% static 'app/desktop/images/ajax-loader.gif' %}"></span>
+                        </div>
+                        <div class="form-group">
+
+                            <input type="tel" name="phone" placeholder="Phone" class="required" value=""
+                                data-min-length="10" data-max-length="10"
+                                onkeyup="javascript: this.value = this.value.replace(/[^0-9]/g,'');" maxlength="10"
+                                data-error-message="Please enter a valid contact number!" />
+                        </div>
+                        <div class="form-group">
+
+                            <input type="text" name="email" placeholder="Email Address" class="required" value=""
+                                data-error-message="Please enter a valid email id!" />
+                            <span id="mxcheck-placeholder" style="display:none;"><img
+                                    src="{% static 'app/desktop/images/ajax-loader.gif' %}" /></span>
+                            <span id="mxcheck-message" style="display:none;"></span>
+                        </div>
+                        <input type="submit" class="pulse frm-btm" name="create_prospect" value="Rush My Order" />
+                    </div>
+                    <p id="loading-indicator" style="display:none;">Processing...</p>
+                    <p id="crm-response-container" style="display:none;">Limelight messages will appear here...</p>
+                </form>
+                <div class="formbottom"><i class="new_sprite new_sprite-frm-botm"></i></div>
+            </div>
+            <div class="Magazines">
+                <p class="maga-txt1">MALE ENHANCEMENT AS SEEN IN</p>
+                <center><i class="new_sprite new_sprite-magazin maga-img1"></i></center>
+                <p class="maga-txt2">The sexual benefits of the ingredients used in <strong>ManDime</strong> have
+                    been covered by leading magazines and scientific journals. </p>
+                <center><i class="new_sprite new_sprite-gry-logo gry-logo"></i></center>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section-2">
+    <div class="container">
+        <div class="sc2-para1">
+            <p class="sc2-txt1">DECLINE IN SEXUAL HEALTH </p>
+            <p class="sc2-txt2">IS A <span>HARSH REALITY</span></p>
+        </div>
+        <div class="clearall"></div>
+        <p class="sc2-cntn">Age-related decline in sexual health leads to low sex drive, lack of stamina, inability
+            to perform, taking a toll on both your confidence and your relationships.</p>
+        <div class="sc2-para2">
+            <div class="scpr2-lft"> <i class="new_sprite new_sprite-sc2-img1 sc2-img1"></i>
+                <div class="ponts1">
+                    <i class="new_sprite new_sprite-sc2-no1"></i>
+                    <p class="sc2-txt3">Frustrated? <span>Are you tired of not being able to achieve an erection
+                            when you need it? </span></p>
+                </div>
+                <div class="ponts2">
+                    <i class="new_sprite new_sprite-sc2-no2"></i>
+                    <p class="sc2-txt3">Embarrassed? <span>Are you embarrassed about premature ejaculation and lack
+                            of staying power? </span></p>
+                </div>
+                <div class="ponts3">
+                    <i class="new_sprite new_sprite-sc2-no3"></i>
+                    <p class="sc2-txt3">STUCK? <span>Have you tried the "purple pill" with no results and only
+                            harmful side effects?
+                        </span></p>
+                </div>
+            </div> <i class="new_sprite new_sprite-sc2-img2 sc2-img2"></i>
+        </div>
+    </div>
+</div>
+<div class="section-3">
+    <div class="container">
+        <div class="sc3-paralft">
+            <p class="sc3-prlft-txt1">boost your <span>SEXUAL HEALTH & PERFORMANCE</span></p>
+            <ul class="sc3lft-pnt">
+            </ul>
+        </div>
+        <div class="sc3-para-rgt"> <img src="{% static 'app/desktop/images/topImage.png' %}" alt="" class="bottles"
+                width="330" height="321">
+            <p class="sc3-txt1">introducing ManDime
+            </p>
+            <p class="sc3-txt2"></p>
+            <p class="sc3-txt3">ManDime is a medical strength male enhancement formula that has been formulated to
+                enhance male virility, vitality, and vigor. ManDime is enriched with pro-sexual nutrients which work
+                synergistically to ramp up sexual stamina, increase staying power, and above all boost sexual
+                confidence. </p>
+            <p class="sc3-txt4"><strong>ManDime</strong> dual action formula boosts testosterone levels to restore
+                sex drive and libido, along with increasing blood flow to the penis to help achieve rock hard
+                erections on command. These two benefits ensure that you can enjoy the most intense and passionate
+                love-making sessions that are sure to leave your partner gasping for more! </p>
+            <div class="sc3-para1">
+                <p class="sc3-txt5"><i class="new_sprite new_sprite-sc3-seal"></i>Independent clinical studies on
+                    the ingredients used in ManDime have shown great
+                    promise in supporting sexual health. </p>
+                <ul class="sc3rgt-pnt">
+                    <li>
+                        <p class="s3-rgtpnt-txt1">74<sup>%</sup></p>
+                        <p class="s3-rgtpnt-txt2"><i class="new_sprite new_sprite-sc3-lft-img1_03"></i>Increase in
+                            staying power </p>
+                    </li>
+                    <div class="clearall"></div>
+                    <li>
+                        <p class="s3-rgtpnt-txt1" style="color:#ff8e18;">62<sup>%</sup></p>
+                        <p class="s3-rgtpnt-txt2-2"><i class="new_sprite new_sprite-sc3-lft-img2_03"></i> Increase
+                            in sex drive & libido </p>
+                    </li>
+                    <div class="clearall"></div>
+                    <li>
+                        <p class="s3-rgtpnt-txt1" style="color:#004f7e; margin-top:-3px;">32<sup>%</sup></p>
+                        <p class="s3-rgtpnt-txt2-3"><i class="new_sprite new_sprite-sc3-lft-img3_03"></i>Boost in
+                            frequency of erections </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="strip">
+    <i class="new_sprite new_sprite-yellow-strip"></i>
+    <div class="container">
+        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>ManDime</strong> Supplies Are Limited.
+                Reserve Your Bottle! </span></p> <i class="new_sprite new_sprite-strp-img strp-img"></i>
+        <a href="#form-top"><i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i></a>
+    </div>
+</div>
+<div class="section-4">
+    <div class="container"> <i class="new_sprite new_sprite-sc4-seal sc4-seal"></i><i
+            class="new_sprite new_sprite-blod blod"></i>
+        <div class="sc4-tppara">
+            <div class="comn-hdng-para">
+                <p class="sc3-txt1-sc4">THE SCIENCE BEHIND</p>
+                <p class="sc3-txt2">OUR UNIQUE FORMULA</p>
+            </div>
+            <p class="sc3-txt4"><strong>ManDime</strong> ingredients have been proven to treat erectile
+                dysfunction, replenish sexual energy stores, ramp up testosterone levels, and reduce performance
+                anxiety. These benefits combined, make <strong>ManDime</strong> a complete male enhancement system.
+            </p>
+            <div class="sc4-doc-para">
+                <p class="sc4-dctxt1">Now Available Without A Prescription </p>
+                <p class="sc4-dctxt2"><strong>ManDime</strong> ingredient matrix includes herbal extracts and
+                    active botanicals which are completely safe and effective. Recently <strong>ManDime</strong> has
+                    become available to the public without the need of a prescription. This is testimony to its
+                    safety, efficacy, and no side effects guarantee.</p>
+            </div>
+        </div>
+        <div class="blue-hdng">
+            <p class="bluhnd-txt1">HOW IT WORKS TO SUPPORT </p>
+            <p class="bluhnd-txt2">SEXUAL HEALTH </p>
+        </div>
+        <div class="sc4-para2"> <i class="new_sprite new_sprite-sc4-pntimg sc4-pntimg"></i>
+            <div class="sc4-paralft">
+                <div class="sc4-box1"> <img class="sc4-img1" alt=""
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4AQMAAACSSKldAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFQxkAAAHAAAG/F6vBAAAAAElFTkSuQmCC">
+                    <p class="sc4-txt2">Health of the <span>Corpora Cavernosa</span></p>
+                    <p class="sc4-txt3">The pills increase blood flow into the corpora cavernosa, allowing more
+                        blood flow to the penis and to produce more intense and longer-lasting erections.</p>
+                </div>
+                <div class="sc4-box2"> <img class="sc4-img2" alt=""
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4AQMAAACSSKldAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFQxkAAAHAAAG/F6vBAAAAAElFTkSuQmCC">
+                    <p class="sc4-txt2">Hormonal <span>Balance</span></p>
+                    <p class="sc4-txt3">The pills also increase the concentration of the hormone, testosterone,
+                        mainly responsible for the male sex drive and have strong influence on the power of
+                        erections and quality of orgasms.</p>
+                </div>
+            </div>
+            <div class="sc4-parargt">
+                <div class="sc4-box3"> <img class="sc4-img3" alt=""
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4AQMAAACSSKldAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFQxkAAAHAAAG/F6vBAAAAAElFTkSuQmCC">
+                    <p class="sc4-txt2">Cell <span>Regeneration</span></p>
+                    <p class="sc4-txt3">To maximize the expansion of the corpora cavernosa which generates
+                        impressive erections, your body must produce new cells more quickly. So <strong>ManDime
+                        </strong>is rich in anti-oxidants, proven to assist in the formation of new tissue.</p>
+                </div>
+                <div class="sc4-box4"> <img class="sc4-img4" alt=""
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4AQMAAACSSKldAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFQxkAAAHAAAG/F6vBAAAAAElFTkSuQmCC">
+                    <p class="sc4-txt2">Energy and <span>Disposition</span></p>
+                    <p class="sc4-txt3">Furthermore, the pills are rich in substances that give extra energy so that
+                        you can enjoy your new power and virility all night.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="strip">
+    <i class="new_sprite new_sprite-yellow-strip"></i>
+    <div class="container">
+        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>ManDime</strong> Supplies Are Limited.
+                Reserve Your Bottle!</span></p> <i class="new_sprite new_sprite-strp-img strp-img"></i>
+        <a href="#form-top"><i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i></a>
+    </div>
+</div>
+<div class="clearall"></div>
+<div class="section-5">
+    <div class="container">
+        <div class="sc5-para1">
+            <p class="sc5-txt1">BENEFITS OF ManDime
+            </p>
+            <p class="sc5-txt2"><i class="new_sprite new_sprite-sc5-hnd2bg"></i>SEXUAL HEALTH BOOSTER </p>
+        </div>
+        <div class="clearall"></div>
+        <ul class="sc5-points">
+            <li>
+                <i class="new_sprite new_sprite-sc5-img1"></i>
+                <p class="sc5-pnttxt1">Renewed Sex
+                    <br>Drive & Libido
+                </p>
+                <p class="pnt-line"></p>
+                <p class="sc5-pnttxt2"><strong>ManDime</strong> replenishes testosterone levels and energy stores to
+                    re-ignite the passion and desire, elevating your sex drive and libido. </p>
+            </li>
+            <li>
+                <i class="new_sprite new_sprite-sc5-img2"></i>
+                <p class="sc5-pnttxt1">Bigger & Firmer
+                    <br>Erections
+                </p>
+                <p class="pnt-line"></p>
+                <p class="sc5-pnttxt2"><strong>ManDime</strong> boosts blood flow to the penis, helping you achieve
+                    harder, stronger, and longer erections, on-command.</p>
+            </li>
+            <li>
+                <i class="new_sprite new_sprite-sc5-img3"></i>
+                <p class="sc5-pnttxt1">Longer Staying
+                    <br> Power
+                </p>
+                <p class="pnt-line"></p>
+                <p class="sc5-pnttxt2"><strong>ManDime</strong> boosts the penis's blood holding capacity, delaying
+                    ejaculations to help you last long during sexual encounters. </p>
+            </li>
+            <li>
+                <i class="new_sprite new_sprite-sc5-img4"></i>
+                <p class="sc5-pnttxt1">Increased
+                    <br> Penis Size
+                </p>
+                <p class="pnt-line"></p>
+                <p class="sc5-pnttxt2"> Regular use of <strong>ManDime</strong> may lead to successive delivery of
+                    blood to the penis, which may help increase penis size. </p>
+            </li>
+        </ul>
+        <div class="clearall"></div>
+        <div class="sc5-para2"> <i class="new_sprite new_sprite-sc5-seal sc5-seal"></i> <img
+                src="{% static 'app/desktop/images/bottomImage.png' %}" alt="" class="sc5-botl" width="350" height="331">
+            <div class="sc5-parlft">
+                <p class="sc5-txt5">Not Just A Pill But A Complete Male Enhancement System</p>
+                <p class="sc5-txt6">What makes <strong>ManDime</strong> different from other "miracle pills" in the
+                    market, is its potent and all natural ingredient matrix. The constituting ingredients work
+                    synergistically to target and treat the most common sexual health concerns. </p>
+                <p class="sc5-txt7">This makes ManDime a comprehensive male enhancement system! </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="strip">
+    <i class="new_sprite new_sprite-yellow-strip"></i>
+    <div class="container">
+        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>ManDime</strong> Supplies Are Limited.
+                Reserve Your Bottle!</span></p> <i class="new_sprite new_sprite-strp-img strp-img"></i>
+        <a href="#form-top"><i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i></a>
+    </div>
+</div>
+<div class="section-6">
+    <div class="container">
+        <div class="sc6-tppara">
+            <div class="comn-hdng-para">
+                <p class="sc3-txt1">POWERFUL INGREDIENTS</p>
+                <p class="sc3-txt2">ALL NATURAL FORMULA </p>
+            </div>
+        </div>
+        <div class="sc6-paralft">
+            <p class="sc6-txt1">Unlike other products in the market, <strong>ManDime</strong> does not hide behind
+                “Proprietary Blends”. Our doctor formulated all-natural formula is powerful, safe, effective and
+                completely transparent! </p>
+            <p class="sc6-txt2">This ensures that you can use ManDime with complete confidence! </p> <i
+                class="new_sprite new_sprite-supplement-facts-v2 sc6-suplmnt"></i>
+            <p class="sc6-txt3">No Prescription Needed<br>ManDime is Made Of All Herbs</p>
+        </div>
+        <div class="sc6-parargt">
+            <ul class="ingrdnts">
+                <li><i class="new_sprite new_sprite-maca-root"></i>MACA ROOT EXTRACT <span> One of the most well
+                        researched sexual nutrients, Maca Root aids with
+                        restoring libido levels and boosting sexual confidence.</span> </li>
+                <li><i class="new_sprite new_sprite-tribulus-terrestris"></i>TRIBULUS TERRESTRIS EXTRACT <span>A
+                        powerhouse of sexual benefits, this herb stimulates erectile
+                        response and also boosts testosterone levels.</span> </li>
+                <li><i class="new_sprite new_sprite-ingre-1"></i>HORNY GOAT WEED EXTRACT <span>An ancient
+                        aphrodisiac, Horny Goat Weed, may help improve sexual
+                        stamina and staying power, letting you enjoy intense orgasms.</span> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="section-7">
+    <div class="container">
+        <div class="sc6-tppara">
+            <div class="comn-hdng-para">
+                <p class="sc3-txt1">HOW TO USE ManDime
+                </p>
+                <p class="sc3-txt2">3 SIMPLE STEPS </p>
+            </div>
+        </div>
+        <div class="sc7-paralft"> <i class="new_sprite new_sprite-sc7-img1 sc7-img1"></i> <i
+                class="new_sprite new_sprite-sc7-seal sc7-seal"></i>
+            <p class="sc7-txt1"><strong>ManDime</strong> is available as an easy to take the dietary supplement,
+                <br> that integrates into one's routine without any hassles.
+            </p>
+            <ul class="sc7-points">
+                <li>Take The Supplement <span>Take 2 capsules of <strong>ManDime</strong> with a glass of water
+                        daily. Do not exceed the recommended dosage in any case. </span> </li>
+                <li>Experience The Benefits <span>The ingredients in the formula get absorbed quickly to increase
+                        nitric oxide production to increase blood flow to the penis.
+                    </span> </li>
+                <li>Follow The Program <span>Regular use of the supplement may help offer long-terms benefits
+                        including better stamina, harder erections and even an increase in penis size. </span> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="strip">
+    <i class="new_sprite new_sprite-yellow-strip"></i>
+    <div class="container">
+        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>ManDime</strong> Supplies Are Limited.
+                Reserve Your Bottle!</span></p> <i class="new_sprite new_sprite-strp-img strp-img"></i>
+        <a href="#form-top"><i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i></a>
+    </div>
+</div>
+<div class="section-9">
+    <div class="container"> <img src="{% static 'app/desktop/images/s1-box-bottle.png' %}" alt="" class="sc9-botls" width="330"
+            height="321">
+        <div class="sc1-para-lft">
+            <div class="sc9-para1-1" style="margin: 90px 0 0 85px;">
+                <i class="new_sprite new_sprite-default_17 s9-logo" style="margin-top: -37px; width: 160px;"></i>
+            </div>
+            <div class="sc9-para2-1">
+                <p class="sc9-txt2" style="margin: 5px 0 0 80px;">Rapid Absorption Technology</p>
+                <i class="new_sprite new_sprite-logo-1 top-logo"
+                    style="margin-top: 23px; margin-left:28px; width: 300px;"></i>
+            </div>
+            <p class="sc1-arw1-1 s9-txt3">Now Available Without A Prescription </p>
+            <div class="sc1-para3-1">
+                <p class="sc1-txt4-1" style="color:#004f7e; margin-top: 12px;">Doctor Recommended </p>
+                <p class="sc1-txt5-1"><strong>ManDime</strong> nutritional matrix includes ingredients which have
+                    been proven to support sexual health and energy. </p>
+                <ul class="list-sec1" style="margin:24px 0 0 12px;">
+                    <li>
+                        <p style="background:none;">Enhances<span> Sex Drive & Libido </span></p>
+                    </li>
+                    <li>
+                        <p>Achieve <span>Bigger & Harder Erections </span></p>
+                    </li>
+                    <li>
+                        <p> Longer <span> Sexual Staying Power </span></p>
+                    </li>
+                    <li>
+                        <p> Increased <span>Penis Length & Girth</span></p>
+                    </li>
+                </ul>
+                <a href="#form-top"><i class="new_sprite new_sprite-btn sc9-btn pulse noexirpop"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="exitpopup-overlay" class="exitpopup-overlay">
+    <div id="exit_pop" class="exitpop-content">
+        <a href="#">
+            <i class="new_sprite new_sprite-downsell"></i>
+        </a>
+    </div>
+</div>
+{% endblock body %}
