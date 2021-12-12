@@ -1,18 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
+{% block style %}
+  <style>
+      .select2-container .select2-selection--single{
+    height:34px !important;
+}
+.select2-container--default .select2-selection--single{
+         border: 1px solid #ccc !important; 
+     border-radius: 0px !important; 
+}
+
+  </style>
+{% endblock style %}
 {% block body %}
-<div class="">
-    <div class="col-sm-12 attention" style="display: none;">
-        <div class='attention-inner'>
-            <div class="icon-exclamation"><i class="new_sprite new_sprite-exclamation"></i></div>
-            <p>Due to increased demand for our offers with free bottles we have a limited supply. As of
-                <span style="color: #DB3D24;">Thursday 9th December 2021</span> we currently have the product <span
-                    style="color: #DB3D24;">IN STOCK</span> and are ready to ship within 24 hours of purchase.
-            </p>
-            <div class="icon-close"><i class="new_sprite new_sprite-close"></i></div>
-        </div>
-    </div>
-</div>
+
 <div class="section-1" id="home">
     <div class="container">
         <div class="sc1-para-lft"> <i class="new_sprite new_sprite-doctr-img doctr-img"></i> <i
@@ -27,23 +28,22 @@
                 <i class="new_sprite new_sprite-logo-1 top-logo"
                     style="width: 304px; margin: 20px 0 10px; padding:0; float: none;"></i>
             </div> -->
-            <p class="red-arrow">Now Available Without A Prescription </p>
+            <p class="red-arrow">AVAILABLE WITHOUT A PRESCRIPTION</p>
             <div class="sc1-para3">
-                <p class="sc1-txt4" style="margin-top: -23px;">Doctor Recommended </p>
-                <p class="sc1-txt5"><strong>ManDime</strong> nutritional matrix includes ingredients which have been
-                    proven to support sexual health and energy. </p>
+                <p class="sc1-txt4" style="margin-top: -23px;">Recommended by doctors </p>
+                <p class="sc1-txt5"><strong>Vigora</strong> is an efficient anti-ED medicine made available by German Laboratories. It has been proven to support sexual health and energy. </p>
                 <ul class="list-sec1">
                     <li>
-                        <p style="background:none;">Enhances<span> Sex Drive & Libido </span></p>
+                        <p style="background:none;">ENHANCES <span> Sex Drive & Libido </span></p>
                     </li>
                     <li>
-                        <p>Achieve <span>Bigger & Harder Erections </span></p>
+                        <p>ACHIEVE<span>Bigger & Harder Erections </span></p>
                     </li>
                     <li>
-                        <p> Longer <span> Sexual Staying Power </span></p>
+                        <p>LONGER <span> Sexual Staying Power </span></p>
                     </li>
                     <li>
-                        <p> Increased <span>Penis Length & Girth</span></p>
+                        <p>INCREASED<span>Blood Circulation </span></p>
                     </li>
                 </ul>
             </div>
@@ -53,13 +53,10 @@
             <div class="clearall"></div>
             <div class="gap"></div>
             <div class="clearall"></div>
-            <p class="promo">†Promotional consideration provided. *Results are not guaranteed, individual results
-                may vary.</p>
+           
         </div>
-        <div class="sc1-para-rgt">
-            <p class="sc1-flag">Internet Exclusive Offer
-                <br>Available to US Residents Only
-            </p>
+        <div class="sc1-para-rgt" id="formBox">
+          
             <div class="form-container">
                 <div class="ani-arrow1"> <i class="new_sprite new_sprite-animate-arw"></i> </div>
                 <div class="form-top" id="form-top">
@@ -67,47 +64,49 @@
 
                 </div>
                 <form method="post"
-                    action="https://trymandimenow.com/special-offer/online/ajax.php?method=new_prospect"
-                    name="prospect_form1" accept-charset="utf-8"
-                    enctype="application/x-www-form-urlencoded;charset=utf-8">
+                    action="{% url 'processToCheckout' %}"
+                    name="" accept-charset="utf-8"
+                    >{% csrf_token %}
                     <input type="hidden" name="limelight_charset" id="limelight_charset" value="utf-8" />
                     <div class="form-box">
                         <div class="form-group">
 
-                            <input type="text" name="firstName" placeholder="First Name"
+                            <input type="text" name="first_name" placeholder="First Name"
                                 class="required form-control" value=""
                                 data-error-message="Please enter your first name!" />
                         </div>
                         <div class="form-group">
 
-                            <input type="text" name="lastName" placeholder="Last Name" class="required form-control"
+                            <input type="text" name="last_name" placeholder="Last Name" class="required form-control"
                                 value="" data-error-message="Please enter your last name!" />
                         </div>
                         <div class="form-group">
 
-                            <input type="text" name="shippingAddress1" placeholder="Your Address" class="required"
+                            <input type="text" name="address" placeholder="Your Address" class="required"
                                 value="" data-error-message="Please enter your address!" />
                         </div>
                         <div class="form-group">
 
-                            <input type="text" name="shippingCity" placeholder="Your City" class="required" value=""
+                            <input type="text" name="city" placeholder="Your City" class="required" value=""
                                 data-error-message="Please enter your city!" />
                         </div>
                         <div class="form-group">
 
-                            <select name="shippingCountry" class="required no-error" data-selected=""
+                            <select name="country" class="required no-error select2" data-selected=""
                                 data-error-message="Please select your country!">
-                                <option value="US">United States</option>
+                                {% for country in country_list %}
+                                <option value="{{country}}">{{country}}</option>
+                                {% endfor %}
                             </select>
                         </div>
                         <div class="form-group">
 
-                            <input type="text" name="shippingState" placeholder="Your State" class="required"
-                                data-selected="" data-error-message="Please select your state!" readonly />
+                            <input type="text" name="state" placeholder="Your State" class="required"
+                                data-selected="" data-error-message="Please select your state!" />
                         </div>
                         <div class="form-group">
 
-                            <input type="tel" name="shippingZip" placeholder="Zip Code" class="required" value=""
+                            <input type="tel" name="zipcode" placeholder="Zip Code" class="required" value=""
                                 maxlength="5" onkeyup="javascript: this.value = this.value.replace(/[^0-9]/g,'');"
                                 data-error-message="Please enter a valid zip code!" />
                             <span id="zip-validate" style="display: none">
@@ -139,9 +138,39 @@
             <div class="Magazines">
                 <p class="maga-txt1">MALE ENHANCEMENT AS SEEN IN</p>
                 <center><i class="new_sprite new_sprite-magazin maga-img1"></i></center>
-                <p class="maga-txt2">The sexual benefits of the ingredients used in <strong>ManDime</strong> have
+                <p class="maga-txt2">The sexual benefits of the ingredients used in <strong>VIGORA - 100</strong> have
                     been covered by leading magazines and scientific journals. </p>
                 <center><i class="new_sprite new_sprite-gry-logo gry-logo"></i></center>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="product_support">
+    <div class="container">
+        <div class="product_service">
+            <div class="service">
+                <div class="icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <div class="product_detail">
+                    <h6>FREE Shipping 3-5 business days </h6>
+                </div>
+            </div>
+            <div class="service">
+                <div class="icon">
+                    <i class="fas fa-tablets"></i>
+                </div>
+                <div class="product_detail">
+                    <h6>FREE pills On every order</h6>
+                </div>
+            </div>
+            <div class="service">
+                <div class="icon">
+                    <i class="fas fa-map-marked"></i>
+                </div>
+                <div class="product_detail">
+                    <h6>Live order tracking 24*7 customer support</h6>
+                </div>
             </div>
         </div>
     </div>
@@ -169,8 +198,7 @@
                 </div>
                 <div class="ponts3">
                     <i class="new_sprite new_sprite-sc2-no3"></i>
-                    <p class="sc2-txt3">STUCK? <span>Have you tried the "purple pill" with no results and only
-                            harmful side effects?
+                    <p class="sc2-txt3">STUCK? <span>Have you tried all herbal pills with no results and waste of money and time?
                         </span></p>
                 </div>
             </div> <i class="new_sprite new_sprite-sc2-img2 sc2-img2"></i>
@@ -184,40 +212,32 @@
             <ul class="sc3lft-pnt">
             </ul>
         </div>
-        <div class="sc3-para-rgt"> <img src="{% static 'app/desktop/images/topImage.png' %}" alt="" class="bottles"
-                width="330" height="321">
-            <p class="sc3-txt1">introducing ManDime
+        <div class="sc3-para-rgt"> <img src="{% static 'app/desktop/images/pr.png' %}" alt="" class="bottles"
+                width="360" height="351" >
+            <p class="sc3-txt1">Introducing Vigora 
             </p>
             <p class="sc3-txt2"></p>
-            <p class="sc3-txt3">ManDime is a medical strength male enhancement formula that has been formulated to
-                enhance male virility, vitality, and vigor. ManDime is enriched with pro-sexual nutrients which work
-                synergistically to ramp up sexual stamina, increase staying power, and above all boost sexual
-                confidence. </p>
-            <p class="sc3-txt4"><strong>ManDime</strong> dual action formula boosts testosterone levels to restore
-                sex drive and libido, along with increasing blood flow to the penis to help achieve rock hard
-                erections on command. These two benefits ensure that you can enjoy the most intense and passionate
-                love-making sessions that are sure to leave your partner gasping for more! </p>
+            <p class="sc3-txt3"><strong>Vigora</strong> is an advanced male sexual enhancement formula that has been designed to offer stronger erections, enhanced libido, and improved virility. Vigora is enriched with the popular anti-ED medicines Sildenafil citrate which works on erectile dysfunction, and also boosts sexual performance.  </p>
+            <p class="sc3-txt4">Erectile dysfunction happens when the male sexual organ does not receive enough amount of blood to get the erection process started. Health issues such as cardiovascular disorders, high blood pressure, vascular issues, diabetes etc. affect the healthy flow of blood to the male sexual organ. Alongside physical health issues, psychological disorders, lifestyle choices, stress, and personal and professional stress cause erection issues. </p>
             <div class="sc3-para1">
                 <p class="sc3-txt5"><i class="new_sprite new_sprite-sc3-seal"></i>Independent clinical studies on
-                    the ingredients used in ManDime have shown great
+                    the ingredients used in VIGORA - 100 have shown great
                     promise in supporting sexual health. </p>
                 <ul class="sc3rgt-pnt">
                     <li>
-                        <p class="s3-rgtpnt-txt1">74<sup>%</sup></p>
-                        <p class="s3-rgtpnt-txt2"><i class="new_sprite new_sprite-sc3-lft-img1_03"></i>Increase in
-                            staying power </p>
+                        <p class="s3-rgtpnt-txt1">99<sup>%</sup></p>
+                        <p class="s3-rgtpnt-txt2"><i class="new_sprite new_sprite-sc3-lft-img1_03"></i>Stronger erections  </p>
                     </li>
                     <div class="clearall"></div>
                     <li>
-                        <p class="s3-rgtpnt-txt1" style="color:#ff8e18;">62<sup>%</sup></p>
+                        <p class="s3-rgtpnt-txt1" style="color:#ff8e18;">85<sup>%</sup></p>
                         <p class="s3-rgtpnt-txt2-2"><i class="new_sprite new_sprite-sc3-lft-img2_03"></i> Increase
-                            in sex drive & libido </p>
+                            in libido </p>
                     </li>
                     <div class="clearall"></div>
                     <li>
-                        <p class="s3-rgtpnt-txt1" style="color:#004f7e; margin-top:-3px;">32<sup>%</sup></p>
-                        <p class="s3-rgtpnt-txt2-3"><i class="new_sprite new_sprite-sc3-lft-img3_03"></i>Boost in
-                            frequency of erections </p>
+                        <p class="s3-rgtpnt-txt1" style="color:#004f7e; margin-top:-3px;">78<sup>%</sup></p>
+                        <p class="s3-rgtpnt-txt2-3"><i class="new_sprite new_sprite-sc3-lft-img3_03"></i>Increase in staying power  </p>
                     </li>
                 </ul>
             </div>
@@ -227,7 +247,7 @@
 <div class="strip">
     <i class="new_sprite new_sprite-yellow-strip"></i>
     <div class="container">
-        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>ManDime</strong> Supplies Are Limited.
+        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>VIGORA - 100</strong> Supplies Are Limited.
                 Reserve Your Bottle! </span></p> <i class="new_sprite new_sprite-strp-img strp-img"></i>
         <a href="#form-top"><i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i></a>
     </div>
@@ -238,18 +258,13 @@
         <div class="sc4-tppara">
             <div class="comn-hdng-para">
                 <p class="sc3-txt1-sc4">THE SCIENCE BEHIND</p>
-                <p class="sc3-txt2">OUR UNIQUE FORMULA</p>
+                <p class="sc3-txt2">OUR BEST-SELLING MEDICINE </p>
             </div>
-            <p class="sc3-txt4"><strong>ManDime</strong> ingredients have been proven to treat erectile
-                dysfunction, replenish sexual energy stores, ramp up testosterone levels, and reduce performance
-                anxiety. These benefits combined, make <strong>ManDime</strong> a complete male enhancement system.
+            <p class="sc3-txt4"><strong>VIGORA - 100</strong> ingredients have been proven to treat erectile dysfunction, replenish sexual energy levels, boost blood circulation, and reduce performance anxiety. These benefits combined, make Vigora a complete erection enhancement system.
             </p>
             <div class="sc4-doc-para">
-                <p class="sc4-dctxt1">Now Available Without A Prescription </p>
-                <p class="sc4-dctxt2"><strong>ManDime</strong> ingredient matrix includes herbal extracts and
-                    active botanicals which are completely safe and effective. Recently <strong>ManDime</strong> has
-                    become available to the public without the need of a prescription. This is testimony to its
-                    safety, efficacy, and no side effects guarantee.</p>
+                <p class="sc4-dctxt1" style="font-weight: bold;">NOW AVAILABLE WITHOUT A PRESCRIPTION </p>
+                <p class="sc4-dctxt2"><strong>VIGORA - 100</strong> ingredient matrix includes Sildenafil citrate as its main ingredient which is completely safe and effective. Recently Vigora has become available to the public without the need of a prescription. This is testimony to its safety, efficacy, and low risk of side effects guaranteed. </p>
             </div>
         </div>
         <div class="blue-hdng">
@@ -277,7 +292,7 @@
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4AQMAAACSSKldAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFQxkAAAHAAAG/F6vBAAAAAElFTkSuQmCC">
                     <p class="sc4-txt2">Cell <span>Regeneration</span></p>
                     <p class="sc4-txt3">To maximize the expansion of the corpora cavernosa which generates
-                        impressive erections, your body must produce new cells more quickly. So <strong>ManDime
+                        impressive erections, your body must produce new cells more quickly. So <strong>VIGORA - 100
                         </strong>is rich in anti-oxidants, proven to assist in the formation of new tissue.</p>
                 </div>
                 <div class="sc4-box4"> <img class="sc4-img4" alt=""
@@ -293,7 +308,7 @@
 <div class="strip">
     <i class="new_sprite new_sprite-yellow-strip"></i>
     <div class="container">
-        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>ManDime</strong> Supplies Are Limited.
+        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>VIGORA - 100</strong> Supplies Are Limited.
                 Reserve Your Bottle!</span></p> <i class="new_sprite new_sprite-strp-img strp-img"></i>
         <a href="#form-top"><i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i></a>
     </div>
@@ -302,7 +317,7 @@
 <div class="section-5">
     <div class="container">
         <div class="sc5-para1">
-            <p class="sc5-txt1">BENEFITS OF ManDime
+            <p class="sc5-txt1">BENEFITS OF VIGORA - 100
             </p>
             <p class="sc5-txt2"><i class="new_sprite new_sprite-sc5-hnd2bg"></i>SEXUAL HEALTH BOOSTER </p>
         </div>
@@ -314,7 +329,7 @@
                     <br>Drive & Libido
                 </p>
                 <p class="pnt-line"></p>
-                <p class="sc5-pnttxt2"><strong>ManDime</strong> replenishes testosterone levels and energy stores to
+                <p class="sc5-pnttxt2"><strong>VIGORA - 100</strong> replenishes testosterone levels and energy stores to
                     re-ignite the passion and desire, elevating your sex drive and libido. </p>
             </li>
             <li>
@@ -323,7 +338,7 @@
                     <br>Erections
                 </p>
                 <p class="pnt-line"></p>
-                <p class="sc5-pnttxt2"><strong>ManDime</strong> boosts blood flow to the penis, helping you achieve
+                <p class="sc5-pnttxt2"><strong>VIGORA - 100</strong> boosts blood flow to the penis, helping you achieve
                     harder, stronger, and longer erections, on-command.</p>
             </li>
             <li>
@@ -332,7 +347,7 @@
                     <br> Power
                 </p>
                 <p class="pnt-line"></p>
-                <p class="sc5-pnttxt2"><strong>ManDime</strong> boosts the penis's blood holding capacity, delaying
+                <p class="sc5-pnttxt2"><strong>VIGORA - 100</strong> boosts the penis's blood holding capacity, delaying
                     ejaculations to help you last long during sexual encounters. </p>
             </li>
             <li>
@@ -341,19 +356,19 @@
                     <br> Penis Size
                 </p>
                 <p class="pnt-line"></p>
-                <p class="sc5-pnttxt2"> Regular use of <strong>ManDime</strong> may lead to successive delivery of
+                <p class="sc5-pnttxt2"> Regular use of <strong>VIGORA - 100</strong> may lead to successive delivery of
                     blood to the penis, which may help increase penis size. </p>
             </li>
         </ul>
         <div class="clearall"></div>
         <div class="sc5-para2"> <i class="new_sprite new_sprite-sc5-seal sc5-seal"></i> <img
-                src="{% static 'app/desktop/images/bottomImage.png' %}" alt="" class="sc5-botl" width="350" height="331">
+                src="{% static 'app/desktop/images/pr.png' %}" alt="" class="sc5-botl" width="350" height="331">
             <div class="sc5-parlft">
                 <p class="sc5-txt5">Not Just A Pill But A Complete Male Enhancement System</p>
-                <p class="sc5-txt6">What makes <strong>ManDime</strong> different from other "miracle pills" in the
+                <p class="sc5-txt6">What makes <strong>VIGORA - 100</strong> different from other "miracle pills" in the
                     market, is its potent and all natural ingredient matrix. The constituting ingredients work
                     synergistically to target and treat the most common sexual health concerns. </p>
-                <p class="sc5-txt7">This makes ManDime a comprehensive male enhancement system! </p>
+                <p class="sc5-txt7">This makes VIGORA - 100 a comprehensive male enhancement system! </p>
             </div>
         </div>
     </div>
@@ -361,12 +376,12 @@
 <div class="strip">
     <i class="new_sprite new_sprite-yellow-strip"></i>
     <div class="container">
-        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>ManDime</strong> Supplies Are Limited.
+        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>VIGORA - 100</strong> Supplies Are Limited.
                 Reserve Your Bottle!</span></p> <i class="new_sprite new_sprite-strp-img strp-img"></i>
         <a href="#form-top"><i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i></a>
     </div>
 </div>
-<div class="section-6">
+<!-- <div class="section-6">
     <div class="container">
         <div class="sc6-tppara">
             <div class="comn-hdng-para">
@@ -375,12 +390,12 @@
             </div>
         </div>
         <div class="sc6-paralft">
-            <p class="sc6-txt1">Unlike other products in the market, <strong>ManDime</strong> does not hide behind
+            <p class="sc6-txt1">Unlike other products in the market, <strong>VIGORA - 100</strong> does not hide behind
                 “Proprietary Blends”. Our doctor formulated all-natural formula is powerful, safe, effective and
                 completely transparent! </p>
-            <p class="sc6-txt2">This ensures that you can use ManDime with complete confidence! </p> <i
+            <p class="sc6-txt2">This ensures that you can use VIGORA - 100 with complete confidence! </p> <i
                 class="new_sprite new_sprite-supplement-facts-v2 sc6-suplmnt"></i>
-            <p class="sc6-txt3">No Prescription Needed<br>ManDime is Made Of All Herbs</p>
+            <p class="sc6-txt3">No Prescription Needed<br>VIGORA - 100 is Made Of All Herbs</p>
         </div>
         <div class="sc6-parargt">
             <ul class="ingrdnts">
@@ -396,29 +411,26 @@
             </ul>
         </div>
     </div>
-</div>
+</div> -->
 <div class="section-7">
     <div class="container">
         <div class="sc6-tppara">
             <div class="comn-hdng-para">
-                <p class="sc3-txt1">HOW TO USE ManDime
+                <p class="sc3-txt1">HOW TO USE VIGORA - 100
                 </p>
                 <p class="sc3-txt2">3 SIMPLE STEPS </p>
             </div>
         </div>
         <div class="sc7-paralft"> <i class="new_sprite new_sprite-sc7-img1 sc7-img1"></i> <i
                 class="new_sprite new_sprite-sc7-seal sc7-seal"></i>
-            <p class="sc7-txt1"><strong>ManDime</strong> is available as an easy to take the dietary supplement,
+            <p class="sc7-txt1"><strong>VIGORA - 100</strong> is available as an easy to take the dietary supplement,
                 <br> that integrates into one's routine without any hassles.
             </p>
             <ul class="sc7-points">
-                <li>Take The Supplement <span>Take 2 capsules of <strong>ManDime</strong> with a glass of water
-                        daily. Do not exceed the recommended dosage in any case. </span> </li>
-                <li>Experience The Benefits <span>The ingredients in the formula get absorbed quickly to increase
-                        nitric oxide production to increase blood flow to the penis.
+                <li>Take one tablet at a time  <span>Take one pill at least an hour before getting into sexual activity. Swallow the pill as a whole with a glass of water. </span> </li>
+                <li>Embrace the results <span>Vigora starts working within 30 minutes post-administration. You need to be sexually aroused to make the drug work for you.
                     </span> </li>
-                <li>Follow The Program <span>Regular use of the supplement may help offer long-terms benefits
-                        including better stamina, harder erections and even an increase in penis size. </span> </li>
+                <li>Follow the dosage regimen  <span>You need to take one tablet only when it’s required. Do not take the medicine on a daily basis.  </span> </li>
             </ul>
         </div>
     </div>
@@ -426,12 +438,12 @@
 <div class="strip">
     <i class="new_sprite new_sprite-yellow-strip"></i>
     <div class="container">
-        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>ManDime</strong> Supplies Are Limited.
+        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>VIGORA - 100</strong> Supplies Are Limited.
                 Reserve Your Bottle!</span></p> <i class="new_sprite new_sprite-strp-img strp-img"></i>
         <a href="#form-top"><i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i></a>
     </div>
 </div>
-<div class="section-9">
+<!-- <div class="section-9">
     <div class="container"> <img src="{% static 'app/desktop/images/s1-box-bottle.png' %}" alt="" class="sc9-botls" width="330"
             height="321">
         <div class="sc1-para-lft">
@@ -446,7 +458,7 @@
             <p class="sc1-arw1-1 s9-txt3">Now Available Without A Prescription </p>
             <div class="sc1-para3-1">
                 <p class="sc1-txt4-1" style="color:#004f7e; margin-top: 12px;">Doctor Recommended </p>
-                <p class="sc1-txt5-1"><strong>ManDime</strong> nutritional matrix includes ingredients which have
+                <p class="sc1-txt5-1"><strong>VIGORA - 100</strong> nutritional matrix includes ingredients which have
                     been proven to support sexual health and energy. </p>
                 <ul class="list-sec1" style="margin:24px 0 0 12px;">
                     <li>
@@ -466,7 +478,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <div id="exitpopup-overlay" class="exitpopup-overlay">
     <div id="exit_pop" class="exitpop-content">
         <a href="#">
@@ -474,4 +486,13 @@
         </a>
     </div>
 </div>
+
 {% endblock body %}
+
+
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+  <script>
+       $('.select2').select2();
+  </script>
+{% endblock script %}

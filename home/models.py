@@ -27,9 +27,9 @@ class Order(models.Model):
 
 class CustomerDetails(models.Model):
     class Meta:
-        verbose_name_plural = 'Order Details'
+        verbose_name_plural = 'Customer Details'
 
-    order = models.ForeignKey(Order,on_delete=models.CASCADE)
+    order = models.ForeignKey(Order,on_delete=models.CASCADE,null=True,blank=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
@@ -45,9 +45,13 @@ class CustomerDetails(models.Model):
         return self.first_name
     
 
-
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10,decimal_places=2)
+    package = models.IntegerField(default=0)
     
-
+    def __str__(self):
+        return self.name
 
 
     

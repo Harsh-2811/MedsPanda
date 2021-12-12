@@ -6,6 +6,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
+    <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8" />
     <title>Vigora</title>
     <meta name="description" content="Vigora" />
@@ -34,45 +35,91 @@
         rel="stylesheet">
     <link rel='stylesheet' href="{% static 'app/desktop/css/bridge.min.css' %}">
     <link rel='stylesheet' href="{% static 'app/desktop/css/home-style.css' %}">
-
-    {% block style %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<style>
+          
+    @media only screen and (max-width: 600px) {
+        .fixbox {
+          display: block !important;
+        }
+      }
+      
+          </style>
+{% block style %}
       
     {% endblock style %}
 </head>
 
 <body>
-    <header id="header container" style="background-color: #004f7f;">
-        <img src="{% static 'app/desktop/images/logo.png' %}" width="250px" alt="">
+    
+    <header id="header container " style="     
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 10000;
+    font-family: roboto, 'sans-serif';
+    font-weight: 300;
+    font-size: 14px;
+    color: #004f7f !important;
+    background: #f8f8f8;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 3px;
+    box-shadow: none;
+    ">
+        <div class="logo">
+            <img src="{% static 'app/desktop/images/logo.png' %}" width="250px" alt="">
+        </div>
+        <div class="d-flex" style="justify-content:space-around;">
+            <div class="mx-1 px-1" style="margin: 0px 10px;font-weight: bold;">
+                <span><a href="#"><i class="far fa-envelope" style="color: #004f7f;"></i></a></span>
+                <span>sales@medspand.com</span>
+            </div>
+            <div class="mx-1 px-1" style="font-weight: bold;">
+                <span><a href="#"><i class="fas fa-phone-alt" style="color: #004f7f;" ></i></a></span>
+                <span>+123456789</span>
+            </div>
+        </div>
+        <div class="social_media">
+            <ul>
+                 
+                <li><a href="#" style="color: #004f7f;"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#" style="color: #004f7f;"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#" style="color: #004f7f;"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </div>
     </header>
+   
     {% block body %}
       
     {% endblock body %}
-
+   
     <footer class="footerWrapper">
         <ul>
-            <li> <a href="javascript:void(0);" onclick="javascript:openNewWindow('page-contact.html' , 'modal');"
+            <li> <a href="javascript:void(0);" onclick="javascript:openNewWindow(`{% url 'contact' %}`, 'modal');"
                     class="bridge-modal" style="color:#a8a8a8;"> Contact </a> </li>
             <li>|</li>
-            <li><a href="javascript:void(0);" onclick="javascript:openNewWindow('/templates/page-privacy.html' , 'modal');"
+            <li><a href="javascript:void(0);" onclick="javascript:openNewWindow(`{% url 'policy' %}` , 'modal');"
                     class="bridge-modal" style="color:#a8a8a8;">Privacy Policy</a></li>
             <li>|</li>
-            <li> <a href="javascript:void(0);" onclick="javascript:openNewWindow('/templates/page-terms.html', 'modal');"
+            <li> <a href="javascript:void(0);" onclick="javascript:openNewWindow(`{% url 'terms' %}`, 'modal');"
                     class="bridge-modal" style="color:#a8a8a8;">Terms & Conditions</a></li>
-            <li>|</li>
-            <li> <a href="javascript:void(0);" onclick="javascript:openNewWindow('page-subscribe.html', 'modal');"
-                    class="bridge-modal" style="color:#a8a8a8;">Unsubscribe</a></li>
+            
         </ul>
-        <p class="represent_txt">
-            Representations regarding the efficacy and safety of ManDime have not been evaluated by the Food and Drug
-            Administration. The FDA only evaluates foods and drugs, not supplements like these products. These products
-            are not intended to diagnose, prevent, treat, or cure any disease. <a
-                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3551978/" target="_blank">Click here </a> to find
-            evidence of a test, analysis, research, or study describing the benefits, performance or efficacy of ManDime
-            based on the expertise of relevant professionals.
-        </p>
-        <p>Copyright © 2021. ManDime . All Rights Reserved</p>
+       
+        
         </div>
     </footer>
+    <div class="fixbox" style="display: none;">
+        <div class="stick_bar"> 	
+            <img src="{% static 'app/desktop/images/pr.png' %}" alt=""  class="bottle"> 
+            <a href="#formBox"><img src="{% static 'app/desktop/images/btn.png' %}" alt="" class="btn pulse"></a>
+            <img src="{% static 'images/scure.png' %}" alt="" class="security2">
+        </div> 
+        
+     </div>
     <p id="loading-indicator" style="display:none;">Processing...</p>
     <script
         type="text/javascript">AJAX_PATH = "ajax.php/index.html"; app_config = { "valid_class": "no-error", "error_class": "has-error", "loading_class": "loading", "exit_popup_enabled": false, "exit_popup_element_id": "", "exit_popup_page": "", "offer_path": "\/special-offer\/online\/", "current_step": 1, "cbtoken": "f8a7c6178e2b9ba527f04ecb4178b18f", "dev_mode": "N", "show_validation_errors": "modal", "allowed_tc": "8\"m4l4d4J454k454O0lv8sm\"l\"d4J454k454O4l481mmlsdeJ\"5[r1j4V4H4q4h4k4R4X|Niraj,V1H4q4h4k4R4X4N4r|jaVtHrq]", "allowed_country_codes": ["US"], "countries": { "US": { "name": "United States", "states": { "AL": { "name": "Alabama" }, "AK": { "name": "Alaska" }, "AS": { "name": "American Samoa" }, "AZ": { "name": "Arizona" }, "AR": { "name": "Arkansas" }, "AE": { "name": "Armed Forces Middle East" }, "AA": { "name": "Armed Forces Americas" }, "AP": { "name": "Armed Forces Pacific" }, "CA": { "name": "California" }, "CO": { "name": "Colorado" }, "CT": { "name": "Connecticut" }, "DE": { "name": "Delaware" }, "DC": { "name": "District of Columbia" }, "FM": { "name": "Federated States of Micronesia" }, "FL": { "name": "Florida" }, "GA": { "name": "Georgia" }, "GU": { "name": "Guam" }, "HI": { "name": "Hawaii" }, "ID": { "name": "Idaho" }, "IL": { "name": "Illinois" }, "IN": { "name": "Indiana" }, "IA": { "name": "Iowa" }, "KS": { "name": "Kansas" }, "KY": { "name": "Kentucky" }, "LA": { "name": "Louisiana" }, "ME": { "name": "Maine" }, "MD": { "name": "Maryland" }, "MA": { "name": "Massachusetts" }, "MI": { "name": "Michigan" }, "MN": { "name": "Minnesota" }, "MS": { "name": "Mississippi" }, "MO": { "name": "Missouri" }, "MT": { "name": "Montana" }, "NE": { "name": "Nebraska" }, "NV": { "name": "Nevada" }, "NH": { "name": "New Hampshire" }, "NJ": { "name": "New Jersey" }, "NM": { "name": "New Mexico" }, "NY": { "name": "New York" }, "NC": { "name": "North Carolina" }, "ND": { "name": "North Dakota" }, "MP": { "name": "Northern Mariana Islands" }, "OH": { "name": "Ohio" }, "OK": { "name": "Oklahoma" }, "OR": { "name": "Oregon" }, "PA": { "name": "Pennsylvania" }, "PR": { "name": "Puerto Rico" }, "MH": { "name": "Republic of Marshall Islands" }, "RI": { "name": "Rhode Island" }, "SC": { "name": "South Carolina" }, "SD": { "name": "South Dakota" }, "TN": { "name": "Tennessee" }, "TX": { "name": "Texas" }, "UT": { "name": "Utah" }, "VT": { "name": "Vermont" }, "VI": { "name": "Virgin Islands of the U.S." }, "VA": { "name": "Virginia" }, "WA": { "name": "Washington" }, "WV": { "name": "West Virginia" }, "WI": { "name": "Wisconsin" }, "WY": { "name": "Wyoming" } } } }, "country_lang_mapping": { "US": { "state": "State:", "zip": "Zip Code:" }, "GB": { "state": "County:", "zip": "Postal Code:" }, "CA": { "state": "Province:", "zip": "Pin Code:" }, "IN": { "state": "State:", "zip": "Pin:" } }, "device_is_mobile": false, "pageType": "leadPage", "enable_browser_back_button": false, "disable_trialoffer_cardexp": false }</script>
