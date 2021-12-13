@@ -112,7 +112,7 @@
     <div class="fixbox" >
         <div class="stick_bar"> 	
             <img src="{% static 'app/desktop/images/pr.png' %}" alt=""  class="bottle"> 
-            <a href="#formBox"><img src="{% static 'app/desktop/images/btn.png' %}" alt="" class="btn pulse"></a>
+            <a class="goTop" style="cursor: pointer;" ><img src="{% static 'app/desktop/images/btn.png' %}" alt="" class="btn pulse "></a>
             <img src="{% static 'images/scure.png' %}" alt="" class="security2">
         </div> 
         
@@ -195,14 +195,17 @@
         })
     </script>
       <script>
-        alert($(window).innerWidth())
+       
         if ($(window).innerWidth() <= 1400) {
-            alert("Test1")
+           
             $(".fixbox").css('display','block')
          } else {
-             alert("Test")
+            
              $(".fixbox").css('display','none')
          }
+         $('.goTop').click(function(){
+    $('html, body').animate({scrollTop:0}, 'slow');
+});
    </script>
     {% block script %}
     
