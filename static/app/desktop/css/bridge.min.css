@@ -255,49 +255,68 @@ header#header {
     color: #76ce16;
 }
 
+
+.section-1{
+    position: relative;
+}
+
+.product_detail {
+    width: 240px;
+}
+.product_ser > div > h6{
+    font-size: 20px;
+    color: #004f7f;
+    font-weight: 700;
+    border-right: 1px solid #fcb01a;
+}
+.product_ser > div > h6 > span{
+    color: #f31f33;
+}
 .product_support{
     float: left;
-    width: 100%;
-    min-width: 1030px;
+    width: 80%;
+    /* min-width: 1030px;
     margin: 20px auto 45px auto;
-    padding: 50px 0;
+    padding: 50px 0; */
+    position: absolute;
 }
-.product_service {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-}
+ 
 
 .product_service {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     text-align: center;
+}
+
+.product_service i {
+    font-size: 25px;
+    margin: 0 10px;
+    color: #fcb01a;
 }
 
 .icon {
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
     display: flex;
     justify-content: center;
     background-color: #76ce16;
     border-radius: 100px;
-    padding: 28px;
+    padding: 10px;
     align-items: center;
     margin: 0 auto;
 }
 
 .icon i {
-    font-size: 35px;
+    font-size: 20px;
     color: #fff;
 }
 
 .product_detail h6 {
     text-align: center;
-    font-size: 22.01px;
+    font-size: 16px;
     color: #1c1c1c;
-    font-weight: 600;
+    font-weight: 700;
+    margin-top: 10px;
 }
 .small_header {
     display: flex;
@@ -317,7 +336,7 @@ header#header {
     width: 640px;
     z-index: 990;
     height: 260px;
-  
+    display: none;
 }
 
 .fixbox .stick_bar {
@@ -331,9 +350,9 @@ header#header {
 
 .fixbox img.bottle {
     position: absolute;
-    left: 40px;
-    top: -218px;
-    width: 30%;
+    left: 7px;
+    top: -241px;
+    width: 450px;
 }
 
 .fixbox .pulse {
@@ -344,16 +363,72 @@ header#header {
 }
 
 
+  
+
+/* @media (min-width: 576px) { 
+
+}
+
+
+@media (min-width: 768px) { 
+
+}
+
+
+@media (min-width: 992px) { 
+    .fixbox{
+        display: block;
+    }
+}
+
+
+@media (min-width: 1200px) { 
+    .fixbox{
+        display: none;
+    }
+}
+
+
+@media (min-width: 1400px) { 
+    .fixbox{
+        display: none;
+    }
+}
+
+  */
+
+
+ 
+
  
 
  
 
 
- 
-
- 
-
- 
-
-
- 
+  .frm-head {
+    text-align: center;
+    position: relative;
+    margin-top:80px;
+    z-index: 2;
+    
+}
+.frm-hd-txt1 {
+    font-size: 17px;
+    line-height: 30px;
+    color: #f0eed4;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.timer {
+    position: absolute;
+    top: 18px;
+    left: 61px;
+    font-size: 22px;
+    line-height: 18px;
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 8px;
+    display: block;
+    font-weight: bold;
+}

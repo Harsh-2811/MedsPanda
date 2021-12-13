@@ -522,7 +522,8 @@ li {
 
 .sc1-para-lft {
     float: left;
-    width: 683px
+    width: 683px;
+    margin-top: 72px;
 }
 
 .sc1-para-rgt {
@@ -875,7 +876,8 @@ li {
     position: relative;
     width: 346px;
     height: 130px;
-    float: right
+    float: right;
+    margin-top: 60px;
 }
 
 .form-top i {
