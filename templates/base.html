@@ -196,11 +196,11 @@
     </script>
       <script>
         
-        if (window.matchMedia('(max-width: 600)').matches) {
-           
+        if ($(window).innerWidth() <= 600) {
+            alert("Test1")
             $(".fixbox").css('display','block')
          } else {
-             
+             alert("Test")
              $(".fixbox").css('display','none')
          }
    </script>
