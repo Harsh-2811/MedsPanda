@@ -6,7 +6,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
-    <meta name="viewport" content="width=device-width" />
+
     <meta charset="utf-8" />
     <title>Vigora</title>
     <meta name="description" content="Vigora" />
@@ -38,13 +38,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<meta content="width=device-width, initial-scale=1" name="viewport" />
 <style>
-          
-    @media only screen and (max-width: 600px) {
-        .fixbox {
-          display: block !important;
-        }
-      }
+       
+         
       
           </style>
 {% block style %}
@@ -112,7 +109,7 @@
         
         </div>
     </footer>
-    <div class="fixbox" style="display: none;">
+    <div class="fixbox" >
         <div class="stick_bar"> 	
             <img src="{% static 'app/desktop/images/pr.png' %}" alt=""  class="bottle"> 
             <a href="#formBox"><img src="{% static 'app/desktop/images/btn.png' %}" alt="" class="btn pulse"></a>
@@ -197,7 +194,17 @@
             })
         })
     </script>
+      <script>
+        
+        if (window.matchMedia('(max-width: 600)').matches) {
+           
+            $(".fixbox").css('display','block')
+         } else {
+             
+             $(".fixbox").css('display','none')
+         }
+   </script>
     {% block script %}
-      
+    
     {% endblock script %}
 </body>
