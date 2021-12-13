@@ -331,9 +331,9 @@ header#header {
 
 .fixbox img.bottle {
     position: absolute;
-    left: 7px;
-    top: -121px;
-    width: 20%;
+    left: 40px;
+    top: -218px;
+    width: 30%;
 }
 
 .fixbox .pulse {
