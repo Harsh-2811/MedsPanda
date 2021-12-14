@@ -109,7 +109,7 @@
         
         </div>
     </footer>
-    <div class="fixbox" >
+    <div class="fixbox" style="display: none;" >
         <div class="stick_bar"> 	
             <img src="{% static 'app/desktop/images/pr.png' %}" alt=""  class="bottle"> 
             <a class="goTop" style="cursor: pointer;" ><img src="{% static 'app/desktop/images/btn.png' %}" alt="" class="btn pulse "></a>
@@ -196,16 +196,16 @@
     </script>
       <script>
        
-        if ($(window).innerWidth() <= 1400) {
+//         if ($(window).innerWidth() <= 1400) {
            
-            $(".fixbox").css('display','block')
-         } else {
+//             $(".fixbox").css('display','block')
+//          } else {
             
-             $(".fixbox").css('display','none')
-         }
-         $('.goTop').click(function(){
-    $('html, body').animate({scrollTop:0}, 'slow');
-});
+//              $(".fixbox").css('display','none')
+//          }
+//          $('.goTop').click(function(){
+//     $('html, body').animate({scrollTop:0}, 'slow');
+// });
    </script>
     {% block script %}
     
