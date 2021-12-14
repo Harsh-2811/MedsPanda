@@ -264,10 +264,9 @@ header#header {
     width: 240px;
 }
 .product_ser > div > h6{
-    font-size: 20px;
+    font-size: 30px;
     color: #004f7f;
     font-weight: 700;
-    border-right: 1px solid #fcb01a;
 }
 .product_ser > div > h6 > span{
     color: #f31f33;
