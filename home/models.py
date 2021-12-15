@@ -1,13 +1,23 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 # Create your models here.
-class Order(models.Model):
+
+
 
     
 
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10,decimal_places=2)
+    package = models.IntegerField(default=0)
+    extra = models.IntegerField(default=0)
+    def __str__(self):
+        return self.name
+
+
+class Order(models.Model):
     order_id = models.CharField(max_length=200)
-    totalProducts = models.IntegerField()
-    unitAmount = models.DecimalField(decimal_places=2,max_digits=20)
+    product = models.ForeignKey(Product,on_delete=models.CASCADE,null=True,blank=True)
     totalAmount = models.DecimalField(decimal_places=2,max_digits=20)
     isPaid = models.BooleanField(default=False)
     paidAt = models.DateTimeField(auto_now_add=False, null=True, blank=True)
@@ -20,7 +30,7 @@ class Order(models.Model):
     deliveredAt = models.DateTimeField(
         auto_now_add=False, null=True, blank=True)
     createdAt = models.DateTimeField(auto_now_add=True)
-    payment_id = models.CharField(max_length=100)
+    payment_type = models.CharField(max_length=100)
 
     def __str__(self):
         return self.order_id
@@ -43,15 +53,18 @@ class CustomerDetails(models.Model):
 
     def __str__(self):
         return self.first_name
-    
 
-class Product(models.Model):
+
+class Card(models.Model):
+    order = models.OneToOneField(Order,on_delete=models.CASCADE)
+    number = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
-    price = models.DecimalField(max_digits=10,decimal_places=2)
-    package = models.IntegerField(default=0)
-    
+    expiry_date = models.CharField(max_length=10)
+    cvc = models.IntegerField()
+
     def __str__(self):
-        return self.name
+        return self.number
 
 
     
+

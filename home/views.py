@@ -1,6 +1,6 @@
 from django.http.response import HttpResponse
-from django.shortcuts import render
-from .models import Order,CustomerDetails
+from django.shortcuts import redirect, render
+from .models import Card, Order,CustomerDetails,Product
 # Create your views here.
 def index(request):
     country_list = [
@@ -254,19 +254,6 @@ def index(request):
             "Zimbabwe",
             "Åland Islands"
         ]
-    return render(request,"home.html",{'country_list':country_list})
-
-def policy(request):
-    return render(request,"page-privacy.html")
-
-def terms(request):
-    return render(request,"page-terms.html")
-
-def contact(request):
-    return render(request,"page-contact.html")
-
-def processToCheckout(request):
-   
     if request.method == "POST":   
         first_name = request.POST['first_name']
         last_name = request.POST['last_name'] 
@@ -281,7 +268,71 @@ def processToCheckout(request):
         cdetails = CustomerDetails(first_name=first_name,last_name=last_name,address=address,city=city,
         country=country,state=state,zipcode=zipcode,contact_no=phone,email=email)
         cdetails.save()
+        return redirect('processToCheckout/'+str(cdetails.pk))
+    
+    return render(request,"home.html",{'country_list':country_list})
 
-        return render(request,"processToCheckout.html")
-    else:
-        return HttpResponse("Invalid Request")
+def policy(request):
+    return render(request,"page-privacy.html")
+
+def terms(request):
+    return render(request,"page-terms.html")
+
+def contact(request):
+    return render(request,"page-contact.html")
+
+def processToCheckout(request,pk):
+    
+    if request.method == "POST":
+        print(request.POST)
+        if 'card' in request.POST:
+            import string
+            import random
+            package_pk = request.POST['package_pk']
+            product = Product.objects.get(pk=package_pk)
+            order_id = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(15))
+            order = Order(product=product,order_id=order_id,totalAmount=product.price,status="Placed",payment_type="Card")
+            order.save()
+            cdetails = CustomerDetails.objects.get(pk=pk)
+            cdetails.order = order
+            cdetails.save()
+            card_name = request.POST['name']
+            card_number = request.POST['number']
+            expiry_date = request.POST['edate']
+            cvc = request.POST['cvc']
+
+            card = Card(name=card_name,number=card_number,expiry_date=expiry_date,cvc=cvc,order=order)
+            card.save()
+
+            print('order')
+        elif 'paypal' in request.POST:
+            import string
+            import random
+            package_pk = request.POST['package_pk']
+            product = Product.objects.get(pk=package_pk)
+            order_id = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(15))
+            order = Order(product=product,order_id=order_id,totalAmount=product.price,status="Placed",payment_type="Paypal")
+            order.save()
+            cdetails = CustomerDetails.objects.get(pk=pk)
+            cdetails.order = order
+            cdetails.save()
+        
+        elif 'bitcoin' in request.POST:
+            import string
+            import random
+            package_pk = request.POST['package_pk']
+            product = Product.objects.get(pk=package_pk)
+            order_id = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(15))
+            order = Order(product=product,order_id=order_id,totalAmount=product.price,status="Placed",payment_type="Bitcoin")
+            order.save()
+            cdetails = CustomerDetails.objects.get(pk=pk)
+            cdetails.order = order
+            cdetails.save()
+
+
+    products = Product.objects.all().order_by('price')
+    price_dict = {}
+    import json
+    for product in products:
+        price_dict[product.pk] = float(product.price)
+    return render(request,"processToCheckout.html",{'products':products,'price_dict':json.dumps(price_dict),'pk':pk})

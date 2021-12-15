@@ -1,0 +1,47 @@
+@media (min-width: 1399px) {}
+
+@media (min-width: 1199px) {}
+
+@media (min-width: 991px) {}
+
+@media (max-width: 767px) {
+  .box-lft img{
+    width: 100px;
+  }
+  .box-rgt {
+    margin-left: 5px;
+}
+.product_data .plush_icon i{
+  font-size: 18px;
+}
+.box-rgt-p1{
+  font-size: 14px;
+  margin: 0;
+}
+.box-rgt-p2{
+  margin: 0;
+  font-size: 24px;
+}
+.box-rgt-p4{
+  font-size: 14px;
+}
+.box-lft-p1{
+  font-size: 12px;
+}
+}
+@media (max-width: 575px) {
+  .product_data {
+    display: inherit;
+    text-align: center;
+}
+
+.product_data .form-check {
+    display: flex;
+    justify-content: center;
+}
+}
+
+
+
+
+

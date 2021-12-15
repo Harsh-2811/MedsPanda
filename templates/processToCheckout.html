@@ -11,7 +11,7 @@
 
     <!-- css -->
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %} ">
-
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
     <!-- icon -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -49,91 +49,41 @@ li {
                                     </span> </p>
                             </div>
                             <div class="product_list">
+                                {% for product in products %}
                                 <div class="box selected" id="pack1">
-                                    <p class="box-lft-p1">3 Month Supply + 2 Pill FREE <span><img
+                                    <p class="box-lft-p1">{{product.package}} + {{product.extra}} Pill FREE <span><img
                                                 src="{% static 'assets/images/box.png' %}" alt=""> Free Shipping</span></p>
                                     <div class="product_data">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <input class="form-check-input packageSelect" type="radio" value=""
+                                                id="flexCheckDefault_{{product.pk}}" name="package_select" {% if forloop.counter == 1 %} checked {% endif %}  >
+                                            <label class="form-check-label" for="flexCheckDefault_{{product.pk}}">
                                             </label>
                                         </div>
                                         <div class="box-lft">
-                                            <img src="{% static 'app/desktop/images/s1-box-bottle.png' %}" alt=""
+                                            <img src="{% static 'app/desktop/images/s1-box-bottle.png' %}"  alt=""
                                                 class="chk-btl">
                                         </div>
-                                        <div class="plush_icon">
-                                            <i class="fas fa-plus-circle"></i>
-                                        </div>
+                                      
+                                       <div class="plush_icon">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div>
+                                  
                                         <div class="box-lft">
                                             <div class="sel-chk"></div>
                                             <img src="{% static 'app/desktop/images/s1-box-bottle.png' %}" alt=""
                                                 class="chk-btl">
                                         </div>
                                         <div class="box-rgt">
-                                            <p class="box-rgt-p1">Extreme Male Enhancement</p>
-                                            <p class="box-rgt-p2">$39.74<span>/Pill</span></p>
-                                            <p class="box-rgt-p4">YOU SAVE $92</p>
+                                            <p class="box-rgt-p1">{{product.name}}</p>
+                                            <p class="box-rgt-p2">${{product.price}}</p>
+                                           
                                             <div class="sel-btn"></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="box" id="pack1">
-                                    <p class="box-lft-p1">3 Month Supply + 2 Pill FREE <span><img
-                                                src="{% static 'assets/images/box.png' %}" alt=""> Free Shipping</span></p>
-                                    <div class="product_data">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                            </label>
-                                        </div>
-                                        <div class="box-lft">
-                                            <img src="{% static 'app/desktop/images/s1-box-bottle.png' %}" alt=""
-                                                class="chk-btl">
-                                        </div>
-                                        <div class="plush_icon">
-                                            <i class="fas fa-plus-circle"></i>
-                                        </div>
-                                        <div class="box-lft">
-                                            <div class="sel-chk"></div>
-                                            <img src="{% static 'app/desktop/images/s1-box-bottle.png' %}" alt=""
-                                                class="chk-btl">
-                                        </div>
-                                        <div class="box-rgt">
-                                            <p class="box-rgt-p1">Extreme Male Enhancement</p>
-                                            <p class="box-rgt-p2">$39.74<span>/Pill</span></p>
-                                            <p class="box-rgt-p4">YOU SAVE $92</p>
-                                            <div class="sel-btn"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box" id="pack1">
-                                    <p class="box-lft-p1">3 Month Supply + 2 Pill FREE <span><img
-                                                src="{% static 'assets/images/box.png' %}" alt=""> Free Shipping</span></p>
-                                    <div class="product_data">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                            </label>
-                                        </div>
-                                        <div class="box-lft">
-                                            <img src="{% static 'app/desktop/images/s1-box-bottle.png' %}" alt=""
-                                                class="chk-btl">
-                                        </div>
-                                        <div class="plush_icon">
-                                            <i class="fas fa-plus-circle"></i>
-                                        </div>
-                                        <div class="box-rgt">
-                                            <p class="box-rgt-p1">Extreme Male Enhancement</p>
-                                            <p class="box-rgt-p2">$39.74<span>/Pill</span></p>
-                                            <p class="box-rgt-p4">YOU SAVE $92</p>
-                                            <div class="sel-btn"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {% endfor %}
+                               
                             </div>
                         </div>
                     </div>
@@ -163,6 +113,7 @@ li {
                                         </li>
                                     </ul>
                                     <div class="tab-content" id="pills-tabContent">
+                                        
                                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                                             aria-labelledby="pills-home-tab">
 
@@ -174,34 +125,36 @@ li {
                                                     <span class="amex"></span>
                                                     <span class="discover"></span>
                                                 </div>
-                                                <form>
+                                                <form action="" method="post">{% csrf_token %}
                                                     <div class="form-group">
                                                         <label for="PaymentAmount">Payment amount</label>
                                                         <div class="amount-placeholder">
                                                             <span>$</span>
-                                                            <span>500.00</span>
+                                                            <span id="package_price">{{products.0.price}}</span>
+                                                            <input class="package_pk" name="package_pk" value="{{products.0.pk}}" style="display: none;" />
+
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label or="NameOnCard">Name on card</label>
-                                                        <input id="NameOnCard" class="form-control" type="text"
+                                                        <input id="NameOnCard" class="form-control" name="name" type="text"
                                                             maxlength="255"></input>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="CreditCardNumber">Card number</label>
                                                         <input id="CreditCardNumber"
-                                                            class="null card-image form-control" type="text"></input>
+                                                            class="null card-image form-control" name="number" type="text"></input>
                                                     </div>
                                                     <div class="expiry-date-group form-group">
                                                         <label for="ExpiryDate">Expiry date</label>
                                                         <input id="ExpiryDate" class="form-control" type="text"
-                                                            placeholder="MM / YY" maxlength="7"></input>
+                                                            placeholder="MM / YY" name="edate" maxlength="7"></input>
                                                     </div>
                                                     <div class="security-code-group form-group">
                                                         <label for="SecurityCode">Security code</label>
                                                         <div class="input-container">
                                                             <input id="SecurityCode" class="form-control"
-                                                                type="text"></input>
+                                                                type="text" name="cvc"></input>
                                                             <i id="cvc" class="fa fa-question-circle"></i>
                                                         </div>
                                                         <div class="cvc-preview-container two-card hide">
@@ -210,7 +163,7 @@ li {
                                                         </div>
                                                     </div>
                                                     <button id="PayButton"
-                                                        class="btn btn-block btn-success submit-button" type="submit">
+                                                        class="btn btn-block btn-success submit-button" name="card" type="submit">
                                                         <span class="submit-button-lock"></span>
                                                         <span class="align-middle">Pay</span>
                                                     </button>
@@ -218,18 +171,33 @@ li {
                                             </div>
 
                                         </div>
-                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                        <div class="tab-pane fade p-3" id="pills-profile" role="tabpanel"
                                             aria-labelledby="pills-profile-tab">
                                              <p>
-                                                 Paypal Descritpion Text Will Be HEre
+                                                When you choose PayPal as your payment option, you will get a call from our customer care team. You need to follow the instructions to complete the payment process.
                                              </p>
+                                             <form action="" method="post">{% csrf_token %}
+                                                <input class="package_pk" name="package_pk" value="{{products.0.pk}}" style="display: none;" />
+                                             <button id="PayButton" type="submit"
+                                             class="btn btn-block btn-success submit-button" name="paypal">
+                                             <span class="submit-button-lock"></span>
+                                             <span class="align-middle" >Place Order</span>
+                                            </button></form>
                                         </div>
-                                        <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                        <div class="tab-pane fade p-3" id="pills-contact" role="tabpanel"
                                             aria-labelledby="pills-contact-tab">
                                             <p>
-                                                Bitcoin Descritpion Text Will Be HEre
+                                                When you choose Bitcoin as your payment option, you will get a call from our customer care team. You need to follow the instructions to complete the payment process.
                                             </p>
+                                            <form action="" method="post">{% csrf_token %}
+                                                <input class="package_pk" name="package_pk" value="{{products.0.pk}}" style="display: none;" />
+                                            <button id="PayButton" type="submit"
+                                            class="btn btn-block btn-success submit-button"  name="bitcoin">
+                                            <span class="submit-button-lock"></span>
+                                            <span class="align-middle">Place Order</span>
+                                        </button></form>
                                         </div>
+                                   
                                     </div>
                                 </div>
                             </div>
@@ -242,6 +210,16 @@ li {
     </main>
     <script src="{% static 'assets/js/popper.min.js' %}"></script>
     <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        var products ={{price_dict|safe}}
+        $(".packageSelect").click(function(){
+            var id = $(this).attr('id').slice(17,)
+            var price = products[id]
+            $("#package_price").html(price)
+            $(".package_pk").val(id)
+        })
+    </script>
 </body>
 
 </html>
