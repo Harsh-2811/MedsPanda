@@ -6,10 +6,10 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ('order_id','payment_type','product','totalAmount','orderDetails','cardDetails','status','deliveredAt','createdAt')
     list_display_links = ('order_id',)
     list_editable = ('status',)
-    list_filter = ['status']
+    list_filter = ['status','payment_type','product','isPaid']
     date_hierarchy = 'createdAt'
     list_per_page = 15
-
+    readonly_fields  = ['order_id','payment_type','totalAmount','product']
     def orderDetails(self,obj):
         #model name has to be lowercase
         return format_html(u'<a href="/admin/home/customerdetails/?order__id__exact=%s">%s</a>' % (obj.pk,"Order Details"))

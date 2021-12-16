@@ -8,6 +8,8 @@ urlpatterns = [
     path('policy/',policy,name="policy" ),
     path('terms',terms,name="terms" ),
     path('contact',contact,name="contact" ),
+    path('thankyou/<str:orderId>/',thankyou,name="thankyou" ),
+
 
 
 

@@ -39,7 +39,7 @@ class CustomerDetails(models.Model):
     class Meta:
         verbose_name_plural = 'Customer Details'
 
-    order = models.ForeignKey(Order,on_delete=models.CASCADE,null=True,blank=True)
+    order = models.OneToOneField(Order,on_delete=models.CASCADE,null=True,blank=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)

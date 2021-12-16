@@ -1,6 +1,7 @@
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from .models import Card, Order,CustomerDetails,Product
+from django.core.mail import send_mail,EmailMessage
 # Create your views here.
 def index(request):
     country_list = [
@@ -329,6 +330,22 @@ def processToCheckout(request,pk):
             cdetails.order = order
             cdetails.save()
 
+        from django.template.loader import render_to_string
+        from django.conf import settings
+        email_subject = 'New Order Placed Successfully'
+        html_message = render_to_string('OrderEmail.html')
+        from_email = settings.EMAIL_HOST_USER,
+        to = 'hrpatel8935@gmail.com'
+        msg = EmailMessage(
+                    email_subject,
+                    html_message,
+                    from_email[0],
+                    [to],
+                )
+        msg.content_subtype = "html" 
+        msg.send()
+        return redirect('/thankyou/'+str(order.order_id))
+
 
     products = Product.objects.all().order_by('price')
     price_dict = {}
@@ -336,3 +353,6 @@ def processToCheckout(request,pk):
     for product in products:
         price_dict[product.pk] = float(product.price)
     return render(request,"processToCheckout.html",{'products':products,'price_dict':json.dumps(price_dict),'pk':pk})
+
+def thankyou(request,orderId):
+    return render(request,'thankyou.html',{'order':orderId})

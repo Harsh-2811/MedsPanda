@@ -25,6 +25,47 @@
 li {
     list-style: none;
 }
+.summryOuter {
+    float: left;
+    width: 95%;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    margin: 20px 0 0 10px;
+}
+.summryHeading {
+    float: left;
+    width: 100%;
+    background: #561b77;
+    padding: 2px 10px;
+    border-radius: 5px 5px 0 0;
+}
+.summryInner {
+    float: left;
+    width: 100%;
+    padding: 10px 15px 0;
+}
+.summryHeading p {
+    float: left;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 13px;
+}
+.summryRaw {
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    color: #2d2d2d;
+    text-align: left;
+}
+.total {
+    font-weight: bold;
+    border: none;
+}
     </style>
 </head>
 
@@ -38,6 +79,7 @@ li {
                     <div class="col-lg-8 col-md-12">
                         <div class="order_process">
                             <div class="order_ad">
+                                <a href="https://medspanda.herokuapp.com/" style="font-weight: bold;text-decoration: none;"> Go Back to Home</a>
                                 <h6>Order now and get your free Pills!</h6>
                             </div>
                             <div class="order_sub_text">
@@ -83,7 +125,22 @@ li {
                                     </div>
                                 </div>
                                 {% endfor %}
-                               
+                                
+                            </div>
+                            <div class="summryOuter mb-4">
+                                <div class="summryHeading">
+                                    <p>Order Summary</p>
+                                    <img src="{% static 'assets/images/postal-logo.png' %}" style="    float: right;
+                                    margin-top: 4px;
+                                " class="postal-logo">
+                                </div>
+                                <div class="summryInner"> 
+                                    <div id="prd-info" class="summryRaw">5 Month Supply: <span class="prd-prc">39.74/each</span></div>
+                                    <div class="summryRaw">Est. Delivery Date:	<span><script type="text/javascript"></script>Dec 19, 2021</span></div>
+                                    <div class="summryRaw">Shipping Type: <span class="shipInfo">Standard Shipping</span></div>
+                                    <div class="summryRaw">Shipping Price: <span class="shippingprice">$0.00</span></div>
+                                    <div class="summryRaw total">Your Total:	<span class="totalprice">${{products.0.price}}</span></div>  
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -217,7 +274,8 @@ li {
             var id = $(this).attr('id').slice(17,)
             var price = products[id]
             $("#package_price").html(price)
-            $(".package_pk").val(id)
+            $(".totalprice").html("$ "+price)
+            $(".apackage_pk").val(id)
         })
     </script>
 </body>
