@@ -25,12 +25,17 @@
 li {
     list-style: none;
 }
+.secure-logos {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 7px 0 0;
+}
 .summryOuter {
-    float: left;
-    width: 95%;
+   
+    width: 100%;
     border: 1px solid #bdbdbd;
     border-radius: 5px;
-    margin: 20px 0 0 10px;
+    
 }
 .summryHeading {
     float: left;
@@ -54,6 +59,9 @@ li {
     margin-top: 13px;
 }
 .summryRaw {
+   
+    justify-content: space-between;
+    display: flex;
     float: left;
     width: 100%;
     padding: 10px 0;
@@ -62,9 +70,45 @@ li {
     color: #2d2d2d;
     text-align: left;
 }
+.summryRaw span{
+    font-weight: bold;
+}
 .total {
     font-weight: bold;
     border: none;
+}
+.testi-txt1 {
+    float: left;
+    width: 100%;
+    font-size: 21px;
+    line-height: 21px;
+    font-weight: bold;
+    color: #002967;
+    margin-bottom: 10px;
+}
+.testi-txt3 {
+    float: left;
+    width: 100%;
+    font-size: 16px;
+    line-height: 23px;
+    color: #313131;
+    margin-bottom: 10px;
+}
+.testi-txt4 {
+    float: left;
+    width: 100%;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+}
+.chk-testiBx {
+    float: left;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 7px 11px;
+    margin-top: 10px;
 }
     </style>
 </head>
@@ -119,29 +163,36 @@ li {
                                         <div class="box-rgt">
                                             <p class="box-rgt-p1">{{product.name}}</p>
                                             <p class="box-rgt-p2">${{product.price}}</p>
+                                            <p class="box-rgt-p2">${{product.price_per_pill}} / pill</p>
+
                                            
                                             <div class="sel-btn"></div>
                                         </div>
                                     </div>
                                 </div>
+                                {% if forloop.last %}
+                                <div class="box" id="pack1">
+                                <div class="summryOuter mb-4">
+                                    <div class="summryHeading">
+                                        <p>Order Summary</p>
+                                        <img src="{% static 'assets/images/postal-logo.png' %}" style="    float: right;
+                                        margin-top: 4px;
+                                    " class="postal-logo">
+                                    </div>
+                                    <div class="summryInner"> 
+                                        <div id="prd-info" class="summryRaw">{{products.0.name}} : {{products.0.package}} + {{products.0.extra}} <span class="prd-prc">${{products.0.price}}</span></div>
+                                        
+                                        <div class="summryRaw">Shipping Type: <span class="shipInfo">Standard Shipping</span></div>
+                                        <div class="summryRaw">Shipping Price: <span class="shippingprice">$0.00</span></div>
+                                        <div class="summryRaw total">Your Total:	<span class="totalprice">$ {{products.0.price}}</span></div>  
+                                    </div>
+                                </div>
+                            </div>
+                                {% endif %}
                                 {% endfor %}
                                 
                             </div>
-                            <div class="summryOuter mb-4">
-                                <div class="summryHeading">
-                                    <p>Order Summary</p>
-                                    <img src="{% static 'assets/images/postal-logo.png' %}" style="    float: right;
-                                    margin-top: 4px;
-                                " class="postal-logo">
-                                </div>
-                                <div class="summryInner"> 
-                                    <div id="prd-info" class="summryRaw">5 Month Supply: <span class="prd-prc">39.74/each</span></div>
-                                    <div class="summryRaw">Est. Delivery Date:	<span><script type="text/javascript"></script>Dec 19, 2021</span></div>
-                                    <div class="summryRaw">Shipping Type: <span class="shipInfo">Standard Shipping</span></div>
-                                    <div class="summryRaw">Shipping Price: <span class="shippingprice">$0.00</span></div>
-                                    <div class="summryRaw total">Your Total:	<span class="totalprice">${{products.0.price}}</span></div>  
-                                </div>
-                            </div>
+                           
                         </div>
                     </div>
 
@@ -212,7 +263,7 @@ li {
                                                         <div class="input-container">
                                                             <input id="SecurityCode" class="form-control"
                                                                 type="text" name="cvc"></input>
-                                                            <i id="cvc" class="fa fa-question-circle"></i>
+                                                            </i>
                                                         </div>
                                                         <div class="cvc-preview-container two-card hide">
                                                             <div class="amex-cvc-preview"></div>
@@ -259,6 +310,14 @@ li {
                                 </div>
                             </div>
                         </div>
+                        <img src="https://www.vitalyzepro.com/pro/images/secure-logos.jpg" class="secure-logos">
+                        <div class="chk-testiBx">
+                            <p class="testi-txt1">Real People . Real Results</p>
+                            <img src="https://www.vitalyzepro.com/pro/images/man1.png" class="chk-t-img1"> 
+                            <img src="https://www.vitalyzepro.com/pro/images/star.png" class="t-star">
+                            <p class="testi-txt3">"This product worked for me. Don’t get me wrong, I was not walking around with an erection all day. But I did have increased libido when it was time for more stamina, and definitely had increased blood flow. I was horny and ready about every night. I felt more energized and was a bit more aggressive but in a good way."</p>
+                            <p class="testi-txt4">- Philip G.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -272,10 +331,11 @@ li {
         var products ={{price_dict|safe}}
         $(".packageSelect").click(function(){
             var id = $(this).attr('id').slice(17,)
-            var price = products[id]
+            var price = products[id][0]
             $("#package_price").html(price)
             $(".totalprice").html("$ "+price)
             $(".apackage_pk").val(id)
+            $("#prd-info").html(`${products[id][1]} : ${products[id][2]} + ${products[id][3]} <span class="prd-prc">$ ${products[id][0]}</span>`)
         })
     </script>
 </body>

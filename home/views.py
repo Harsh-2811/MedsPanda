@@ -347,11 +347,11 @@ def processToCheckout(request,pk):
         return redirect('/thankyou/'+str(order.order_id))
 
 
-    products = Product.objects.all().order_by('price')
+    products = Product.objects.all().order_by('-price')
     price_dict = {}
     import json
     for product in products:
-        price_dict[product.pk] = float(product.price)
+        price_dict[product.pk] = [float(product.price),product.name,product.package,product.extra]
     return render(request,"processToCheckout.html",{'products':products,'price_dict':json.dumps(price_dict),'pk':pk})
 
 def thankyou(request,orderId):

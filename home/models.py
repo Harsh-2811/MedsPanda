@@ -11,6 +11,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10,decimal_places=2)
     package = models.IntegerField(default=0)
     extra = models.IntegerField(default=0)
+    price_per_pill = models.DecimalField(max_digits=10,decimal_places=2)
     def __str__(self):
         return self.name
 
