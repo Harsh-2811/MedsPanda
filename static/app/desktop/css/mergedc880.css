@@ -478,12 +478,12 @@ li {
     height: 1px
 }
 
-.container {
+/* .container {
     width: 1030px;
     margin: 0 auto;
     position: relative;
     padding: 0
-}
+} */
 
 .top-header {
     float: left;
@@ -508,9 +508,7 @@ li {
 }
 
 .section-1 {
-    float: left;
-    width: 100%;
-    min-width: 1030px;
+   
     background: url(../images/section-1.jpg) center top no-repeat
 }
 
@@ -519,17 +517,8 @@ li {
     width: 300px;
     margin-top: 20px;
 }
-
-.sc1-para-lft {
-    float: left;
-    width: 683px;
-    margin-top: 72px;
-}
-
-.sc1-para-rgt {
-    float: right;
-    width: 346px
-}
+ 
+ 
 
 .contr-txt,
 .list-sec1 li p span,
@@ -595,8 +584,8 @@ li {
 
 .sc1-para3,
 .sc1-para3-1 {
-    float: left;
-    margin: 35px 0 0 36.5%
+    /* float: left;
+    margin: 35px 0 0 36.5% */
 }
 
 .sc1-txt4,
@@ -614,8 +603,8 @@ li {
     font-size: 16px;
     line-height: 20px;
     color: #000;
-    float: left;
-    width: 71%;
+   
+
     line-height: 18px;
     margin: 3px 0 0
 }
@@ -625,16 +614,6 @@ li {
     width: 100%;
     margin: 33px 0 0 0
 }
-
-.sc1-para4 {
-    position: relative;
-    background: url(../images/arrow.png) left top no-repeat;
-    float: right;
-    width: 92%;
-    height: 93px;
-    margin: 3% 0 0 0
-}
-
 .sc1-para5 {
     float: left;
     width: 100%;
@@ -666,7 +645,7 @@ li {
 .sc1-txt2,
 .sc1-txt3,
 .sc1-txt3-1 {
-    float: left;
+    /* float: left; */
     width: 100%;
     font-size: 24px;
     line-height: 28px;
@@ -704,18 +683,17 @@ li {
     color: #fff;
     text-transform: uppercase;
     padding: 4px 0 0 42px;
-    width: 68%;
-    margin: 7px 0 0 192px
+    width: 100%;
 }
 
 .list-sec1 {
     float: left;
-    margin: 16px 0 0 8px
+    margin: 53px 0 0 8px
 }
 
 .list-sec1 li {
     background: url("") no-repeat left 17px;
-    padding: 4px 0 0 35px
+    padding: 4px 0 0 10px
 }
 
 .list-sec1 li p {
@@ -872,22 +850,9 @@ li {
     margin: 12px 0 0 0
 }
 
-.form-top {
-    position: relative;
-    width: 346px;
-    height: 130px;
-    float: right;
-    margin-top: 60px;
-}
+ 
 
-.form-top i {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-    z-index: 1;
-}
+ 
 
 .form-fields {
     background: url(../images/frm-middle.png) repeat-y center top;
@@ -1039,12 +1004,7 @@ select {
     }
 }
 
-.section-2 {
-    float: left;
-    width: 100%;
-    min-width: 1030px;
-    margin: 20px auto 45px auto
-}
+ 
 
 .sc2-para1 {
     margin: 0 auto;
@@ -1118,11 +1078,7 @@ select {
     left: 8px
 }
 
-.scpr2-lft {
-    float: left;
-    width: 41%;
-    margin: 35px 0 0 74px
-}
+ 
 
 .ponts1,
 .ponts2,
@@ -1145,7 +1101,9 @@ select {
     font-size: 27px;
     text-transform: uppercase;
     color: #f20303;
-    padding: 0 0 45px 68px
+    width: 380px;
+    padding-bottom: 100px;
+    margin-left: 75px;
 }
 
 .sc2-txt3 span,
@@ -1164,11 +1122,13 @@ select {
 }
 
 .section-3 {
-    float: left;
-    width: 100%;
-    min-width: 1030px;
     background: url(../images/section-3.jpg) #def3fe center top no-repeat;
-    height: 797px
+    display: inline-block;
+    height: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    padding: 50px 0;
 }
 
 .sc3-paralft {
@@ -1211,8 +1171,7 @@ select {
 
 .sc3-txt4,
 .sc4-dctxt1 {
-    float: left;
-    width: 100%;
+   
     margin: 14px 0 0 4px;
     font-weight: 400;
     font-size: 16px;
@@ -1289,9 +1248,10 @@ select {
 .s3-rgtpnt-txt2-2 i,
 .s3-rgtpnt-txt2-3 i {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 13px !important;
+    top: 40px;
 }
+
 
 .s3-rgtpnt-txt2-2 i,
 .s3-rgtpnt-txt2-3 i {
@@ -1317,12 +1277,7 @@ select {
     display: block
 }
 
-.sc3-para-rgt {
-    float: right;
-    width: 58%;
-    margin: 43px 0 0;
-    position: relative
-}
+ 
 
 .sc3-prlft-txt1 {
     font-family: Conv_Geomanist-Bold;
@@ -1369,21 +1324,7 @@ select {
     width: 280px
 }
 
-.strip {
-    float: left;
-    width: 100%;
-    min-width: 1030px;
-    height: 95px;
-    position: relative
-}
-
-.strip i {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
+ 
 
 .strip i.strp-img {
     position: absolute;
@@ -1394,25 +1335,26 @@ select {
 }
 
 .strip a i {
-    position: static;
-    -webkit-transform: none;
-    transform: none;
+    position: relative;
+    z-index: 1;
 }
 
 .strp-txt {
-    float: left;
-    width: 58%;
+     
     text-transform: uppercase;
     font-size: 24px;
-    color: #000;
+    color: #fff;
     font-weight: 700;
-    margin: 22px 0 0 33px;
-    line-height: 26px
+    margin: 22px 0px 0px 33px;
+    line-height: 26px;
+    position: relative;
+    z-index: 2;
 }
 
 .strp-txt span {
     display: block;
-    font-size: 16px
+    font-size: 16px;
+    color: #fff;
 }
 
 .strpbtn {
@@ -1421,11 +1363,12 @@ select {
 }
 
 .section-4 {
-    float: left;
+  
     width: 100%;
-    min-width: 1030px;
+    display: flex;
     background: url(../images/section-4.jpg) center top no-repeat;
-    height: 1097px
+     
+    background-size: cover;
 }
 
 .sc3-txt1-sc4 {
@@ -1445,9 +1388,8 @@ select {
 }
 
 .sc4-doc-para {
-    float: right;
-    width: 72%;
-    margin: 25px 0 0
+  display: flex;
+  margin-top: 10px;
 }
 
 .sc4-dctxt1 {
@@ -1588,11 +1530,12 @@ select {
 }
 
 .section-5 {
-    float: left;
     width: 100%;
-    min-width: 1030px;
+     
     background: url(../images/section-5.jpg) center top no-repeat;
-    height: 980px
+    height: auto;
+    background-size: cover;
+    height: 970px;
 }
 
 .sc5-para1 {
@@ -1626,7 +1569,9 @@ select {
     float: left;
     width: 100%;
     margin: 36px 0 0;
-    text-align: center
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .sc5-points li {
@@ -1664,7 +1609,7 @@ select {
 }
 
 .sc5-pnttxt2 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     color: #3c3c3c;
     margin: 22px auto 0;
@@ -1675,7 +1620,8 @@ select {
 .sc5-para2 {
     float: left;
     width: 100%;
-    position: relative
+    position: relative;
+    display: flex;
 }
 
 .sc5-seal {
@@ -1725,7 +1671,7 @@ select {
 .sc5-txt7 {
     float: left;
     width: 76%;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     color: #333;
     margin: 13px 0 0
@@ -1739,9 +1685,7 @@ select {
 }
 
 .section-6 {
-    float: left;
     width: 100%;
-    min-width: 1030px;
     background: url(../images/section-6.jpg) center top no-repeat;
     margin: 0 0 1.5% 0
 }
@@ -1826,11 +1770,11 @@ select {
 }
 
 .section-7 {
-    float: left;
+   
     width: 100%;
-    height: 638px;
-    min-width: 1030px;
-    background: url(../images/section-7.jpg) #e0f3fe center top no-repeat
+ 
+    background: url(../images/section-7.jpg) #e0f3fe center top no-repeat;
+    background-size: cover;
 }
 
 .sc7-paralft {
@@ -1933,11 +1877,9 @@ select {
 }
 
 .section-9 {
-    float: left;
-    width: 100%;
-    height: 717px;
-    min-width: 1030px;
-    background: url(../images/section-9.jpg) center top no-repeat
+    background: url(../images/section-9.jpg) center top no-repeat;
+    background-size: cover;
+    display: grid;
 }
 
 .sc9-para1-1 {
@@ -2092,7 +2034,7 @@ select {
 }
 
 .sc1-para3-1 {
-    margin: 45px 0 0 257px
+    margin: 45px 0 0 155px
 }
 
 .sc9-btn {
@@ -2557,7 +2499,7 @@ div.loading-window {
     color: #000
 }
 
-.list-sec1 li,
+ 
 .list-sec1 li p,
 .sc1-flag,
 .sc4-img1,
@@ -2656,23 +2598,16 @@ div.loading-window {
 }
 
 .new_sprite {
-    background-image: url(../images/spritesheet.png);
+    background-image: url(../../../app/desktop/images/spritesheet.png);
     background-repeat: no-repeat;
     display: block;
 }
 
 .new_sprite-animate-arw {
-    width: 103px;
+    /* width: 103px;
     height: 457px;
-    background-position: -5px -5px;
+    background-position: -5px -5px; */
 }
-
-.new_sprite-blod {
-    width: 413px;
-    height: 237px;
-    background-position: -118px -5px;
-}
-
 .new_sprite-btn {
     width: 281px;
     height: 71px;
@@ -2727,13 +2662,7 @@ div.loading-window {
     height: 4px;
     background-position: -474px -465px;
 }
-
-.new_sprite-frm-top {
-    width: 346px;
-    height: 130px;
-    background-position: -830px -465px;
-}
-
+ 
 .new_sprite-gry-logo {
     width: 329px;
     height: 79px;
@@ -2768,7 +2697,7 @@ div.loading-window {
 .new_sprite-s1-box-bottle {
     width: 370px;
     height: 360px;
-    background-position: -1186px -580px;
+     
 }
 
 .new_sprite-sc1-arw1 {
@@ -2782,12 +2711,7 @@ div.loading-window {
     height: 86px;
     background-position: -1902px -47px;
 }
-
-.new_sprite-sc2-img2 {
-    width: 532px;
-    height: 431px;
-    background-position: -5px -950px;
-}
+ 
 
 .new_sprite-sc2-no1 {
     width: 408px;
@@ -2906,8 +2830,9 @@ div.loading-window {
 .new_sprite-supplement-facts-v2 {
     width: 517px;
     height: 388px;
-    background-position: -600px -1526px;
+    /* background-position: -600px -1526px; */
     display: inline-block;
+    background-image: url(../images/supplement-facts.png);
 }
 
 .new_sprite-tribulus-terrestris {
@@ -2922,8 +2847,4 @@ div.loading-window {
     background-position: -1984px -664px;
 }
 
-.new_sprite-yellow-strip {
-    width: 2000px;
-    height: 95px;
-    background-position: -5px -2017px;
-}
+ 

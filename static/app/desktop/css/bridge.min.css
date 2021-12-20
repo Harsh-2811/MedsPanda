@@ -1,6 +1,4 @@
-#header{
-    background-color: #004f7f;    
-}
+ 
 
 header#header img {
     width: 200px;
@@ -234,12 +232,7 @@ select.changed:valid {
 }
 
 
-header#header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 15px;
-}
+
 
 .social_media ul li {
     display: inline-block;
@@ -256,10 +249,7 @@ header#header {
 }
 
 
-.section-1{
-    position: relative;
-}
-
+ 
 .product_detail {
     width: 240px;
 }
@@ -268,16 +258,14 @@ header#header {
     color: #004f7f;
     font-weight: 700;
 }
+.product_ser {
+    margin-left: 25%;
+}
 .product_ser > div > h6 > span{
     color: #f31f33;
 }
 .product_support{
-    float: left;
-    width: 80%;
-    /* min-width: 1030px;
-    margin: 20px auto 45px auto;
-    padding: 50px 0; */
-    position: absolute;
+ 
 }
  
 
@@ -285,6 +273,7 @@ header#header {
     display: flex;
     align-items: center;
     text-align: center;
+    justify-content: flex-end;
 }
 
 .product_service i {
@@ -318,15 +307,14 @@ header#header {
     margin-top: 10px;
 }
 .small_header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+ 
     padding: 10px 15px;
     color: #fff;
     background-color: #004f7f;
     border-bottom: 1px solid #ffffff1c;
     font-size: 15px;
 }
+ 
 .small_header_text i {
     color: #fff;
     margin: 0 15px;
@@ -334,13 +322,13 @@ header#header {
 .fixbox {
     width: 640px;
     z-index: 990;
-    height: 260px;
+    height: 130px;
     display: none;
 }
 
 .fixbox .stick_bar {
     background: #5a266e;
-    height: 189px;
+    height: 100px;
     bottom: 0;
     width: 100%;
     z-index: 999;
@@ -349,15 +337,14 @@ header#header {
 
 .fixbox img.bottle {
     position: absolute;
-    left: 7px;
-    top: -241px;
-    width: 450px;
+    width: 170px;
+    bottom: 0;
 }
 
 .fixbox .pulse {
     animation: pulse 1.5s infinite;
     float: right;
-    margin: 18px 56px 0 20px;
+    margin: 18px 25px 0 20px;
     width: 50%;
 }
 
@@ -402,21 +389,14 @@ header#header {
  
 
  
-
-
-  .frm-head {
-    text-align: center;
-    position: relative;
-    margin-top:80px;
-    z-index: 2;
-    
-}
+ 
 .frm-hd-txt1 {
     font-size: 17px;
     line-height: 30px;
     color: #f0eed4;
     font-weight: 600;
     text-transform: uppercase;
+    text-align: center;
 }
 .timer {
     position: absolute;

@@ -16,205 +16,199 @@
 
 <div class="section-1" id="home">
     <div class="container">
-        <div class="sc1-para-lft"> <i class="new_sprite new_sprite-doctr-img doctr-img"></i> <i
-                class="new_sprite new_sprite-s1-box-bottle top-bottle"></i> 
-                <!-- <i             class="new_sprite new_sprite-usa-seal usa-seal"></i> -->
-            <div class="sc1-para1"> <i class="new_sprite new_sprite-default_17 top-logo"
-                    style="margin-bottom: 5px; margin-left: 0; width: 160px; margin-left: 256px;"></i>
-               
-            </div>
-            <!-- <div class="sc1-para2" style="margin-top: -25px; text-align: center;">
-                <p class="sc1-txt2" style="margin-top: 30px;     margin-left: 0;">Rapid Absorption Technology </p>
-                <i class="new_sprite new_sprite-logo-1 top-logo"
-                    style="width: 304px; margin: 20px 0 10px; padding:0; float: none;"></i>
-            </div> -->
-            <p class="red-arrow">AVAILABLE WITHOUT A PRESCRIPTION</p>
-            <div class="sc1-para3">
-                <p class="sc1-txt4" style="margin-top: -23px;">Recommended by doctors </p>
-                <p class="sc1-txt5"><strong>Vigora</strong> is an efficient anti-ED medicine made available by German Laboratories. It has been proven to support sexual health and energy. </p>
-                <ul class="list-sec1">
-                    <li>
-                        <p style="background:none;">ENHANCES <span class="ml-2"> Sex Drive & Libido </span></p>
-                    </li>
-                    <li>
-                        <p>ACHIEVE <span class="ml-2">Bigger & Harder Erections </span></p>
-                    </li>
-                    <li>
-                        <p>LONGER <span class="ml-2"> Sexual Staying Power </span></p>
-                    </li>
-                    <li>
-                        <p>INCREASED <span class="ml-2">Blood Circulation </span></p>
-                    </li>
-                </ul>
-            </div>
-            <div class="sc1-para4">
-                <div class="bnr-slider"></div>
-            </div>
-            <div class="clearall"></div>
-            <div class="gap"></div>
-            <div class="clearall"></div>
-           
-        </div>
-        <div class="sc1-para-rgt" id="formBox">
-          
-            <div class="form-container">
-                <div class="ani-arrow1"> <i class="new_sprite new_sprite-animate-arw"></i> </div>
-                <div class="form-top" id="form-top">
-                    <div class="frm-head">
-                        <p class="frm-hd-txt1">Only<img src="images/counter.png" alt="" class="cont"> 150 Orders Filled
-                            Per Day!</p>
-                         
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="product_support" >
+
+                    <div class="product_service">
+                       
+                        <div class="service">
+                            <div class="product_detail">
+                                <h6><span style="    font-size: 26px;
+    color: #004f7f !important;">FREE Shipping </span><br />3-5 business days </h6>
+                            </div>
+                        </div>
+                        <i class="fas fa-plus-circle"></i>
+                        <div class="service">
+
+                            <div class="product_detail">
+                                <h6><span style="    font-size: 26px;
+    color: #004f7f !important;">FREE Pills</span> <br /> On every order</h6>
+                            </div>
+                        </div>
+                        <i class="fas fa-plus-circle"></i>
+                        <div class="service">
+
+                            <div class="product_detail">
+                                <h6><span style="    font-size: 26px;
+    color: #004f7f !important;">Live Tracking </span><br /> 24*7 customer support</h6>
+                            </div>
+                        </div>
                     </div>
-                    <i class="new_sprite new_sprite-frm-top"></i>
+                    <div class="product_ser">
+                        <div class="product_detail">
+                            <h6 >VIGORA - <span> 100 </span></h6>
+                        </div>
+                    </div>
 
                 </div>
-                <form method="post"
-                    action=""
-                    name="" accept-charset="utf-8"
-                    >{% csrf_token %}
-                    <input type="hidden" name="limelight_charset" id="limelight_charset" value="utf-8" />
-                    <div class="form-box">
-                        <div class="form-group">
-
-                            <input type="text" name="first_name" placeholder="First Name"
-                                class="required form-control" value=""
-                                data-error-message="Please enter your first name!" />
-                        </div>
-                        <div class="form-group">
-
-                            <input type="text" name="last_name" placeholder="Last Name" class="required form-control"
-                                value="" data-error-message="Please enter your last name!" />
-                        </div>
-                        <div class="form-group">
-
-                            <input type="text" name="address" placeholder="Your Address" class="required"
-                                value="" data-error-message="Please enter your address!" />
-                        </div>
-                        <div class="form-group">
-
-                            <input type="text" name="city" placeholder="Your City" class="required" value=""
-                                data-error-message="Please enter your city!" />
-                        </div>
-                        <div class="form-group">
-
-                            <select name="country" class="required no-error select2" data-selected=""
-                                data-error-message="Please select your country!">
-                                {% for country in country_list %}
-                                <option value="{{country}}">{{country}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="form-group">
-
-                            <input type="text" name="state" placeholder="Your State" class="required"
-                                data-selected="" data-error-message="Please select your state!" />
-                        </div>
-                        <div class="form-group">
-
-                            <input type="tel" name="zipcode" placeholder="Zip Code" class="required" value=""
-                                maxlength="5" onkeyup="javascript: this.value = this.value.replace(/[^0-9]/g,'');"
-                                data-error-message="Please enter a valid zip code!" />
-                            <span id="zip-validate" style="display: none">
-                                <img
-                                    src="{% static 'app/desktop/images/ajax-loader.gif' %}"></span>
-                        </div>
-                        <div class="form-group">
-
-                            <input type="tel" name="phone" placeholder="Phone" class="required" value=""
-                                data-min-length="10" data-max-length="10"
-                                onkeyup="javascript: this.value = this.value.replace(/[^0-9]/g,'');" maxlength="10"
-                                data-error-message="Please enter a valid contact number!" />
-                        </div>
-                        <div class="form-group">
-
-                            <input type="text" name="email" placeholder="Email Address" class="required" value=""
-                                data-error-message="Please enter a valid email id!" />
-                            <span id="mxcheck-placeholder" style="display:none;"><img
-                                    src="{% static 'app/desktop/images/ajax-loader.gif' %}" /></span>
-                            <span id="mxcheck-message" style="display:none;"></span>
-                        </div>
-                        <input type="submit" class="pulse frm-btm" name="create_prospect" value="Rush My Order" />
-                    </div>
-                    <p id="loading-indicator" style="display:none;">Processing...</p>
-                    <p id="crm-response-container" style="display:none;">Limelight messages will appear here...</p>
-                </form>
-                <div class="formbottom"><i class="new_sprite new_sprite-frm-botm"></i></div>
             </div>
-            <div class="Magazines">
-                <p class="maga-txt1">MALE ENHANCEMENT AS SEEN IN</p>
-                <center><i class="new_sprite new_sprite-magazin maga-img1"></i></center>
-                <p class="maga-txt2">The sexual benefits of the ingredients used in <strong>VIGORA - 100</strong> have
-                    been covered by leading magazines and scientific journals. </p>
-                <center><i class="new_sprite new_sprite-gry-logo gry-logo"></i></center>
-            </div>
-        </div>
-        <div class="product_support" style="    margin-left: 60px;">
+            <div class="col-xl-8 col-lg-12">
 
-            <div class="product_service">
-                <div class="product_ser" style="position: absolute;
-                top: 80px;
-                left: 150px;">
-                    <div class="product_detail">
-                    <h6>VIGORA - <span> 100 </span></h6>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="product_image">
+                            <img src="{% static 'app/desktop/images/meds_box-bottle.png' %}" alt="">
+                        </div>
                     </div>
-                </div>
-                <div class="service">
-                    <div class="product_detail">
-                        <h6><span style="    font-size: 26px;
-    color: #004f7f !important;">FREE Shipping </span><br/>3-5 business days </h6>
-                    </div>
-                </div>
-                <i class="fas fa-plus-circle"></i>
-                <div class="service">
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <div class="sc1-para-lft">
+                            <p class="red-arrow">AVAILABLE WITHOUT A PRESCRIPTION</p>
+                            <div class="sc1-para3">
+                                <div class="doc_detail">
+                                    <div class="doctor_text">
 
-                    <div class="product_detail">
-                        <h6><span style="    font-size: 26px;
-    color: #004f7f !important;">FREE Pills</span> <br/> On every order</h6>
-                    </div>
-                </div>
-                <i class="fas fa-plus-circle"></i>
-                <div class="service">
+                                        <p class="sc1-txt4">Recommended by doctors </p>
+                                        <p class="sc1-txt5"><strong>Vigora</strong> is an efficient anti-ED medicine
+                                            made available
+                                            by
+                                            German Laboratories. It has been proven to support sexual health and
+                                            energy. </p>
+                                    </div>
+                                    <div class="doctor_image">
+                                        <img src="{% static 'app/desktop/images/doctor_img.png' %}" alt="">
+                                    </div>
+                                </div>
+                                <ul class="list-sec1">
+                                    <li>
+                                        <p style="background:none;">ENHANCES <span class="ml-2"> Sex Drive & Libido
+                                            </span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>ACHIEVE <span class="ml-2">Bigger & Harder Erections </span></p>
+                                    </li>
+                                    <li>
+                                        <p>LONGER <span class="ml-2"> Sexual Staying Power </span></p>
+                                    </li>
+                                    <li>
+                                        <p>INCREASED <span class="ml-2">Blood Circulation </span></p>
+                                    </li>
+                                </ul>
+                                <div class="product_label">
+                                    <img src="{% static 'app/desktop/images/arrow.png' %}" alt="">
+                                </div>
+                            </div>
 
-                    <div class="product_detail">
-                        <h6><span style="    font-size: 26px;
-    color: #004f7f !important;">Live Tracking </span><br/> 24*7 customer support</h6>
+
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="col-xl-4 col-lg-12">
+                <div class="sc1-para-rgt" id="formBox">
+                    <div class="form-container">
+                        <div class="form_top">
+                            <img src="{% static 'app/desktop/images/frm-top.png' %}" class="img-fluid" alt="">
+                        </div>
+                        <div class="form-top" id="form-top">
+                            <div class="frm-head">
+                                <p class="frm-hd-txt1">Only<img src="{% static 'images/counter.png'  %}" alt="" class="cont"> 150
+                                    Orders
+                                    Filled
+                                    Per Day!</p>
 
+                            </div>
+
+                        </div>
+                        <form method="post" action="" name="" accept-charset="utf-8">{% csrf_token %}
+                            <input type="hidden" name="limelight_charset" id="limelight_charset" value="utf-8" />
+                            <div class="form-box">
+                                <div class="form-group">
+
+                                    <input type="text" name="first_name" placeholder="First Name"
+                                        class="required form-control" value=""
+                                        data-error-message="Please enter your first name!" />
+                                </div>
+                                <div class="form-group">
+
+                                    <input type="text" name="last_name" placeholder="Last Name"
+                                        class="required form-control" value=""
+                                        data-error-message="Please enter your last name!" />
+                                </div>
+                                <div class="form-group">
+
+                                    <input type="text" name="address" placeholder="Your Address" class="required"
+                                        value="" data-error-message="Please enter your address!" />
+                                </div>
+                                <div class="form-group">
+
+                                    <input type="text" name="city" placeholder="Your City" class="required" value=""
+                                        data-error-message="Please enter your city!" />
+                                </div>
+                                <div class="form-group">
+
+                                    <select name="country" class="required no-error select2" data-selected=""
+                                        data-error-message="Please select your country!">
+                                        {% for country in country_list %}
+                                        <option value="{{country}}">{{country}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+
+                                    <input type="text" name="state" placeholder="Your State" class="required"
+                                        data-selected="" data-error-message="Please select your state!" />
+                                </div>
+                                <div class="form-group">
+
+                                    <input type="tel" name="zipcode" placeholder="Zip Code" class="required"
+                                        value="" maxlength="5"
+                                        onkeyup="javascript: this.value = this.value.replace(/[^0-9]/g,'');"
+                                        data-error-message="Please enter a valid zip code!" />
+                                    <span id="zip-validate" style="display: none">
+                                        <img src="{% static 'app/desktop/images/ajax-loader.gif' %}"></span>
+                                </div>
+                                <div class="form-group">
+
+                                    <input type="tel" name="phone" placeholder="Phone" class="required" value=""
+                                        data-min-length="10" data-max-length="10"
+                                        onkeyup="javascript: this.value = this.value.replace(/[^0-9]/g,'');"
+                                        maxlength="10" data-error-message="Please enter a valid contact number!" />
+                                </div>
+                                <div class="form-group">
+
+                                    <input type="text" name="email" placeholder="Email Address" class="required"
+                                        value="" data-error-message="Please enter a valid email id!" />
+                                    <span id="mxcheck-placeholder" style="display:none;"><img
+                                            src="{% static 'app/desktop/images/ajax-loader.gif' %}" /></span>
+                                    <span id="mxcheck-message" style="display:none;"></span>
+                                </div>
+                                <input type="submit" class="pulse frm-btm" name="create_prospect"
+                                    value="Rush My Order" />
+                            </div>
+                            <p id="loading-indicator" style="display:none;">Processing...</p>
+                            <p id="crm-response-container" style="display:none;">Limelight messages will appear
+                                here...
+                            </p>
+                        </form>
+                        <div class="formbottom"><i class="new_sprite new_sprite-frm-botm"></i></div>
+                    </div>
+                    <div class="Magazines">
+                        <p class="maga-txt1">MALE ENHANCEMENT AS SEEN IN</p>
+                        <center><i class="new_sprite new_sprite-magazin maga-img1"></i></center>
+                        <p class="maga-txt2">The sexual benefits of the ingredients used in <strong>VIGORA -
+                                100</strong>
+                            have
+                            been covered by leading magazines and scientific journals. </p>
+                        <center><i class="new_sprite new_sprite-gry-logo gry-logo"></i></center>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<!-- <div class="product_support">
-    <div class="container">
-        <div class="product_service">
-            <div class="service">
-                <div class="icon">
-                    <i class="fas fa-shipping-fast"></i>
-                </div>
-                <div class="product_detail">
-                    <h6>FREE Shipping 3-5 business days </h6>
-                </div>
-            </div>
-            <div class="service">
-                <div class="icon">
-                    <i class="fas fa-tablets"></i>
-                </div>
-                <div class="product_detail">
-                    <h6>FREE pills On every order</h6>
-                </div>
-            </div>
-            <div class="service">
-                <div class="icon">
-                    <i class="fas fa-map-marked"></i>
-                </div>
-                <div class="product_detail">
-                    <h6>Live order tracking 24*7 customer support</h6>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
+
 <div class="section-2">
     <div class="container">
         <div class="sc2-para1">
@@ -225,91 +219,175 @@
         <p class="sc2-cntn">Age-related decline in sexual health leads to low sex drive, lack of stamina, inability
             to perform, taking a toll on both your confidence and your relationships.</p>
         <div class="sc2-para2">
-            <div class="scpr2-lft"> <i class="new_sprite new_sprite-sc2-img1 sc2-img1"></i>
-                <div class="ponts1">
-                    <i class="new_sprite new_sprite-sc2-no1"></i>
-                    <p class="sc2-txt3">Frustrated? <span>Are you tired of not being able to achieve an erection
-                            when you need it? </span></p>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="scpr2-lft">
+                        <i class="red_dot"></i>
+                        <div class="points_list">
+                            <div class="ponts1">
+
+                                <p class="sc2-txt3">Frustrated? <span>Are you tired of not being able to achieve an
+                                        erection
+                                        when you need it? </span></p>
+                                <i class="s2_list_one"></i>
+                            </div>
+                            <div class="ponts2">
+
+                                <p class="sc2-txt3">Embarrassed? <span>Are you embarrassed about premature
+                                        ejaculation
+                                        and lack
+                                        of staying power? </span></p>
+                                <i class="s2_list_two"></i>
+                            </div>
+                            <div class="ponts3">
+
+                                <p class="sc2-txt3">STUCK? <span>Have you tried all herbal pills with no results and
+                                        waste of
+                                        money and time?
+                                    </span></p>
+                                <i class="s2_list_three"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="ponts2">
-                    <i class="new_sprite new_sprite-sc2-no2"></i>
-                    <p class="sc2-txt3">Embarrassed? <span>Are you embarrassed about premature ejaculation and lack
-                            of staying power? </span></p>
+                <div class="col-lg-6">
+                    <div class="section_2_bg">
+                        <img src="{% static 'app/desktop/images/section-2-bg.png' %}" alt="">
+                    </div>
                 </div>
-                <div class="ponts3">
-                    <i class="new_sprite new_sprite-sc2-no3"></i>
-                    <p class="sc2-txt3">STUCK? <span>Have you tried all herbal pills with no results and waste of money and time?
-                        </span></p>
-                </div>
-            </div> <i class="new_sprite new_sprite-sc2-img2 sc2-img2"></i>
-        </div>
-    </div>
-</div>
-<div class="section-3">
-    <div class="container">
-        <div class="sc3-paralft">
-            <p class="sc3-prlft-txt1">boost your <span>SEXUAL HEALTH & PERFORMANCE</span></p>
-            <ul class="sc3lft-pnt">
-            </ul>
-        </div>
-        <div class="sc3-para-rgt"> <img src="{% static 'app/desktop/images/pr.png' %}" alt="" class="bottles"
-                width="360" height="351" >
-            <p class="sc3-txt1">Introducing Vigora 
-            </p>
-            <p class="sc3-txt2"></p>
-            <p class="sc3-txt3"><strong>Vigora</strong> is an advanced male sexual enhancement formula that has been designed to offer stronger erections, enhanced libido, and improved virility. Vigora is enriched with the popular anti-ED medicines Sildenafil citrate which works on erectile dysfunction, and also boosts sexual performance.  </p>
-            <p class="sc3-txt4">Erectile dysfunction happens when the male sexual organ does not receive enough amount of blood to get the erection process started. Health issues such as cardiovascular disorders, high blood pressure, vascular issues, diabetes etc. affect the healthy flow of blood to the male sexual organ. Alongside physical health issues, psychological disorders, lifestyle choices, stress, and personal and professional stress cause erection issues. </p>
-            <div class="sc3-para1">
-                <p class="sc3-txt5"><i class="new_sprite new_sprite-sc3-seal"></i>Independent clinical studies on
-                    the ingredients used in VIGORA - 100 have shown great
-                    promise in supporting sexual health. </p>
-                <ul class="sc3rgt-pnt">
-                    <li>
-                        <p class="s3-rgtpnt-txt1">99<sup>%</sup></p>
-                        <p class="s3-rgtpnt-txt2"><i class="new_sprite new_sprite-sc3-lft-img1_03"></i>Stronger erections  </p>
-                    </li>
-                    <div class="clearall"></div>
-                    <li>
-                        <p class="s3-rgtpnt-txt1" style="color:#ff8e18;">85<sup>%</sup></p>
-                        <p class="s3-rgtpnt-txt2-2"><i class="new_sprite new_sprite-sc3-lft-img2_03"></i> Increase
-                            in libido </p>
-                    </li>
-                    <div class="clearall"></div>
-                    <li>
-                        <p class="s3-rgtpnt-txt1" style="color:#004f7e; margin-top:-3px;">78<sup>%</sup></p>
-                        <p class="s3-rgtpnt-txt2-3"><i class="new_sprite new_sprite-sc3-lft-img3_03"></i>Increase in staying power  </p>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
 </div>
-<div class="strip">
-    <i class="new_sprite new_sprite-yellow-strip"></i>
+
+<div class="section-3">
     <div class="container">
-        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>VIGORA - 100</strong> Supplies Are Limited.
-                Reserve Your Bottle! </span></p> <i class="new_sprite new_sprite-strp-img strp-img"></i>
-        <a href="#form-top"><i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i></a>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="sc3-paralft">
+                    <p class="sc3-prlft-txt1">boost your <span>SEXUAL HEALTH & PERFORMANCE</span></p>
+                    <ul class="sc3lft-pnt">
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="sc3-para-rgt">
+
+                    <p class="sc3-txt1">Introducing Vigora
+                    </p>
+                    <p class="sc3-txt2"></p>
+                    <p class="sc3-txt3"><strong>Vigora</strong> is an advanced male sexual enhancement formula that
+                        has been
+                        designed to offer stronger erections, enhanced libido, and improved virility. Vigora is
+                        enriched
+                        with the popular anti-ED medicines Sildenafil citrate which works on erectile dysfunction,
+                        and also
+                        boosts sexual performance. </p>
+                    <p class="sc3-txt4">Erectile dysfunction happens when the male sexual organ does not receive
+                        enough
+                        amount of blood to get the erection process started. Health issues such as cardiovascular
+                        disorders,
+                        high blood pressure, vascular issues, diabetes etc. affect the healthy flow of blood to the
+                        male
+                        sexual organ. Alongside physical health issues, psychological disorders, lifestyle choices,
+                        stress,
+                        and personal and professional stress cause erection issues. </p>
+                    <div class="sc3-para1">
+                        <p class="sc3-txt5">
+                        <div class="cli_logo">
+                            <img src="{% static 'app/desktop/images/cli_logo.png' %}" class="img-fluid" alt="">
+                        </div>
+                        Independent clinical studies on
+                        the ingredients used in VIGORA - 100 have shown great
+                        promise in supporting sexual health. </p>
+                        <ul class="sc3rgt-pnt">
+                            <li>
+                                <p class="s3-rgtpnt-txt1">99<sup>%</sup></p>
+                                <p class="s3-rgtpnt-txt2">
+                                    <i class="progress_line_one"></i>
+                                    Stronger erections
+                                </p>
+                            </li>
+                            <div class="clearall"></div>
+                            <li>
+                                <p class="s3-rgtpnt-txt1" style="color:#ff8e18;">85<sup>%</sup></p>
+                                <p class="s3-rgtpnt-txt2-2">Increase in libido
+                                    <i class="progress_line_two"></i>
+                                </p>
+
+                            </li>
+                            <div class="clearall"></div>
+                            <li>
+                                <p class="s3-rgtpnt-txt1" style="color:#004f7e; margin-top:-3px;">78<sup>%</sup></p>
+                                <p class="s3-rgtpnt-txt2-3">
+                                    <i class="progress_line_three"></i>
+                                    Increase in staying power
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="s3_prtoduct_image">
+                        <img src="{% static 'app/desktop/images/meds_box-bottle.png' %}" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<div class="strip new_sprite-yellow-strip">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>VIGORA - 100</strong> Supplies
+                        Are
+                        Limited.
+                        Reserve Your Bottle! </span></p>
+            </div>
+            <div class="col-lg-6">
+                <a href="#form-top">
+                    <i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 <div class="section-4">
-    <div class="container"> <i class="new_sprite new_sprite-sc4-seal sc4-seal"></i><i
-            class="new_sprite new_sprite-blod blod"></i>
+    <div class="container">
         <div class="sc4-tppara">
             <div class="comn-hdng-para">
                 <p class="sc3-txt1-sc4">THE SCIENCE BEHIND</p>
                 <p class="sc3-txt2">OUR BEST-SELLING MEDICINE </p>
             </div>
-            <p class="sc3-txt4"><strong>VIGORA - 100</strong> ingredients have been proven to treat erectile dysfunction, replenish sexual energy levels, boost blood circulation, and reduce performance anxiety. These benefits combined, make Vigora a complete erection enhancement system.
+            <p class="sc3-txt4"><strong>VIGORA - 100</strong> ingredients have been proven to treat erectile
+                dysfunction, replenish sexual energy levels, boost blood circulation, and reduce performance
+                anxiety. These benefits combined, make Vigora a complete erection enhancement system.
             </p>
             <div class="sc4-doc-para">
-                <p class="sc4-dctxt1" style="font-weight: bold;">NOW AVAILABLE WITHOUT A PRESCRIPTION </p>
-                <p class="sc4-dctxt2"><strong>VIGORA - 100</strong> ingredient matrix includes Sildenafil citrate as its main ingredient which is completely safe and effective. Recently Vigora has become available to the public without the need of a prescription. This is testimony to its safety, efficacy, and low risk of side effects guaranteed. </p>
+                <div class="shield">
+                    <img src="{% static 'app/desktop/images/shield.png' %}" class="img-fluid" alt="">
+                </div>
+                <div class="shield_text">
+                    <p class="sc4-dctxt1" style="font-weight: bold;">NOW AVAILABLE WITHOUT A PRESCRIPTION </p>
+                    <p class="sc4-dctxt2"><strong>VIGORA - 100</strong> ingredient matrix includes Sildenafil
+                        citrate as
+                        its main ingredient which is completely safe and effective. Recently Vigora has become
+                        available
+                        to the public without the need of a prescription. This is testimony to its safety, efficacy,
+                        and
+                        low risk of side effects guaranteed. </p>
+                </div>
             </div>
         </div>
         <div class="blue-hdng">
             <p class="bluhnd-txt1">HOW IT WORKS TO SUPPORT </p>
             <p class="bluhnd-txt2">SEXUAL HEALTH </p>
+            <div class="blode_image">
+                <img src="{% static 'app/desktop/images/blode_image.png' %}" alt="">
+            </div>
         </div>
         <div class="sc4-para2"> <i class="new_sprite new_sprite-sc4-pntimg sc4-pntimg"></i>
             <div class="sc4-paralft">
@@ -345,15 +423,29 @@
         </div>
     </div>
 </div>
-<div class="strip">
-    <i class="new_sprite new_sprite-yellow-strip"></i>
+
+<div class="strip new_sprite-yellow-strip">
+
     <div class="container">
-        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>VIGORA - 100</strong> Supplies Are Limited.
-                Reserve Your Bottle!</span></p> <i class="new_sprite new_sprite-strp-img strp-img"></i>
-        <a href="#form-top"><i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i></a>
+        <div class="row">
+            <div class="col-lg-6">
+                <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>VIGORA - 100</strong> Supplies
+                        Are
+                        Limited.
+                        Reserve Your Bottle! </span></p>
+            </div>
+            <div class="col-lg-6">
+                <a href="#form-top">
+                    <i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i>
+                </a>
+            </div>
+        </div>
     </div>
+
 </div>
+
 <div class="clearall"></div>
+
 <div class="section-5">
     <div class="container">
         <div class="sc5-para1">
@@ -369,7 +461,8 @@
                     <br>Drive & Libido
                 </p>
                 <p class="pnt-line"></p>
-                <p class="sc5-pnttxt2"><strong>VIGORA - 100</strong> replenishes testosterone levels and energy stores to
+                <p class="sc5-pnttxt2"><strong>VIGORA - 100</strong> replenishes testosterone levels and energy
+                    stores to
                     re-ignite the passion and desire, elevating your sex drive and libido. </p>
             </li>
             <li>
@@ -378,7 +471,8 @@
                     <br>Erections
                 </p>
                 <p class="pnt-line"></p>
-                <p class="sc5-pnttxt2"><strong>VIGORA - 100</strong> boosts blood flow to the penis, helping you achieve
+                <p class="sc5-pnttxt2"><strong>VIGORA - 100</strong> boosts blood flow to the penis, helping you
+                    achieve
                     harder, stronger, and longer erections, on-command.</p>
             </li>
             <li>
@@ -387,7 +481,8 @@
                     <br> Power
                 </p>
                 <p class="pnt-line"></p>
-                <p class="sc5-pnttxt2"><strong>VIGORA - 100</strong> boosts the penis's blood holding capacity, delaying
+                <p class="sc5-pnttxt2"><strong>VIGORA - 100</strong> boosts the penis's blood holding capacity,
+                    delaying
                     ejaculations to help you last long during sexual encounters. </p>
             </li>
             <li>
@@ -396,16 +491,20 @@
                     <br> Penis Size
                 </p>
                 <p class="pnt-line"></p>
-                <p class="sc5-pnttxt2"> Regular use of <strong>VIGORA - 100</strong> may lead to successive delivery of
+                <p class="sc5-pnttxt2"> Regular use of <strong>VIGORA - 100</strong> may lead to successive delivery
+                    of
                     blood to the penis, which may help increase penis size. </p>
             </li>
         </ul>
         <div class="clearall"></div>
-        <div class="sc5-para2"> <i class="new_sprite new_sprite-sc5-seal sc5-seal"></i> <img
-                src="{% static 'app/desktop/images/pr.png' %}" alt="" class="sc5-botl" width="350" height="331">
+        <div class="sc5-para2"> <i class="new_sprite new_sprite-sc5-seal sc5-seal"></i>
+            <div class="sec5_product_image">
+                <img src="{% static 'app/desktop/images/meds_box-bottle.png' %}" alt="" class="img-fluid">
+            </div>
             <div class="sc5-parlft">
                 <p class="sc5-txt5">Not Just A Pill But A Complete Male Enhancement System</p>
-                <p class="sc5-txt6">What makes <strong>VIGORA - 100</strong> different from other "miracle pills" in the
+                <p class="sc5-txt6">What makes <strong>VIGORA - 100</strong> different from other "miracle pills" in
+                    the
                     market, is its potent and all natural ingredient matrix. The constituting ingredients work
                     synergistically to target and treat the most common sexual health concerns. </p>
                 <p class="sc5-txt7">This makes VIGORA - 100 a comprehensive male enhancement system! </p>
@@ -413,79 +512,96 @@
         </div>
     </div>
 </div>
-<div class="strip">
-    <i class="new_sprite new_sprite-yellow-strip"></i>
+
+<div class="strip new_sprite-yellow-strip">
+
     <div class="container">
-        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>VIGORA - 100</strong> Supplies Are Limited.
-                Reserve Your Bottle!</span></p> <i class="new_sprite new_sprite-strp-img strp-img"></i>
-        <a href="#form-top"><i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i></a>
-    </div>
-</div>
-<!-- <div class="section-6">
-    <div class="container">
-        <div class="sc6-tppara">
-            <div class="comn-hdng-para">
-                <p class="sc3-txt1">POWERFUL INGREDIENTS</p>
-                <p class="sc3-txt2">ALL NATURAL FORMULA </p>
+        <div class="row">
+            <div class="col-lg-6">
+                <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>VIGORA - 100</strong> Supplies
+                        Are
+                        Limited.
+                        Reserve Your Bottle! </span></p>
+            </div>
+            <div class="col-lg-6">
+                <a href="#form-top">
+                    <i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i>
+                </a>
             </div>
         </div>
-        <div class="sc6-paralft">
-            <p class="sc6-txt1">Unlike other products in the market, <strong>VIGORA - 100</strong> does not hide behind
-                “Proprietary Blends”. Our doctor formulated all-natural formula is powerful, safe, effective and
-                completely transparent! </p>
-            <p class="sc6-txt2">This ensures that you can use VIGORA - 100 with complete confidence! </p> <i
-                class="new_sprite new_sprite-supplement-facts-v2 sc6-suplmnt"></i>
-            <p class="sc6-txt3">No Prescription Needed<br>VIGORA - 100 is Made Of All Herbs</p>
-        </div>
-        <div class="sc6-parargt">
-            <ul class="ingrdnts">
-                <li><i class="new_sprite new_sprite-maca-root"></i>MACA ROOT EXTRACT <span> One of the most well
-                        researched sexual nutrients, Maca Root aids with
-                        restoring libido levels and boosting sexual confidence.</span> </li>
-                <li><i class="new_sprite new_sprite-tribulus-terrestris"></i>TRIBULUS TERRESTRIS EXTRACT <span>A
-                        powerhouse of sexual benefits, this herb stimulates erectile
-                        response and also boosts testosterone levels.</span> </li>
-                <li><i class="new_sprite new_sprite-ingre-1"></i>HORNY GOAT WEED EXTRACT <span>An ancient
-                        aphrodisiac, Horny Goat Weed, may help improve sexual
-                        stamina and staying power, letting you enjoy intense orgasms.</span> </li>
-            </ul>
-        </div>
     </div>
-</div> -->
+
+</div>
+
+
+
 <div class="section-7">
     <div class="container">
-        <div class="sc6-tppara">
-            <div class="comn-hdng-para">
-                <p class="sc3-txt1">HOW TO USE VIGORA - 100
-                </p>
-                <p class="sc3-txt2">3 SIMPLE STEPS </p>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sc6-tppara">
+                    <div class="comn-hdng-para">
+                        <p class="sc3-txt1">HOW TO USE VIGORA - 100
+                        </p>
+                        <p class="sc3-txt2">3 SIMPLE STEPS </p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="sc7-paralft"> <i class="new_sprite new_sprite-sc7-img1 sc7-img1"></i> <i
-                class="new_sprite new_sprite-sc7-seal sc7-seal"></i>
-            <p class="sc7-txt1"><strong>VIGORA - 100</strong> is available as an easy to take the dietary supplement,
-                <br> that integrates into one's routine without any hassles.
-            </p>
-            <ul class="sc7-points">
-                <li>Take one tablet at a time  <span>Take one pill at least an hour before getting into sexual activity. Swallow the pill as a whole with a glass of water. </span> </li>
-                <li>Embrace the results <span>Vigora starts working within 30 minutes post-administration. You need to be sexually aroused to make the drug work for you.
-                    </span> </li>
-                <li>Follow the dosage regimen  <span>You need to take one tablet only when it’s required. Do not take the medicine on a daily basis.  </span> </li>
-            </ul>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="sc7-paralft">
+
+
+                    <p class="sc7-txt1"><strong>VIGORA - 100</strong> is available as an easy to take the dietary
+                        supplement,
+                        <br> that integrates into one's routine without any hassles.
+                    </p>
+                    <ul class="sc7-points">
+                        <li>Take one tablet at a time <span>Take one pill at least an hour before getting into
+                                sexual
+                                activity. Swallow the pill as a whole with a glass of water. </span> </li>
+                        <li>Embrace the results <span>Vigora starts working within 30 minutes post-administration.
+                                You need
+                                to be sexually aroused to make the drug work for you.
+                            </span> </li>
+                        <li>Follow the dosage regimen <span>You need to take one tablet only when it’s required. Do
+                                not take
+                                the medicine on a daily basis. </span> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="section_seven">
+                    <img src="{% static 'app/desktop/images/sec7_bg_image.png' %}" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="strip new_sprite-yellow-strip">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>VIGORA - 100</strong> Supplies
+                        Are
+                        Limited.
+                        Reserve Your Bottle! </span></p>
+            </div>
+            <div class="col-lg-6">
+                <a>
+                    <i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i>
+                </a>
+            </div>
         </div>
     </div>
+
 </div>
-<div class="strip">
-    <i class="new_sprite new_sprite-yellow-strip"></i>
-    <div class="container">
-        <p class="strp-txt">CLAIM YOUR EXCLUSIVE TRIAL TODAY <span><strong>VIGORA - 100</strong> Supplies Are Limited.
-                Reserve Your Bottle!</span></p> <i class="new_sprite new_sprite-strp-img strp-img"></i>
-        <a href="#form-top"><i class="new_sprite new_sprite-btn strpbtn btn pulse noexirpop"></i></a>
-    </div>
-</div>
+
 <div class="section-9">
-    <div class="container"> <img src="{% static 'app/desktop/images/s1-box-bottle.png' %}" alt="" class="sc9-botls" width="330"
-            height="321">
+    <div class="container">
         <div class="sc1-para-lft">
             <div class="sc9-para1-1" style="margin: 90px 0 0 85px;">
                 <i class="new_sprite new_sprite-default_17 s9-logo" style="margin-top: -37px; width: 160px;"></i>
@@ -498,31 +614,35 @@
             <p class="sc1-arw1-1 s9-txt3">Now Available Without A Prescription </p>
             <div class="sc1-para3-1">
                 <p class="sc1-txt4-1" style="color:#004f7e; margin-top: 12px;">Recommended by doctors</p>
-                <p class="sc1-txt5-1"><strong>Vigora</strong> is an efficient anti-ED medicine made available by German Laboratories. It has been proven to support sexual health and energy. </p>
-                   <ul class="list-sec1">
-                    <li>
-                        <p style="background:none;">ENHANCES <span> Sex Drive & Libido </span></p>
-                    </li>
-                    <li>
-                        <p>ACHIEVE<span>Bigger & Harder Erections </span></p>
-                    </li>
-                    <li>
-                        <p>LONGER <span> Sexual Staying Power </span></p>
-                    </li>
-                    <li>
-                        <p>INCREASED<span>Blood Circulation </span></p>
-                    </li>
-                </ul>
-                
+                <p class="sc1-txt5-1"><strong>Vigora</strong> is an efficient anti-ED medicine made available by
+                    German Laboratories. It has been proven to support sexual health and energy. </p>
+                <div class="product_list">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="sec_9_product">
+                                <img src="{% static 'app/desktop/images/meds_box-bottle.png' %}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <ul class="list-sec1">
+                                <li>
+                                    <p style="background:none;">ENHANCES <span> Sex Drive & Libido </span></p>
+                                </li>
+                                <li>
+                                    <p>ACHIEVE<span>Bigger & Harder Erections </span></p>
+                                </li>
+                                <li>
+                                    <p>LONGER <span> Sexual Staying Power </span></p>
+                                </li>
+                                <li>
+                                    <p>INCREASED<span>Blood Circulation </span></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div id="exitpopup-overlay" class="exitpopup-overlay">
-    <div id="exit_pop" class="exitpop-content">
-        <a href="#">
-            <i class="new_sprite new_sprite-downsell"></i>
-        </a>
     </div>
 </div>
 

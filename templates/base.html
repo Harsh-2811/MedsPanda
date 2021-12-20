@@ -9,38 +9,54 @@
 
     <meta charset="utf-8" />
     <title>Vigora</title>
-    <meta name="description" content="Vigora" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <meta http-equiv="content-language" content="en-us" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="viewport" content="width=1366,user-scalable=no" />
-    <link rel="stylesheet" href="{% static 'assets/css/app.css' %}" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta charset="utf-8" />
-    <meta name="description" content="ManDime" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <meta http-equiv="content-language" content="en-us" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="viewport" content="width=1360,user-scalable=no" />
-    <link rel="shortcut icon" href="{% static 'app/desktop/images/s1-box-bottle.png' %}" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+    <link rel="shortcut icon" href="{% static 'app/desktop/images/meds_box-bottle.png' %}" />
+
     <link href="{% static 'app/desktop/css/mergedc880.css' %}" rel="stylesheet" type="text/css">
     <script src="{% static 'app/desktop/js/jquery.min.js' %}"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap"
         rel="stylesheet">
     <link rel='stylesheet' href="{% static 'app/desktop/css/bridge.min.css' %}">
     <link rel='stylesheet' href="{% static 'app/desktop/css/home-style.css' %}">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
+    <link rel="stylesheet" href="{% static 'app/desktop/css/responsive.css' %}">
+
+
+    <!-- responsive -->
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <style>
-       
+       .logo{
+           width: 230px;
+           padding: 12px 15px;
+    font-size: 19px;
+    line-height: 21px;
+    height: 62px;
+    max-width: 220px;
+    display: table;
+       }
+       .logo img{
+           width: 100%;
+           height: 100%;
+       }
          
       
           </style>
@@ -51,41 +67,36 @@
 
 <body>
     
-    <header id="header container " style="     
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 10000;
-    font-family: roboto, 'sans-serif';
-    font-weight: 300;
-    font-size: 14px;
-    color: #004f7f !important;
-    background: #f8f8f8;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    border-radius: 3px;
-    box-shadow: none;
-    ">
-        <div class="logo">
-            <img src="{% static 'app/desktop/images/medsbuzz_logo.png' %}" width="250px" alt="">
-        </div>
-        <div class="d-flex" style="justify-content:space-around;">
-            <div class="mx-1 px-1" style="margin: 0px 10px;font-weight: bold;">
-                <span><a href="#"><i class="far fa-envelope" style="color: #004f7f;"></i></a></span>
-                <span>sales@medspand.com</span>
+    <header id="header">
+        <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-4">
+                <div class="logo">
+                    <a href="#"> <img src="{% static 'app/desktop/images/logo.png' %}" class="img-fluid" alt=""></a>
+                </div>
             </div>
-            <div class="mx-1 px-1" style="font-weight: bold;">
-                <span><a href="#"><i class="fas fa-phone-alt" style="color: #004f7f;" ></i></a></span>
-                <span>+123456789</span>
+            <div class="col-md-4">
+                <div class="d-flex" style="justify-content:space-around;">
+                    <div class="mx-1 px-1" style="margin: 0px 10px;font-weight: bold;">
+                        <span><a href="#"><i class="far fa-envelope" style="color: #004f7f;"></i></a></span>
+                        <span>sales@medspand.com</span>
+                    </div>
+                    <div class="mx-1 px-1" style="font-weight: bold;">
+                        <span><a href="#"><i class="fas fa-phone-alt" style="color: #004f7f;"></i></a></span>
+                        <span>+123456789</span>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="social_media">
-            <ul>
-                 
-                <li><a href="#" style="color: #004f7f;"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#" style="color: #004f7f;"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#" style="color: #004f7f;"><i class="fab fa-youtube"></i></a></li>
-            </ul>
+            <div class="col-md-4">
+                <div class="social_media">
+                    <ul>
+                        <li><a href="#" style="color: #004f7f;"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" style="color: #004f7f;"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" style="color: #004f7f;"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+         </div>
         </div>
     </header>
    
@@ -109,14 +120,14 @@
         
         </div>
     </footer>
-    <div class="fixbox" style="display: none;" >
-        <div class="stick_bar"> 	
-            <img src="{% static 'app/desktop/images/pr.png' %}" alt=""  class="bottle"> 
-            <a class="goTop" style="cursor: pointer;" ><img src="{% static 'app/desktop/images/btn.png' %}" alt="" class="btn pulse "></a>
+    <div class="fixbox">
+        <div class="stick_bar">
+            <img src="{% static 'app/desktop/images/meds_box-bottle.png' %}" alt="" class="bottle">
+            <a ><img src="{% static 'app/desktop/images/btn.png' %}" alt="" class="btn pulse noexirpop"></a>
             <img src="{% static 'images/scure.png' %}" alt="" class="security2">
-        </div> 
+        </div>
         
-     </div>
+    </div>
     <p id="loading-indicator" style="display:none;">Processing...</p>
     <script
         type="text/javascript">AJAX_PATH = "ajax.php/index.html"; app_config = { "valid_class": "no-error", "error_class": "has-error", "loading_class": "loading", "exit_popup_enabled": false, "exit_popup_element_id": "", "exit_popup_page": "", "offer_path": "\/special-offer\/online\/", "current_step": 1, "cbtoken": "f8a7c6178e2b9ba527f04ecb4178b18f", "dev_mode": "N", "show_validation_errors": "modal", "allowed_tc": "8\"m4l4d4J454k454O0lv8sm\"l\"d4J454k454O4l481mmlsdeJ\"5[r1j4V4H4q4h4k4R4X|Niraj,V1H4q4h4k4R4X4N4r|jaVtHrq]", "allowed_country_codes": ["US"], "countries": { "US": { "name": "United States", "states": { "AL": { "name": "Alabama" }, "AK": { "name": "Alaska" }, "AS": { "name": "American Samoa" }, "AZ": { "name": "Arizona" }, "AR": { "name": "Arkansas" }, "AE": { "name": "Armed Forces Middle East" }, "AA": { "name": "Armed Forces Americas" }, "AP": { "name": "Armed Forces Pacific" }, "CA": { "name": "California" }, "CO": { "name": "Colorado" }, "CT": { "name": "Connecticut" }, "DE": { "name": "Delaware" }, "DC": { "name": "District of Columbia" }, "FM": { "name": "Federated States of Micronesia" }, "FL": { "name": "Florida" }, "GA": { "name": "Georgia" }, "GU": { "name": "Guam" }, "HI": { "name": "Hawaii" }, "ID": { "name": "Idaho" }, "IL": { "name": "Illinois" }, "IN": { "name": "Indiana" }, "IA": { "name": "Iowa" }, "KS": { "name": "Kansas" }, "KY": { "name": "Kentucky" }, "LA": { "name": "Louisiana" }, "ME": { "name": "Maine" }, "MD": { "name": "Maryland" }, "MA": { "name": "Massachusetts" }, "MI": { "name": "Michigan" }, "MN": { "name": "Minnesota" }, "MS": { "name": "Mississippi" }, "MO": { "name": "Missouri" }, "MT": { "name": "Montana" }, "NE": { "name": "Nebraska" }, "NV": { "name": "Nevada" }, "NH": { "name": "New Hampshire" }, "NJ": { "name": "New Jersey" }, "NM": { "name": "New Mexico" }, "NY": { "name": "New York" }, "NC": { "name": "North Carolina" }, "ND": { "name": "North Dakota" }, "MP": { "name": "Northern Mariana Islands" }, "OH": { "name": "Ohio" }, "OK": { "name": "Oklahoma" }, "OR": { "name": "Oregon" }, "PA": { "name": "Pennsylvania" }, "PR": { "name": "Puerto Rico" }, "MH": { "name": "Republic of Marshall Islands" }, "RI": { "name": "Rhode Island" }, "SC": { "name": "South Carolina" }, "SD": { "name": "South Dakota" }, "TN": { "name": "Tennessee" }, "TX": { "name": "Texas" }, "UT": { "name": "Utah" }, "VT": { "name": "Vermont" }, "VI": { "name": "Virgin Islands of the U.S." }, "VA": { "name": "Virginia" }, "WA": { "name": "Washington" }, "WV": { "name": "West Virginia" }, "WI": { "name": "Wisconsin" }, "WY": { "name": "Wyoming" } } } }, "country_lang_mapping": { "US": { "state": "State:", "zip": "Zip Code:" }, "GB": { "state": "County:", "zip": "Postal Code:" }, "CA": { "state": "Province:", "zip": "Pin Code:" }, "IN": { "state": "State:", "zip": "Pin:" } }, "device_is_mobile": false, "pageType": "leadPage", "enable_browser_back_button": false, "disable_trialoffer_cardexp": false }</script>
