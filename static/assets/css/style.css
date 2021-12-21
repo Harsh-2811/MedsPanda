@@ -532,3 +532,46 @@ input {
 #header > div > .row{
   align-items: center;
 }
+
+.list-sec1{
+  margin: 0 0 0 38px !important;
+}
+
+.section-1 .product_label img {
+  margin-top: 10px;
+}
+.form-box{
+  position: relative;
+}
+.form-box:after {
+  content: "";
+  background-image: url(../../app/desktop/images/red_arrow.png);
+  background-repeat: no-repeat;
+  height: 470px;
+  width: 100px;
+  display: block;
+  position: absolute;
+  top: -5%;
+  right: -30%;
+}
+
+.use_vigora_mobile_wrp{
+  display: none;
+}
+.stap_wrp .sc7-paralft .sc7-points li{
+  text-align: center;
+}
+
+.strip.new_sprite-yellow-strip:after {
+  content: "";
+  background-image: url('../../app/desktop/images/yellow-strip.png');
+  height: 140px;
+  display: block;
+  background-repeat: no-repeat;
+  margin-top: -128px;
+  background-repeat-x: inherit;
+  background-size: cover;
+}
+.new_sprite-yellow-strip{
+  background-color: transparent;
+}

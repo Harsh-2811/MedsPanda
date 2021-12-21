@@ -195,6 +195,14 @@ i.new_sprite.new_sprite-logo-1.top-logo {
   text-align: center;
   width: 100%;
 }
+.strip.new_sprite-yellow-strip:after{
+  display: none;
+}
+.new_sprite-yellow-strip {
+  background-color: #00507f;
+  display: inline-grid;
+  width: 100%;
+}
 }
 
 @media (max-width: 767px) {
@@ -293,6 +301,24 @@ i.new_sprite.new_sprite-logo-1.top-logo {
   .ingrdnts li span, .sc7-points li span, .sld-txt1{
     font-size: 11px;
   }
+  .sc7-paralft{
+    display: none;
+  }
+  .section_seven{
+    display: none;
+  }
+  .use_vigora_mobile_wrp{
+    display: block;
+  }
+  .use_vigora_mobile_wrp .sc7-paralft {
+    display: block;
+    display: flex;
+    justify-content: center;
+}
+.stap_wrp .sc7-paralft .sc7-points li{
+  background-image: none;
+  padding: 0;
+}
 }
 @media (max-width: 575px) {
   .product_data {
@@ -345,6 +371,7 @@ p.sc9-txt2 {
 }
 .fixbox {
   display: block;
+  width: 100%;
 }
 }
 
@@ -455,6 +482,18 @@ p.sc6-txt3 {
 }
 .product_service {
   flex-direction: row;
+}
+.new_sprite-supplement-facts-v2{
+  background-size: 290px;
+  height: 241px;
+}
+p.sc6-txt3{
+  padding: 0;
+  width: 100%;
+}
+
+.fixbox{
+  width: 100%;
 }
 }
 
