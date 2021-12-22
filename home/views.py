@@ -3,8 +3,17 @@ from django.shortcuts import redirect, render
 from .models import Card, Order,CustomerDetails,Product
 from django.core.mail import send_mail,EmailMessage
 # Create your views here.
+from django.conf import settings
+from mailchimp_marketing import Client
+from mailchimp_marketing.api_client import ApiClientError
+
+api_key = settings.MAILCHIMP_API_KEY
+server = settings.MAILCHIMP_DATA_CENTER
+list_id = settings.MAILCHIMP_EMAIL_LIST_ID
+
 def index(request):
     country_list = [
+        "United Kingdom",
             "Afghanistan",
             "Albania",
             "Algeria",
@@ -238,7 +247,7 @@ def index(request):
             "Uganda",
             "Ukraine",
             "United Arab Emirates (the)",
-            "United Kingdom of Great Britain and Northern Ireland (the)",
+            
             "United States Minor Outlying Islands (the)",
             "United States of America (the)",
             "Uruguay",
@@ -330,22 +339,41 @@ def processToCheckout(request,pk):
             cdetails.order = order
             cdetails.save()
 
-        from django.template.loader import render_to_string
-        from django.conf import settings
-        email_subject = 'New Order Placed Successfully'
-        html_message = render_to_string('OrderEmail.html')
-        from_email = settings.EMAIL_HOST_USER,
-        to = 'hrpatel8935@gmail.com'
-        msg = EmailMessage(
-                    email_subject,
-                    html_message,
-                    from_email[0],
-                    [to],
-                )
-        msg.content_subtype = "html" 
-        msg.send()
-        return redirect('/thankyou/'+str(order.order_id))
+        # from django.template.loader import render_to_string
+        # from django.conf import settings
+        # email_subject = 'New Order Placed Successfully'
+        # html_message = render_to_string('OrderEmail.html')
+        # from_email = settings.EMAIL_HOST_USER,
+        # to = 'hrpatel8935@gmail.com'
+        # msg = EmailMessage(
+        #             email_subject,
+        #             html_message,
+        #             from_email[0],
+        #             [to],
+        #         )
+        # msg.content_subtype = "html" 
+        # msg.send()
+        # return redirect('/thankyou/'+str(order.order_id))
 
+        mailchimp = Client()
+        mailchimp.set_config({
+            "api_key": api_key,
+            "server": server,
+        })
+
+        
+
+        try:
+            member_info = {
+            "email_address": cdetails.email,
+            "status": "subscribed",
+            }
+            response = mailchimp.lists.add_list_member(list_id, member_info)
+            print("response: {}".format(response))
+        except ApiClientError as error:
+            print("An exception occurred: {}".format(error.text))
+
+        return redirect('/thankyou/'+str(order.order_id))
 
     products = Product.objects.all().order_by('-price')
     price_dict = {}

@@ -571,7 +571,11 @@ input {
   margin-top: -128px;
   background-repeat-x: inherit;
   background-size: cover;
+  background-position: top;
 }
 .new_sprite-yellow-strip{
   background-color: transparent;
+}
+.product_image_mobile{
+  display: none;
 }

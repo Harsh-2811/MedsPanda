@@ -79,6 +79,9 @@
                                         <img src="{% static 'app/desktop/images/doctor_img.png' %}" alt="">
                                     </div>
                                 </div>
+                                <div class="product_image_mobile">
+                                    <img src="{% static 'app/desktop/images/meds_box-bottle.png' %}" alt="">
+                                </div>
                                 <ul class="list-sec1">
                                     <li>
                                         <p style="background:none;">ENHANCES <span class="ml-2"> Sex Drive & Libido
@@ -128,44 +131,44 @@
 
                                     <input type="text" name="first_name" placeholder="First Name"
                                         class="required form-control" value=""
-                                        data-error-message="Please enter your first name!" />
+                                        data-error-message="Please enter your first name!" required/>
                                 </div>
                                 <div class="form-group">
 
                                     <input type="text" name="last_name" placeholder="Last Name"
                                         class="required form-control" value=""
-                                        data-error-message="Please enter your last name!" />
+                                        data-error-message="Please enter your last name!" required/>
                                 </div>
                                 <div class="form-group">
 
                                     <input type="text" name="address" placeholder="Your Address" class="required"
-                                        value="" data-error-message="Please enter your address!" />
+                                        value="" data-error-message="Please enter your address!" required />
                                 </div>
                                 <div class="form-group">
 
                                     <input type="text" name="city" placeholder="Your City" class="required" value=""
-                                        data-error-message="Please enter your city!" />
+                                        data-error-message="Please enter your city!" required/>
                                 </div>
                                 <div class="form-group">
 
                                     <select name="country" class="required no-error select2" data-selected=""
-                                        data-error-message="Please select your country!">
+                                        data-error-message="Please select your country!" required>
                                         {% for country in country_list %}
-                                        <option value="{{country}}">{{country}}</option>
+                                        <option value="{{country}}" {% if forloop.counter == 1 %}selected{% endif %}>{{country}}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
                                 <div class="form-group">
 
                                     <input type="text" name="state" placeholder="Your State" class="required"
-                                        data-selected="" data-error-message="Please select your state!" />
+                                        data-selected="" data-error-message="Please select your state!" required/>
                                 </div>
                                 <div class="form-group">
 
                                     <input type="tel" name="zipcode" placeholder="Zip Code" class="required"
-                                        value="" maxlength="5"
+                                        value="" maxlength="8"
                                         onkeyup="javascript: this.value = this.value.replace(/[^0-9]/g,'');"
-                                        data-error-message="Please enter a valid zip code!" />
+                                        data-error-message="Please enter a valid zip code!" required/>
                                     <span id="zip-validate" style="display: none">
                                         <img src="{% static 'app/desktop/images/ajax-loader.gif' %}"></span>
                                 </div>
@@ -174,12 +177,12 @@
                                     <input type="tel" name="phone" placeholder="Phone" class="required" value=""
                                         data-min-length="10" data-max-length="10"
                                         onkeyup="javascript: this.value = this.value.replace(/[^0-9]/g,'');"
-                                        maxlength="10" data-error-message="Please enter a valid contact number!" />
+                                        maxlength="10" data-error-message="Please enter a valid contact number!" required/>
                                 </div>
                                 <div class="form-group">
 
                                     <input type="text" name="email" placeholder="Email Address" class="required"
-                                        value="" data-error-message="Please enter a valid email id!" />
+                                        value="" data-error-message="Please enter a valid email id!" required/>
                                     <span id="mxcheck-placeholder" style="display:none;"><img
                                             src="{% static 'app/desktop/images/ajax-loader.gif' %}" /></span>
                                     <span id="mxcheck-message" style="display:none;"></span>
@@ -294,7 +297,7 @@
                         and personal and professional stress cause erection issues. </p>
                     <div class="sc3-para1">
                         <p class="sc3-txt5">
-                        <div class="cli_logo">
+                        <div class="cli_logo ">
                             <img src="{% static 'app/desktop/images/cli_logo.png' %}" class="img-fluid" alt="">
                         </div>
                         Independent clinical studies on
@@ -327,7 +330,7 @@
                         </ul>
                     </div>
                     <div class="s3_prtoduct_image">
-                        <img src="{% static 'app/desktop/images/meds_box-bottle.png' %}" alt="" class="img-fluid">
+                        <img src="{% static 'app/desktop/images/meds_box-bottle.png' %}" style="width:310px" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -498,7 +501,7 @@
         </ul>
         <div class="clearall"></div>
         <div class="sc5-para2"> <i class="new_sprite new_sprite-sc5-seal sc5-seal"></i>
-            <div class="sec5_product_image">
+            <div class="sec5_product_image product_image">
                 <img src="{% static 'app/desktop/images/meds_box-bottle.png' %}" alt="" class="img-fluid">
             </div>
             <div class="sc5-parlft">

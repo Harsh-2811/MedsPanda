@@ -116,13 +116,18 @@ USE_TZ = True
 import os
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+# MAILCHIMP CREDENTIALS
+MAILCHIMP_API_KEY = "14b43f728cd23e05ce90a0a77cd05b5c-us20"
+MAILCHIMP_DATA_CENTER = "us20"
+MAILCHIMP_EMAIL_LIST_ID = "7a42df082d"
+
 
 STATIC_URL = 'static/'
-# STATICFILES_DIRS=[
-#     os.path.join(BASE_DIR,'static'),
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,'static'),
 
-# ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 MEDIA_URL= '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static/')

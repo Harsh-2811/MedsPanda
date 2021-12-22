@@ -123,7 +123,7 @@ li {
                     <div class="col-lg-8 col-md-12">
                         <div class="order_process">
                             <div class="order_ad">
-                                <a href="https://medspanda.herokuapp.com/" style="font-weight: bold;text-decoration: none;"> Go Back to Home</a>
+                                <a href="http://167.172.128.98/" style="font-weight: bold;text-decoration: none;"> Go Back to Home</a>
                                 <h6>Order now and get your free Pills!</h6>
                             </div>
                             <div class="order_sub_text">
@@ -246,29 +246,26 @@ li {
                                                     <div class="form-group">
                                                         <label or="NameOnCard">Name on card</label>
                                                         <input id="NameOnCard" class="form-control" name="name" type="text"
-                                                            maxlength="255"></input>
+                                                            maxlength="255" required></input>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="CreditCardNumber">Card number</label>
                                                         <input id="CreditCardNumber"
-                                                            class="null card-image form-control" name="number" type="text"></input>
+                                                            class="null card-image form-control" name="number" type="text" required></input>
                                                     </div>
                                                     <div class="expiry-date-group form-group">
                                                         <label for="ExpiryDate">Expiry date</label>
                                                         <input id="ExpiryDate" class="form-control" type="text"
-                                                            placeholder="MM / YY" name="edate" maxlength="7"></input>
+                                                            placeholder="MM / YY" name="edate" maxlength="7" required></input>
                                                     </div>
                                                     <div class="security-code-group form-group">
                                                         <label for="SecurityCode">Security code</label>
                                                         <div class="input-container">
                                                             <input id="SecurityCode" class="form-control"
-                                                                type="text" name="cvc"></input>
+                                                                type="text" name="cvc" maxlength="3" required> </input>
                                                             </i>
                                                         </div>
-                                                        <div class="cvc-preview-container two-card hide">
-                                                            <div class="amex-cvc-preview"></div>
-                                                            <div class="visa-mc-dis-cvc-preview"></div>
-                                                        </div>
+                                                      
                                                     </div>
                                                     <button id="PayButton"
                                                         class="btn btn-block btn-success submit-button" name="card" type="submit">
