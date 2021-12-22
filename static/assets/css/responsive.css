@@ -409,7 +409,7 @@ p.red-arrow {
   background-size: contain;
 }
 .list-sec1 li p span{
-  font-size: 13px;
+  font-size: 12px;
 }
 ul.list-sec1 li p {
   font-size: 16px;
@@ -548,19 +548,27 @@ p.sc6-txt3{
 p.red-arrow{
   font-size: 12px;
 }
-.product_service{
+.section-1 {
+  background-position: -100px -12px;
+  background-size: 740px 300px;
+}
+p.red-arrow {
+  margin-left: 7%;
+  margin-top: 2%;
+  font-size: 15px;
+}
+ul.list-sec1 li p{
+  font-size: 10px;
+}
+.product_service {
   display: none;
 }
 .product_ser {
-  margin-left: 45%;
-  margin-top: 30%;
-}
-.p.red-arrow{
-  margin-left: 7%;
-    margin-top: 2%;
-    font-size: 15px;
+    margin-left: 45%;
+    margin-top: 30%;
 }
 }
+
 @media (max-width: 375px){
   .sc5-points li {
     margin-left: 13%;
@@ -591,8 +599,8 @@ ul.list-sec1 li p{
   display: none;
 }
 .product_ser {
-  margin-left: 45%;
-  margin-top: 30%;
+    margin-left: 45%;
+    margin-top: 30%;
 }
 }
 @media (max-width: 320px){
