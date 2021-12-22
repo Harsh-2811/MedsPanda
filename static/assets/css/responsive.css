@@ -548,6 +548,18 @@ p.sc6-txt3{
 p.red-arrow{
   font-size: 12px;
 }
+.product_service{
+  display: none;
+}
+.product_ser {
+  margin-left: 45%;
+  margin-top: 30%;
+}
+.p.red-arrow{
+  margin-left: 7%;
+    margin-top: 2%;
+    font-size: 15px;
+}
 }
 @media (max-width: 375px){
   .sc5-points li {
