@@ -9,6 +9,8 @@ urlpatterns = [
     path('terms',terms,name="terms" ),
     path('contact',contact,name="contact" ),
     path('thankyou/<str:orderId>/',thankyou,name="thankyou" ),
+    path('singleForm/',singleForm,name="singleForm" ),
+
 
 
 

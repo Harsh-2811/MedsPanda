@@ -123,7 +123,7 @@
     <div class="fixbox">
         <div class="stick_bar">
             <img src="{% static 'app/desktop/images/meds_box-bottle.png' %}" alt="" class="bottle">
-            <a ><img src="{% static 'app/desktop/images/btn.png' %}" alt="" class="btn pulse noexirpop"></a>
+            <a ><img src="{% static 'app/desktop/images/btn.png' %}" alt="" class="btn pulse noexirpop redirectTOSingle"></a>
             <img src="{% static 'images/scure.png' %}" alt="" class="security2">
         </div>
         
@@ -190,6 +190,12 @@
                 $("input[name=shipToFirstName]").focus();
             });
         });
+
+        $(document).ready(function(){
+            $(".redirectTOSingle").click(function (evt) {
+                window.location.href="/singleForm/"
+            })
+        })
         $(function () {
 
             setTimeout(function () {

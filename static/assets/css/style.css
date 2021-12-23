@@ -53,7 +53,7 @@
 .box {
   cursor: pointer;
   background: #fff;
-  margin: 10px 20px 15px 20px;
+  margin: 10px 20px 15px 12px;
   border: 1px solid #b7b7b7;
   border-radius: 8px;
   overflow: hidden;
@@ -104,7 +104,7 @@
 }
 
 .box-lft img {
-  width: 170px;
+  width: 82px;
 }
 
 .form-check-input[type=checkbox] {
@@ -480,9 +480,10 @@ input {
   width: 100%;
 }
 .new_sprite-yellow-strip{
-  background-color: #00507f;
+  background-color: #ffc602;
   display: inline-grid;
   width: 100%;
+
 }
  
  
@@ -578,4 +579,49 @@ input {
 }
 .product_image_mobile{
   display: none;
+}
+.sec5_product_image img {
+  width: 340px;
+}
+.s3-boost {
+  background: url(../../app/desktop/images/mobile_system.png) center top no-repeat;
+  width: 100%;
+  margin: 20px auto;
+  height: 100%;
+  display: none;
+  background-size: contain;
+}
+.sec3-p2 {
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  float: right;
+  margin: 0;
+  padding: 182px 28px 0 0;
+}
+ul.s3txt_list {
+  width: auto;
+  margin: 0;
+  padding: 20px 0 0 200px;
+}
+ul.s3txt_list li {
+  background: url(../../app/desktop/images/system-tick-.png) left 5px no-repeat;
+  font-size: 14px;
+  line-height: 30px;
+  color: #fff;
+  text-align: left;
+  letter-spacing: -.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+  padding: 0 0 0 30px;
+}
+.strp-txt{
+  color: #000 !important;
+}
+.strp-txt span{
+  color: #000 !important;
 }

@@ -18,6 +18,21 @@
       
     <title>Checkout</title>
     <style>
+        .frm-btm {
+    background-color: transparent !important;
+    background-image: url("{% static 'app/desktop/images/btn.png' %}") !important;
+    background-repeat: no-repeat !important;
+    background-position: center top !important;
+    height: 75px !important;
+    font-size: 0 !important;
+    width: 100% !important;
+    border: none !important;
+    margin-top: 15px !important;
+    cursor: pointer !important;
+}
+.pulse {
+    animation: pulse 1.5s infinite;
+}
         .social_media ul li {
     display: inline-block;
     margin: 0px 10px;
@@ -115,15 +130,32 @@ li {
 
 <body>
   
-   
-    <main class="checkout mt-4">
+    <header id="header" style=" 
+    clear: both;
+    margin: 10px auto;
+    padding: 0;">
+        <div class="container">
+         <div class="row">
+            <div class="col-md-4">
+                <div class="logo">
+                    <a href="{% url 'Home' %}"> <img src="{% static 'app/desktop/images/logo.png' %}" class="img-fluid" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'app/desktop/images/twosetp.png' %}" class="img-fluid" alt=""></a>
+            </div>
+            
+         </div>
+        </div>
+    </header>
+    <main class="checkout mt-4" style="background-image: url('{% static 'app/desktop/images/checkout.jpg' %}');background-size:cover;background-repeat:no-repeat;">
         <section class="checkout_wrp">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-12">
                         <div class="order_process">
                             <div class="order_ad">
-                                <a href="http://167.172.128.98/" style="font-weight: bold;text-decoration: none;"> Go Back to Home</a>
+                              
                                 <h6>Order now and get your free Pills!</h6>
                             </div>
                             <div class="order_sub_text">
@@ -137,7 +169,7 @@ li {
                             <div class="product_list">
                                 {% for product in products %}
                                 <div class="box selected" id="pack1">
-                                    <p class="box-lft-p1">{{product.package}} + {{product.extra}} Pill FREE <span><img
+                                    <p class="box-lft-p1"><span style="font-size: 28px;">{{product.name}}</span> <span><img
                                                 src="{% static 'assets/images/box.png' %}" alt=""> Free Shipping</span></p>
                                     <div class="product_data">
                                         <div class="form-check">
@@ -147,8 +179,10 @@ li {
                                             </label>
                                         </div>
                                         <div class="box-lft">
-                                            <img src="{% static 'app/desktop/images/s1-box-bottle.png' %}"  alt=""
+                                            <img src="{% static 'app/desktop/images/pills.png' %}"  alt=""
                                                 class="chk-btl">
+
+                                            <h3>{{product.package}} Pills</h3>
                                         </div>
                                       
                                        <div class="plush_icon">
@@ -157,11 +191,12 @@ li {
                                   
                                         <div class="box-lft">
                                             <div class="sel-chk"></div>
-                                            <img src="{% static 'app/desktop/images/s1-box-bottle.png' %}" alt=""
+                                            <img src="{% static 'app/desktop/images/pills.png' %}" alt=""
                                                 class="chk-btl">
+                                                <h3>{{product.extra}} Pills</h3>
                                         </div>
                                         <div class="box-rgt">
-                                            <p class="box-rgt-p1">{{product.name}}</p>
+                                            
                                             <p class="box-rgt-p2">${{product.price}}</p>
                                             <p class="box-rgt-p2">${{product.price_per_pill}} / pill</p>
 
@@ -184,6 +219,8 @@ li {
                                         
                                         <div class="summryRaw">Shipping Type: <span class="shipInfo">Standard Shipping</span></div>
                                         <div class="summryRaw">Shipping Price: <span class="shippingprice">$0.00</span></div>
+                                        <div class="summryRaw">Delivery Date: <span class="shippingprice">{{four_days|date:"d-m-Y"}}</span></div>
+
                                         <div class="summryRaw total">Your Total:	<span class="totalprice">$ {{products.0.price}}</span></div>  
                                     </div>
                                 </div>
@@ -267,11 +304,8 @@ li {
                                                         </div>
                                                       
                                                     </div>
-                                                    <button id="PayButton"
-                                                        class="btn btn-block btn-success submit-button" name="card" type="submit">
-                                                        <span class="submit-button-lock"></span>
-                                                        <span class="align-middle">Pay</span>
-                                                    </button>
+                                                    <input type="submit" class="pulse frm-btm" name="card"
+                                                    value="Rush My Order" />
                                                 </form>
                                             </div>
 
