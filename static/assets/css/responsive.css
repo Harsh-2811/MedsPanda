@@ -320,6 +320,18 @@ i.new_sprite.new_sprite-logo-1.top-logo {
   background-image: none;
   padding: 0;
 }
+.social_media_mobile{
+  display: block;
+}
+.email_text{
+  display: none !important;
+}
+.call_text{
+  display: none;
+}
+.social_media {
+  display: none;
+}
 }
 @media (max-width: 575px) {
   .product_data {

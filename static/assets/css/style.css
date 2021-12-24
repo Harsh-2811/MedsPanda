@@ -370,7 +370,7 @@ input {
 
 .logo {
   width: 260px;
- 
+  text-align: center;
 }
 
 
@@ -624,4 +624,16 @@ ul.s3txt_list li {
 }
 .strp-txt span{
   color: #000 !important;
+}
+.social_media_mobile {
+  display: none;
+}
+.social_media_mobile ul {
+  width: 100%;
+  text-align: center;
+}
+
+.social_media_mobile ul li {
+  display: inline-block;
+  margin: 0 5px;
 }
