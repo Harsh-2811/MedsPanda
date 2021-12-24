@@ -190,29 +190,29 @@ li {
                     <form method="post" action="{% url 'Home' %}" name="" accept-charset="utf-8">{% csrf_token %}
                         <input type="hidden" name="limelight_charset" id="limelight_charset" value="utf-8" />
                         <div class="form-box">
-                            <div class="form-group">
+                            <div class="form-group mb-3 mb-3">
 
                                 <input type="text" name="first_name" placeholder="First Name"
                                     class="required form-control" value=""
                                     data-error-message="Please enter your first name!" required/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-3">
 
                                 <input type="text" name="last_name" placeholder="Last Name"
                                     class="required form-control" value=""
                                     data-error-message="Please enter your last name!" required/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-3">
 
                                 <input type="text" name="address" placeholder="Your Address" class="required form-control"
                                     value="" data-error-message="Please enter your address!" required />
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-3">
 
                                 <input type="text" name="city" placeholder="Your City" class="required form-control" value=""
                                     data-error-message="Please enter your city!" required/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-3">
 
                                 <select name="country" class="required form-control no-error select2" data-selected=""
                                     data-error-message="Please select your country!" required>
@@ -221,12 +221,12 @@ li {
                                     {% endfor %}
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-3">
 
                                 <input type="text" name="state" placeholder="Your State" class="required form-control"
                                     data-selected="" data-error-message="Please select your state!" required/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-3">
 
                                 <input type="tel" name="zipcode" placeholder="Zip Code" class="required form-control"
                                     value="" maxlength="8"
@@ -235,14 +235,14 @@ li {
                                 <span id="zip-validate" style="display: none">
                                     <img src="{% static 'app/desktop/images/ajax-loader.gif' %}"></span>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-3">
 
                                 <input type="tel" name="phone" placeholder="Phone" class="required form-control" value=""
                                     data-min-length="10" data-max-length="10"
                                     onkeyup="javascript: this.value = this.value.replace(/[^0-9]/g,'');"
                                     maxlength="10" data-error-message="Please enter a valid contact number!" required/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-3">
 
                                 <input type="text" name="email" placeholder="Email Address" class="required form-control"
                                     value="" data-error-message="Please enter a valid email id!" required/>

@@ -652,4 +652,5 @@ def processToCheckout(request,pk):
     return render(request,"processToCheckout.html",{'products':products,'price_dict':json.dumps(price_dict),'pk':pk,'four_days':four_days})
 
 def thankyou(request,orderId):
-    return render(request,'thankyou.html',{'order':orderId})
+    order = Order.objects.get(order_id=orderId)
+    return render(request,'thankyou.html',{'order_id':orderId,'order':order})
