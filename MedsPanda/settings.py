@@ -122,6 +122,12 @@ MAILCHIMP_DATA_CENTER = "us20"
 MAILCHIMP_EMAIL_LIST_ID = "7a42df082d"
 
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'medspanda3@gmail.com'
+EMAIL_HOST_PASSWORD = 'hxuljgeudduepmox'
+
 STATIC_URL = 'static/'
 # STATICFILES_DIRS=[
 #     os.path.join(BASE_DIR,'static'),
