@@ -82,8 +82,17 @@ DATABASES = {
     }
 }
 
-
-# Password validation
+# DATABASES = {
+#     'default': {
+#         'ENGINE'  : 'django.db.backends.mysql', # <-- UPDATED line 
+#         'NAME'    : 'medspanda',                 # <-- UPDATED line 
+#         'USER'    : 'root',                     # <-- UPDATED line
+#         'PASSWORD': 'Meds',              # <-- UPDATED line
+#         'HOST'    : 'localhost',                # <-- UPDATED line
+#         'PORT'    : '3306',
+#     }
+# }
+# # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -122,6 +131,12 @@ MAILCHIMP_DATA_CENTER = "us20"
 MAILCHIMP_EMAIL_LIST_ID = "7a42df082d"
 
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'medspanda3@gmail.com'
+EMAIL_HOST_PASSWORD = 'hxuljgeudduepmox'
+
 STATIC_URL = 'static/'
 # STATICFILES_DIRS=[
 #     os.path.join(BASE_DIR,'static'),
@@ -139,8 +154,3 @@ X_FRAME_OPTIONS = 'ALLOWALL'
 
 XS_SHARING_ALLOWED_METHODS = ['POST','GET','OPTIONS', 'PUT', 'DELETE']
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'harshpatel281199@gmail.com'
-EMAIL_HOST_PASSWORD = 'ppzthhbcqjivedli'

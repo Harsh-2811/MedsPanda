@@ -125,6 +125,36 @@ li {
     padding: 10px 7px 11px;
     margin-top: 10px;
 }
+input.pulse.frm-btm {}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.pulse {
+    animation: pulse 1.5s infinite
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(.9)
+    }
+
+    50% {
+        transform: scale(1)
+    }
+
+    100% {
+        transform: scale(.9)
+    }
+}
+
     </style>
 </head>
 
@@ -148,7 +178,7 @@ li {
          </div>
         </div>
     </header>
-    <main class="checkout mt-4" style="background-image: url('{% static 'app/desktop/images/checkout.jpg' %}');background-size:cover;background-repeat:no-repeat;">
+    <main class="checkout pt-4" style="background-image: url('{% static 'app/desktop/images/checkout.jpg' %}');background-size:cover;background-repeat:no-repeat;">
         <section class="checkout_wrp">
             <div class="container">
                 <div class="row">
@@ -168,7 +198,7 @@ li {
                             </div>
                             <div class="product_list">
                                 {% for product in products %}
-                                <div class="box selected" id="pack1">
+                                <div class="box {% if forloop.counter == 1 %}selected {% endif %}" id="pack_{{product.pk}}">
                                     <p class="box-lft-p1"><span style="font-size: 28px;">{{product.name}}</span> <span><img
                                                 src="{% static 'assets/images/box.png' %}" alt=""> Free Shipping</span></p>
                                     <div class="product_data">
@@ -193,12 +223,13 @@ li {
                                             <div class="sel-chk"></div>
                                             <img src="{% static 'app/desktop/images/pills.png' %}" alt=""
                                                 class="chk-btl">
-                                                <h3>{{product.extra}} Pills</h3>
+                                                <h3>{{product.extra}} Free Pills</h3>
                                         </div>
                                         <div class="box-rgt">
                                             
                                             <p class="box-rgt-p2">${{product.price}}</p>
-                                            <p class="box-rgt-p2">${{product.price_per_pill}} / pill</p>
+                                            <p style="    font-size: 22px;
+                                            font-weight: bold;">${{product.price_per_pill}} / pill</p>
 
                                            
                                             <div class="sel-btn"></div>
@@ -219,7 +250,7 @@ li {
                                         
                                         <div class="summryRaw">Shipping Type: <span class="shipInfo">Standard Shipping</span></div>
                                         <div class="summryRaw">Shipping Price: <span class="shippingprice">$0.00</span></div>
-                                        <div class="summryRaw">Delivery Date: <span class="shippingprice">{{four_days|date:"d-m-Y"}}</span></div>
+                                        <div class="summryRaw">Estimated Delivery Date: <span class="shippingprice">{{four_days|date:"d-m-Y"}}</span></div>
 
                                         <div class="summryRaw total">Your Total:	<span class="totalprice">$ {{products.0.price}}</span></div>  
                                     </div>
@@ -305,7 +336,7 @@ li {
                                                       
                                                     </div>
                                                     <input type="submit" class="pulse frm-btm" name="card"
-                                                    value="Rush My Order" />
+                                                    value="Secure Checkout " style="    animation: pulse 1.5s infinite;background-image: url(/static/app/desktop/images/checkout.png) !important;" />
                                                 </form>
                                             </div>
 
@@ -362,11 +393,23 @@ li {
         var products ={{price_dict|safe}}
         $(".packageSelect").click(function(){
             var id = $(this).attr('id').slice(17,)
+            $(".box").removeClass("selected")
+            $("#pack_"+id).addClass("selected")
             var price = products[id][0]
             $("#package_price").html(price)
             $(".totalprice").html("$ "+price)
             $(".apackage_pk").val(id)
             $("#prd-info").html(`${products[id][1]} : ${products[id][2]} + ${products[id][3]} <span class="prd-prc">$ ${products[id][0]}</span>`)
+        })
+
+        $("#ExpiryDate").keyup(function(){
+           
+            var val_len = $(this).val().length;
+            if(val_len == 2){
+                $(this).val($(this).val()+"/")
+            }
+           
+
         })
     </script>
 </body>

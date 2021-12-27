@@ -251,15 +251,16 @@ select.changed:valid {
 
  
 .product_detail {
-    width: 240px;
+    width: 340px;
 }
 .product_ser > div > h6{
-    font-size: 35px;
+    font-size: 50px;
     color: #004f7f;
-    font-weight: 700;
+    font-weight: bolder;
 }
 .product_ser {
-    margin-left: 25%;
+    margin-left: 38%;
+    margin-bottom: -40px;
 }
 .product_ser > div > h6 > span{
     color: #f31f33;

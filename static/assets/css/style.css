@@ -370,7 +370,7 @@ input {
 
 .logo {
   width: 260px;
- 
+  text-align: center;
 }
 
 
@@ -384,7 +384,7 @@ input {
 }
 
 .product_image img {
-  width: 310px;
+  width: 344px;
 }
 
 .sc1-para-lft {
@@ -540,6 +540,7 @@ input {
 
 .section-1 .product_label img {
   margin-top: 10px;
+  margin-left: 20px;
 }
 .form-box{
   position: relative;
@@ -624,4 +625,16 @@ ul.s3txt_list li {
 }
 .strp-txt span{
   color: #000 !important;
+}
+.social_media_mobile {
+  display: none;
+}
+.social_media_mobile ul {
+  width: 100%;
+  text-align: center;
+}
+
+.social_media_mobile ul li {
+  display: inline-block;
+  margin: 0 5px;
 }

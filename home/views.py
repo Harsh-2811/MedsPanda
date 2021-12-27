@@ -605,20 +605,34 @@ def processToCheckout(request,pk):
             cdetails.order = order
             cdetails.save()
 
-        # from django.template.loader import render_to_string
-        # from django.conf import settings
-        # email_subject = 'New Order Placed Successfully'
-        # html_message = render_to_string('OrderEmail.html')
-        # from_email = settings.EMAIL_HOST_USER,
-        # to = 'hrpatel8935@gmail.com'
-        # msg = EmailMessage(
-        #             email_subject,
-        #             html_message,
-        #             from_email[0],
-        #             [to],
-        #         )
-        # msg.content_subtype = "html" 
-        # msg.send()
+        from django.template.loader import render_to_string
+        from django.conf import settings
+        email_subject = 'New Order Placed Successfully'
+        html_message = render_to_string('OrderEmail.html',{'orderId':order.pk})
+        from_email = settings.EMAIL_HOST_USER,
+        to = settings.EMAIL_HOST_USER
+        msg = EmailMessage(
+                    email_subject,
+                    html_message,
+                    from_email[0],
+                    [to],
+                )
+        msg.content_subtype = "html" 
+        msg.send()
+
+
+        email_subject = 'Your Order Placed Successfully'
+        html_message = render_to_string('OrderEmailCustomer.html',{'order_id':order.order_id})
+        from_email = settings.EMAIL_HOST_USER,
+        to = settings.EMAIL_HOST_USER
+        msg = EmailMessage(
+                    email_subject,
+                    html_message,
+                    from_email[0],
+                    [CustomerDetails.objects.get(pk=pk).email],
+                )
+        msg.content_subtype = "html" 
+        msg.send()
         # return redirect('/thankyou/'+str(order.order_id))
 
         mailchimp = Client()
@@ -652,4 +666,5 @@ def processToCheckout(request,pk):
     return render(request,"processToCheckout.html",{'products':products,'price_dict':json.dumps(price_dict),'pk':pk,'four_days':four_days})
 
 def thankyou(request,orderId):
-    return render(request,'thankyou.html',{'order':orderId})
+    order = Order.objects.get(order_id=orderId)
+    return render(request,'thankyou.html',{'order_id':orderId,'order':order})

@@ -234,13 +234,13 @@ i.new_sprite.new_sprite-logo-1.top-logo {
     font-size: 10px;
   }
   .product_detail h6 span {
-    font-size: 23px;
+    font-size: 30px;
   }
   .product_detail {
     width: 164px;
   }
   .product_ser > div > h6{
-    font-size: 23px;
+    font-size: 30px;
   }
   .product_service i{
     font-size: 14px;
@@ -319,6 +319,18 @@ i.new_sprite.new_sprite-logo-1.top-logo {
 .stap_wrp .sc7-paralft .sc7-points li{
   background-image: none;
   padding: 0;
+}
+.social_media_mobile{
+  display: block;
+}
+.email_text{
+  display: none !important;
+}
+.call_text{
+  display: none;
+}
+.social_media {
+  display: none;
 }
 }
 @media (max-width: 575px) {
@@ -556,7 +568,7 @@ p.sc6-txt3{
   width: 100%;
 }
 .product_detail {
-  width: 94px;
+  width: 198px;
 }
 .product_image_mobile img {
   width: 150px;
@@ -671,4 +683,11 @@ p.sc1-arw1-1.s9-txt3{
   font-size: 11px;
 }
 
+}
+
+@media only screen 
+  and (min-width: 1024px) 
+  and (max-height: 1366px) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+   
 }
