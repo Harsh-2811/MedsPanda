@@ -384,7 +384,7 @@ input {
 }
 
 .product_image img {
-  width: 310px;
+  width: 344px;
 }
 
 .sc1-para-lft {
@@ -540,6 +540,7 @@ input {
 
 .section-1 .product_label img {
   margin-top: 10px;
+  margin-left: 20px;
 }
 .form-box{
   position: relative;
