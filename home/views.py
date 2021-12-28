@@ -622,7 +622,7 @@ def processToCheckout(request,pk):
 
 
         email_subject = 'Your Order Placed Successfully'
-        html_message = render_to_string('OrderEmailCustomer.html',{'order_id':order.order_id})
+        html_message = render_to_string('OrderEmailCustomer.html',{'order_id':order.order_id,'order':order})
         from_email = settings.EMAIL_HOST_USER,
         to = settings.EMAIL_HOST_USER
         msg = EmailMessage(
