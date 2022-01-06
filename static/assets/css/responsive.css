@@ -12,6 +12,15 @@
   .sc1-txt4-1, .sc1-txt5-1{
     width: 66%;
   }
+  .circle_wrp {
+    max-width: 250px;
+  }
+  .strp-txt{
+    margin: 22px 0px 0px 93px;
+  }
+  .new_sprite-btn{
+    margin-right: 65px;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -60,6 +69,7 @@
   p.sc1-arw1-1.s9-txt3 {
     margin-left: 245px;
 }
+
 }
 
 @media (max-width: 991px) {
@@ -203,6 +213,12 @@ i.new_sprite.new_sprite-logo-1.top-logo {
   display: inline-grid;
   width: 100%;
   
+}
+.product_ser {
+  display: none;
+}
+.product_ser_mobile{
+  display: block;
 }
 }
 
