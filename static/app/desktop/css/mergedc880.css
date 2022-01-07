@@ -508,10 +508,9 @@ li {
 }
 
 .section-1 {
-   
-    background: url(../images/section-1.jpg) center top no-repeat
+    background: url(../images/section-1.jpg) center top no-repeat;
 }
-
+ 
 .top-logo {
     float: left;
     width: 300px;

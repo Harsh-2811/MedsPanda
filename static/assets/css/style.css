@@ -653,7 +653,7 @@ ul.s3txt_list li {
   width: 1em;
   height: 1em;
   position: relative;
-  background: #eee;
+  background: rgba(238, 238, 238, 0);
   border-radius: 50%;
   overflow: hidden;
   display: inline-block;
@@ -708,7 +708,7 @@ ul.s3txt_list li {
 
 .percent_text {
   position: absolute;
-  font-size: 36px;
+  font-size: 48px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -730,7 +730,10 @@ ul.s3txt_list li {
   margin-bottom: 10px;
 }
 .section-2 {
-  margin: 100px 0;
+  background: url(../images/section-3.jpg) center top / cover no-repeat rgb(222, 243, 254);
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
 }
 .numbers_dont_title_text h2 {
   font-size: 27px;
