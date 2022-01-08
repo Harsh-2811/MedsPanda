@@ -402,7 +402,7 @@ input {
 }
 
 .form_top img {
-  width: 100%;
+  width: 95%;
   margin-bottom: -50px;
 }
 
@@ -638,3 +638,140 @@ ul.s3txt_list li {
   display: inline-block;
   margin: 0 5px;
 }
+.product_ser .product_detail {
+  width: 316px;
+}
+.product_ser_mobile{
+  display: none;
+}
+.product_support {
+  margin-bottom: 30px;
+}
+
+.circle_percent {
+  font-size: 200px;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  background: rgba(238, 238, 238, 0);
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+  margin: 20px;
+}
+
+.circle_inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  clip: rect(0 1em 1em 0.5em);
+}
+
+.round_per {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background: #004f7f;
+  clip: rect(0 1em 1em 0.5em);
+  transform: rotate(180deg);
+  transition: 1.05s;
+}
+
+.percent_more .circle_inner {
+  clip: rect(0 0.5em 1em 0em);
+}
+
+.percent_more:after {
+  position: absolute;
+  left: 0.5em;
+  top: 0em;
+  right: 0;
+  bottom: 0;
+  background: #004f7f;
+  content: "";
+}
+
+.circle_inbox {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: #fff;
+  z-index: 3;
+  border-radius: 50%;
+}
+
+.percent_text {
+  position: absolute;
+  font-size: 48px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: #f31f33;
+  font-weight: 700;
+}
+
+.numbers_dont_title_text,
+.numbers_dont_sub_title,
+.numbers_dont_counter {
+  text-align: center;
+}
+
+.numbers_dont_title_text h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #004f7f;
+  margin-bottom: 10px;
+}
+.section-2 {
+  background: url(../images/section-3.jpg) center top / cover no-repeat rgb(222, 243, 254);
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+}
+.numbers_dont_title_text h2 {
+  font-size: 27px;
+  margin: 7px 0;
+  font-weight: 800;
+  font-family: Conv_Geomanist-Bold;
+}
+
+.numbers_dont_sub_title p {
+  font-size: 16px;
+  color: #b5b5b5;
+  margin-bottom: 30px;
+}
+.numbers_dont_counter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.circle_wrp p {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 45px;
+}
+.circle_wrp {
+  max-width: 300px;
+}
+.product_ser_mobile .product_detail h6{
+  font-size: 50px;
+    color: #004f7f;
+    font-weight: bolder;
+}
+
+.product_ser_mobile .product_detail h6 span{
+  font-size: 50px;
+  color: #f31f33;
+}
+
+.product_ser_mobile .product_detail {
+  width: 380px;
+}
+ 
