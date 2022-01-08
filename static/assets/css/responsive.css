@@ -357,6 +357,8 @@
   }
 }
 
+
+
 /* ipad */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
   div#formBox {
@@ -381,7 +383,7 @@
 .s3_prtoduct_image img{
   width: 243px !important;
   top: 413px;
-    left: -64px;
+    left: -115px;
 }
 .sc5-points{
   display: flex;
@@ -568,7 +570,14 @@
     display: none;
   }
 }
-
+@media (width: 768px) {
+  /* Your CSS */
+  .s3_prtoduct_image img{
+    width: 243px !important;
+    top: 413px;
+      left: -64px !important;
+  }
+}
 @media (max-width: 575px) {
   .product_data {
     display: inherit;
