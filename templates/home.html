@@ -21,7 +21,11 @@
                 <div class="product_support" >
 
                     <div class="product_service">
-                       
+                        <div class="product_ser">
+                            <div class="product_detail">
+                                <h6 >VIGORE - <span> 100 </span></h6>
+                            </div>
+                        </div>
                         <div class="service">
                             <div class="product_detail">
                                 <h6><span style="    font-size: 26px;
@@ -45,7 +49,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product_ser">
+                    <div class="product_ser_mobile">
                         <div class="product_detail">
                             <h6 >VIGORE - <span> 100 </span></h6>
                         </div>
@@ -212,7 +216,7 @@
     </div>
 </div>
 
-<div class="section-2">
+<!-- <div class="section-2">
     <div class="container">
         <div class="sc2-para1">
             <p class="sc2-txt1">DECLINE IN SEXUAL HEALTH </p>
@@ -261,8 +265,59 @@
             </div>
         </div>
     </div>
+</div> -->
+<div class="section-2">
+    <div class="container">
+       <div class="row">
+        <div class="col-lg-12">
+            <div class="numbers_dont_lie">
+                <div class="numbers_dont_title_text">
+                    <h1>Numbers Dont's lie</h1>
+                    <h2>Has your sex life gone downhill over the years?</h2>
+                </div>
+                <div class="numbers_dont_sub_title">
+                    <p>Recent studies revel a not-so-perfect picture on the level of satisfaction and sex life among
+                        American men:</p>
+                </div>
+                <div class="numbers_dont_counter">
+                    <div class="circle_wrp">
+                        <div class="circle_percent" data-percent="75">
+                            <div class="circle_inner">
+                                <div class="round_per"></div>
+                            </div>
+                        </div>
+                        <p>Reported having no sexual activity</p>
+                    </div>
+                    <div class="circle_wrp">
+                        <div class="circle_percent" data-percent="25">
+                            <div class="circle_inner">
+                                <div class="round_per"></div>
+                            </div>
+                        </div>
+                         <p>Too tired or need more sleep</p>
+                    </div>
+                    <div class="circle_wrp">
+                        <div class="circle_percent" data-percent="50">
+                            <div class="circle_inner">
+                                <div class="round_per"></div>
+                            </div>
+                        </div>
+                        <p>Complain aboute not feeling or health problems</p>
+                    </div>
+                    <div class="circle_wrp">
+                    <div class="circle_percent" data-percent="95">
+                        <div class="circle_inner">
+                            <div class="round_per"></div>
+                        </div>
+                    </div>
+                    <p>Are not in the mood to have sex</p>
+                </div>
+                </div>
+            </div>
+        </div>
+       </div>
+    </div>
 </div>
-
 <div class="section-3">
     <div class="container">
         <div class="row">
@@ -662,8 +717,13 @@
                 <div class="product_support" >
 
                     <div class="product_service">
-                       
+                        <div class="product_ser">
+                            <div class="product_detail">
+                                <h6 >VIGORE - <span> 100 </span></h6>
+                            </div>
+                        </div>
                         <div class="service">
+                            
                             <div class="product_detail">
                                 <h6><span style="    font-size: 26px;
     color: #004f7f !important;">FREE Shipping </span><br />3-5 business days </h6>
@@ -686,11 +746,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product_ser">
-                        <div class="product_detail">
-                            <h6 >VIGORE - <span> 100 </span></h6>
-                        </div>
-                    </div>
+                    
 
                 </div>
             </div>
@@ -698,9 +754,13 @@
 
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-12">
-                        <!-- <div class="product_image">
-                            <img src="{% static 'app/desktop/images/meds_box-bottle.png' %}" style="    margin-left: -30px;" alt="">
-                        </div> -->
+                        <div class="product_image bottom_product_image" >
+                            <img style="  position: absolute;
+                            top: -84px;
+                            left: 892px;
+                            width: 432px;
+                        " src="{% static 'app/desktop/images/meds_box-bottle.png' %}" alt="">
+                        </div>
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-12">
                         <div class="sc1-para-lft">
@@ -708,7 +768,6 @@
                             <div class="sc1-para3">
                                 <div class="doc_detail">
                                     <div class="doctor_text">
-
                                         <p class="sc1-txt4">Recommended by doctors </p>
                                         <p class="sc1-txt5"><strong>VIGORE</strong> is an efficient anti-ED medicine
                                             made available
@@ -860,6 +919,34 @@
 
 {% block script %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(".circle_percent").each(function () {
+            var $this = $(this),
+                $dataV = $this.data("percent"),
+                $dataDeg = $dataV * 3.6,
+                $round = $this.find(".round_per");
+            $round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
+            $this.append('<div class="circle_inbox"><span class="percent_text"></span></div>');
+            $this.prop('Counter', 0).animate({ Counter: $dataV },
+                {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $this.find(".percent_text").text(Math.ceil(now) + "%");
+                    }
+                });
+            if ($dataV >= 51) {
+                $round.css("transform", "rotate(" + 360 + "deg)");
+                setTimeout(function () {
+                    $this.addClass("percent_more");
+                }, 1000);
+                setTimeout(function () {
+                    $round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
+                }, 1000);
+            }
+        });
+    </script>
   <script>
        $('.select2').select2();
   </script>

@@ -508,10 +508,9 @@ li {
 }
 
 .section-1 {
-   
-    background: url(../images/section-1.jpg) center top no-repeat
+    background: url(../images/section-1.jpg) center top no-repeat;
 }
-
+ 
 .top-logo {
     float: left;
     width: 300px;
@@ -847,7 +846,8 @@ li {
 .form-container {
     width: 346px;
     float: right;
-    margin: -15px 0 0 0
+    margin: -15px 0px 0px;
+    text-align: center;
 }
 
  
@@ -1345,7 +1345,7 @@ select {
     font-size: 24px;
     color: #fff;
     font-weight: 700;
-    margin: 22px 0px 0px 33px;
+    margin: 22px 0px 0px 223px;
     line-height: 26px;
     position: relative;
     z-index: 2;
@@ -2148,7 +2148,7 @@ select {
 
 .form-box .form-group {
     width: 87%;
-    margin: 16px auto 0;
+    margin: 6px auto 0;
     float: none;
 }
 
@@ -2613,6 +2613,7 @@ div.loading-window {
     height: 71px;
     background-position: -541px -5px;
     display: inline-block;
+    margin-right: 220px;
 }
 
 .new_sprite-close {

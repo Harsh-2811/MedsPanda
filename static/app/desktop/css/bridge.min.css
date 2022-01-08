@@ -251,23 +251,18 @@ select.changed:valid {
 
  
 .product_detail {
-    width: 340px;
+    width: 200px;
 }
 .product_ser > div > h6{
     font-size: 50px;
     color: #004f7f;
     font-weight: bolder;
 }
-.product_ser {
-    margin-left: 38%;
-    margin-bottom: -40px;
-}
+ 
 .product_ser > div > h6 > span{
     color: #f31f33;
 }
-.product_support{
  
-}
  
 
 .product_service {
