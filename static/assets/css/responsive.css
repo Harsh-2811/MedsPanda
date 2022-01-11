@@ -22,7 +22,7 @@
   }
 
   .strp-txt {
-    margin: 22px 0px 0px 93px;
+    margin: 22px 0px 0px 41px;
   }
 
   .new_sprite-btn {
@@ -619,7 +619,7 @@
   }
 
   .new_sprite-sc5-seal {
-    margin-left: 70px;
+    margin-left: 48px;
   }
 
   .sc4-txt3,
@@ -723,6 +723,25 @@
 
 
 @media (max-width: 480px) {
+  .product_ser_mobile .product_detail h6 {
+    font-size: 25px;
+}
+
+.product_ser_mobile .product_detail h6 span {
+    font-size: 25px;
+}
+.product_support {
+  margin-top: 80px;
+  margin-bottom: 0;
+}
+
+.sc1-para-lft {
+  margin-top: 0;
+}
+
+.product_ser_mobile {
+  margin-left: 50px;
+}
   #formBox {
     margin-top: 80px;
     display: none;
@@ -948,6 +967,26 @@
 }
 
 @media (max-width: 375px) {
+  .product_ser_mobile .product_detail h6 {
+    font-size: 25px;
+}
+
+.product_ser_mobile .product_detail h6 span {
+    font-size: 25px;
+}
+.product_support {
+  margin-top: 80px;
+  margin-bottom: 0;
+}
+
+.sc1-para-lft {
+  margin-top: 0;
+}
+
+.product_ser_mobile {
+  margin-left: 50px;
+}
+
   .sc5-points li {
     margin-left: 13%;
   }

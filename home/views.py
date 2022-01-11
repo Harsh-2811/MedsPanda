@@ -566,7 +566,15 @@ def processToCheckout(request,pk):
             import random
             package_pk = request.POST['package_pk']
             product = Product.objects.get(pk=package_pk)
-            order_id = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(15))
+            order_id = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(5))
+            order_not_present = False
+
+            while not order_not_present:
+                if Order.objects.filter(order_id = order_id).exists():
+                    order_id = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(5))
+                else:
+                    order_not_present = True
+
             order = Order(product=product,order_id=order_id,totalAmount=product.price,status="Placed",payment_type="Card")
             order.save()
             cdetails = CustomerDetails.objects.get(pk=pk)
