@@ -570,12 +570,49 @@
     display: none;
   }
 }
-@media (width: 768px) {
+@media (width: 768px){
   /* Your CSS */
   .s3_prtoduct_image img{
     width: 243px !important;
     top: 413px;
       left: -64px !important;
+  }
+
+  
+  .fixbox {
+    display: block;
+    width: 100%;
+  }
+
+  .fixbox .stick_bar {
+    height: 130px;
+  }
+
+  .fixbox .stick_bar img{
+    width: 240px;
+  }
+}
+
+@media (width: 820px){
+  /* Your CSS */
+  .s3_prtoduct_image img{
+    width: 243px !important;
+    top: 413px;
+      left: -64px !important;
+  }
+
+  
+  .fixbox {
+    display: block;
+    width: 100%;
+  }
+
+  .fixbox .stick_bar {
+    height: 130px;
+  }
+
+  .fixbox .stick_bar img{
+    width: 240px;
   }
 }
 @media (max-width: 575px) {
